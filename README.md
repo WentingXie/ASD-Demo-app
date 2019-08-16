@@ -1,4 +1,5 @@
 # ASD-Demo-app
-my first commit
-wenting
-new commit2
+#Java Maven web-app
+#Regiser and Login options for users
+#User information is stored in xml
+#Slack+GitHub Integration enabled
