@@ -5,4 +5,4 @@
 #Slack+GitHub Integration enabled
 Heruko deployment 
 Group 18
-Kazzy's update
+Kazzy's update v2
