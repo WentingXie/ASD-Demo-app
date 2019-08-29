@@ -1,8 +1,3 @@
-<%-- 
-    Document   : Register
-    Created on : 11/04/2018, 10:20:23 AM
-    Author     : george
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" import="asd.demo.controller.*" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -14,17 +9,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
         <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Nunito:400,300,700'>
         <link rel="stylesheet" href="css/login.css">
-        <link rel="stylesheet" href="css/demo.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <%
         String emailErr = request.getParameter("emailErr");
         String passErr = request.getParameter("passErr");
         String emptyErr = request.getParameter("empty");
     %>
-    <body style="background:none transparent;">
+    <body>
 
         <div class="row">
-            <form class="register-form" action="welcome.jsp" method="post">
+            <form action="welcome.jsp" method="post">
                 <p class="form_title">Register Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
                     <div class="form-group" id="fullname">
                         <input class="form-input" placeholder="Full name" name="name" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>                                       

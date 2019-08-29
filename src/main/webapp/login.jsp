@@ -14,17 +14,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
         <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Nunito:400,300,700'>
         <link rel="stylesheet" href="css/login.css">
-        <link rel="stylesheet" href="css/demo.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <%
         String emailErr = request.getParameter("emailErr");
         String passErr = request.getParameter("passErr");
         String emptyErr = request.getParameter("empty");
     %>
-    <body style="background:none transparent;">
+    <body>
 
         <div class="row">
-            <form class="login-form" action="ValidatorServlet" method="post" target="_parent">
+            <form action="main.jsp" method="post" target="_parent">
                 <p class="form_title">Login Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
                     <div class="form-group" id="username">
                         <input class="form-input" placeholder="Email" name="email" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>                                       
