@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <script type="text/javascript" src="js/animation.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/demo.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Edit</title>
     </head>
     <body style="background:none transparent;">
