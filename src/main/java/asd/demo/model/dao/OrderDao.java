@@ -29,7 +29,7 @@ public class OrderDao {
         public OrderDao(MongoClient mongoClient) {
         this.mongoClient = mongoClient;
         
-        database = mongoClient.getDB("heroku_r0hsk6vb");
+        database = mongoClient.getDB("heroku_bqcjmqws");
         collection = database.getCollection("classes");
     }
         
