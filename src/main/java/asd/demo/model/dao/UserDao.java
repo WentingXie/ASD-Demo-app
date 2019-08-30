@@ -7,7 +7,7 @@ package asd.demo.model.dao;
 
 /**
  *
- * @author wentingxie
+ * @author suyixin
  */
 
 import com.mongodb.BasicDBObject;
@@ -23,7 +23,7 @@ import java.util.List;
 import static java.util.regex.Pattern.*;
 import org.bson.types.ObjectId;
 public class UserDao {
-         MongoClient mongoClient;
+          MongoClient mongoClient;
     DB database;
     DBCollection collection;
         public UserDao(MongoClient mongoClient) {
@@ -42,14 +42,13 @@ public class UserDao {
         while (cursor.hasNext()) {
             DBObject result = cursor.next();
             ObjectId userId = (ObjectId)result.get("_id");
-            String name = (String)result.get("Name");
-            String email = (String)result.get("email");
+            
+            String name = (String)result.get("name");
             String password = (String)result.get("password");
-            String phone = (String)result.get("phone");
+            String email = (String)result.get("email");
             
             count ++;
         }
         return user;
     }
-    
 }
