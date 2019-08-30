@@ -29,8 +29,8 @@ public class OrderDao {
         public OrderDao(MongoClient mongoClient) {
         this.mongoClient = mongoClient;
         
-        database = mongoClient.getDB("heroku_r0hsk6vb");
-        collection = database.getCollection("classes");
+        database = mongoClient.getDB("heroku_bqcjmqws");
+        collection = database.getCollection("order");
     }
         
         public Order [] getOrders() {
@@ -41,10 +41,10 @@ public class OrderDao {
         int count = 0;
         while (cursor.hasNext()) {
             DBObject result = cursor.next();
-            ObjectId tutorialId = (ObjectId)result.get("_id");
-            String department = (String)result.get("firstName");
-            int grade = (int)result.get("lastName");
-            ObjectId userId = (ObjectId)result.get("department");
+            ObjectId orderId = (ObjectId)result.get("_id");
+            String userid = (String)result.get("userid");
+            int price = (int)result.get("price");
+            int date = (int)result.get("orderdate");
             int tutSize = (int)result.get("email");
             //order[count] = new Order(tutorialId, department, grade, userId, tutSize);
             count ++;

@@ -21,21 +21,21 @@ import static com.mongodb.client.model.Filters.eq;
 
 public class MongoDBConnector {
 
-    private List<Document> users = new ArrayList();
-    private String owner;
-    private String password;
+    MongoClient mongoClient;
 
-    public MongoDatabase getMongoDB(){
-       MongoClientURI uri = new MongoClientURI("mongodb://" + this.owner + ":" + this.password + "@ds023603.mlab.com:23603/heroku_bqcjmqws");
-       MongoDatabase db;
-       try (MongoClient client = new MongoClient(uri)) {
-            db = client.getDatabase(uri.getDatabase());
-       }
-       return db;
+    public MongoDBConnector() throws UnknownHostException {
+        String dbUrl = "ds023603.mlab.com";
+        String dbPort = String.valueOf(23603);
+        String dbUser = "heroku_bqcjmqws";
+        String dbPass = "3n91u46bthugnp5ejiuvpc9fvq";
+        String dbName = "heroku_bqcjmqws";
+        String dbUri = String.format("mongodb://%s:%s@%s:%s/%s", dbUser, dbPass, dbUrl, dbPort, dbName);
+        mongoClient = new MongoClient(new MongoClientURI(dbUri));
     }
-    
-    public MongoDBConnector(String owner, String password) throws UnknownHostException {
-        this.owner = owner;
-        this.password = password;
+    public MongoClient openConnection(){
+        return this.mongoClient;
+    }
+    public void closeConnection() {
+        mongoClient.close();
     }
 }
