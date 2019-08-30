@@ -21,6 +21,34 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static java.util.regex.Pattern.*;
+import org.bson.types.ObjectId;
 public class UserDao {
-    
+          MongoClient mongoClient;
+    DB database;
+    DBCollection collection;
+        public UserDao(MongoClient mongoClient) {
+        this.mongoClient = mongoClient;
+        
+        database = mongoClient.getDB("heroku_bqcjmqws");
+        collection = database.getCollection("user");
+    }
+        
+        public User [] getUsers() {
+            
+        DBCursor cursor = collection.find();
+        System.out.println("COUNT: " + cursor.count());
+        User[] user = new User[cursor.count()];
+        int count = 0;
+        while (cursor.hasNext()) {
+            DBObject result = cursor.next();
+            ObjectId userId = (ObjectId)result.get("_id");
+            
+            String name = (String)result.get("name");
+            String password = (String)result.get("password");
+            String email = (String)result.get("email");
+            
+            count ++;
+        }
+        return user;
+    }
 }

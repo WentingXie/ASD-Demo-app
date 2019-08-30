@@ -1,8 +1,4 @@
-<%-- 
-    Document   : welcome
-    Created on : 23/03/2018, 3:13:21 PM
-    Author     : george
---%>
+
 
 <%@page import="asd.demo.model.dao.MongoDBConnector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" import="asd.demo.model.*"%>
@@ -25,8 +21,8 @@
         
         String adminemail = (String)session.getAttribute("adminemail");
         String adminpass = (String)session.getAttribute("adminpassword");
-        MongoDBConnector connector = new MongoDBConnector(adminemail, adminpass);
-        if(connector != null ) connector.add(user); else out.print("Cannot add user");
+        
+        
 
     %>
     <body style="background:none transparent;"> 
