@@ -30,7 +30,7 @@ public class OrderDao {
         this.mongoClient = mongoClient;
         
         database = mongoClient.getDB("heroku_bqcjmqws");
-        collection = database.getCollection("classes");
+        collection = database.getCollection("order");
     }
         
         public Order [] getOrders() {
