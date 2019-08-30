@@ -7,7 +7,7 @@ package asd.demo.model.dao;
 
 /**
  *
- * @author suyixin
+ * @author wentingxie
  */
 
 import com.mongodb.BasicDBObject;
@@ -46,7 +46,7 @@ public class UserDao {
             String email = (String)result.get("email");
             String password = (String)result.get("password");
             String phone = (String)result.get("phone");
-            //order[count] = new Order(tutorialId, department, grade, userId, tutSize);
+            
             count ++;
         }
         return user;
