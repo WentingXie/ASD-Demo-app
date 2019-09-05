@@ -21,21 +21,23 @@ import static com.mongodb.client.model.Filters.eq;
 
 public class MongoDBConnector {
 
-    MongoClient mongoClient;
+	MongoClient mongoClient;
 
-    public MongoDBConnector() throws UnknownHostException {
-        String dbUrl = "ds023603.mlab.com";
-        String dbPort = String.valueOf(23603);
-        String dbUser = "heroku_bqcjmqws";
-        String dbPass = "3n91u46bthugnp5ejiuvpc9fvq";
-        String dbName = "heroku_bqcjmqws";
-        String dbUri = String.format("mongodb://%s:%s@%s:%s/%s", dbUser, dbPass, dbUrl, dbPort, dbName);
-        mongoClient = new MongoClient(new MongoClientURI(dbUri));
-    }
-    public MongoClient openConnection(){
-        return this.mongoClient;
-    }
-    public void closeConnection() {
-        mongoClient.close();
-    }
+	public MongoDBConnector() throws UnknownHostException {
+		String dbUrl = "ds023603.mlab.com";
+		String dbPort = String.valueOf(23603);
+		String dbUser = "heroku_bqcjmqws";
+		String dbPass = "3n91u46bthugnp5ejiuvpc9fvq";
+		String dbName = "heroku_bqcjmqws";
+		String dbUri = String.format("mongodb://%s:%s@%s:%s/%s", dbUser, dbPass, dbUrl, dbPort, dbName);
+		mongoClient = new MongoClient(new MongoClientURI(dbUri));
+	}
+
+	public MongoClient openConnection() {
+		return this.mongoClient;
+	}
+
+	public void closeConnection() {
+		mongoClient.close();
+	}
 }

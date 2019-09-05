@@ -23,35 +23,34 @@ import static java.util.regex.Pattern.*;
 import org.bson.types.ObjectId;
 
 public class OrderDao {
-      MongoClient mongoClient;
-    DB database;
-    DBCollection collection;
-        public OrderDao(MongoClient mongoClient) {
-        this.mongoClient = mongoClient;
-        
-        database = mongoClient.getDB("heroku_bqcjmqws");
-        collection = database.getCollection("order");
-    }
-        
-        public Order [] getOrders() {
-            
-        DBCursor cursor = collection.find();
-        System.out.println("COUNT: " + cursor.count());
-        Order[] order = new Order[cursor.count()];
-        int count = 0;
-        while (cursor.hasNext()) {
-            DBObject result = cursor.next();
-            ObjectId orderId = (ObjectId)result.get("_id");
-            String userid = (String)result.get("userid");
-            int price = (int)result.get("price");
-            int date = (int)result.get("orderdate");
-            int tutSize = (int)result.get("email");
-            //order[count] = new Order(tutorialId, department, grade, userId, tutSize);
-            count ++;
-        }
-        return order;
-    }
-    
-}
-    
+	MongoClient mongoClient;
+	DB database;
+	DBCollection collection;
 
+	public OrderDao(MongoClient mongoClient) {
+		this.mongoClient = mongoClient;
+
+		database = mongoClient.getDB("heroku_bqcjmqws");
+		collection = database.getCollection("order");
+	}
+
+	public Order[] getOrders() {
+
+		DBCursor cursor = collection.find();
+		System.out.println("COUNT: " + cursor.count());
+		Order[] order = new Order[cursor.count()];
+		int count = 0;
+		while (cursor.hasNext()) {
+			DBObject result = cursor.next();
+			ObjectId orderId = (ObjectId) result.get("_id");
+			String userid = (String) result.get("userid");
+			int price = (int) result.get("price");
+			int date = (int) result.get("orderdate");
+			int tutSize = (int) result.get("email");
+			// order[count] = new Order(tutorialId, department, grade, userId, tutSize);
+			count++;
+		}
+		return order;
+	}
+
+}

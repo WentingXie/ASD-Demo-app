@@ -2,12 +2,19 @@ package asd.demo.model;
 
 import java.io.Serializable;
 
-public class User  implements Serializable{
+public class User implements Serializable{
 
-    private String name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8899453096527341507L;
+	
+	private String name;
     private String email;
     private String password;
     private String phone;
+    private String userType;
+    private String accountBalance;
 
     public User() {
     }
@@ -53,5 +60,27 @@ public class User  implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    public String getUserType() {
+		return userType;
+	}
 
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+	public String getAccountBalance() {
+		return accountBalance;
+	}
+
+	public void setAccountBalance(String accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", email=" + email + ", password=" + password + ", phone=" + phone + ", userType="
+				+ userType + ", accountBalance=" + accountBalance + "]";
+	}
+ 
 }
