@@ -1,8 +1,4 @@
-<%-- 
-    Document   : login
-    Created on : 11/04/2018, 10:20:23 AM
-    Author     : george
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8" import="asd.demo.controller.*" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -24,7 +20,7 @@
     <body>
 
         <div class="row">
-            <form action="main.jsp" method="post" target="_parent">
+            <form action="${pageContext.request.contextPath}/LoginServlet" method="post" target="_parent">
                 <p class="form_title">Login Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
                     <div class="form-group" id="username">
                         <input class="form-input" placeholder="Email" name="email" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>                                       

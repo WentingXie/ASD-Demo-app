@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 import static java.util.regex.Pattern.*;
 import org.bson.types.ObjectId;
+
 public class UserDao {
           MongoClient mongoClient;
     DB database;
@@ -51,4 +52,5 @@ public class UserDao {
         }
         return user;
     }
+
 }

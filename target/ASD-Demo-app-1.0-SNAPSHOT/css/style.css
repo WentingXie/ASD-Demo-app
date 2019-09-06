@@ -1,7 +1,8 @@
 body {
-    background: url("bh.png")no-repeat center center fixed; 
-    
-    background-size: cover;   
+    background: url("../image/bg.jpg")no-repeat center center fixed; 
+    background-size: cover;
+    text-align:center;
+    wigth:1000px;
 }
 .title{
 
@@ -156,11 +157,11 @@ input{
     font-size: 18px;
 }
 .date:invalid+span:after{
-    content: '✖';
+    content: '鉁�';
     padding-left: 5px;
 }
 .date:valid+span:after{
-    content: '✓';
+    content: '鉁�';
     padding-left: 5px;
 }
 .login-form {

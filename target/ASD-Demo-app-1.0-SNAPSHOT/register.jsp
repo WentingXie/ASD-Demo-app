@@ -19,7 +19,7 @@
     <body>
 
         <div class="row">
-            <form action="welcome.jsp" method="post">
+            <form action="${pageContext.request.contextPath}/RegisterServlet" method="post">
                 <p class="form_title">Register Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
                     <div class="form-group" id="fullname">
                         <input class="form-input" placeholder="Full name" name="name" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>                                       
