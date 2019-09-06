@@ -33,3 +33,4 @@ public class OrderDao {
 		database = mongoClient.getDB("heroku_bqcjmqws");
 		collection = database.getCollection("order");
 	}
+}
