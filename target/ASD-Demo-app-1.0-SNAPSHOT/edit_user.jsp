@@ -23,7 +23,7 @@
 
 	<div class="container">
 
-		<p class="form_title">My Account</p>
+		<p class="title">My Account</p>
 
 		<form method="post" action="${pageContext.request.contextPath}/changeInfo">
 			<table class="table">
@@ -50,7 +50,7 @@
 				<tr>
 					<td></td>
 					<td><input type="submit" value="Save" class="btn btn-info">&nbsp;&nbsp;&nbsp;
-					<a href="main.jsp" class="btn btn-info" target="_parent">Cancle</a></td>
+					<a href="main.jsp" class="btn btn-info" target="_parent">Cancel</a></td>
 				</tr>
 			</table>
 		</form>

@@ -5,13 +5,12 @@ body {
     wigth:1000px;
 }
 .title{
-
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: 60px;
-    color: #c9c9c9;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-    text-align: center;
+    font-size: 35px;
+    color:#000000;
+    
+    
 }
 iframe{
     background:none transparent;
@@ -136,7 +135,7 @@ iframe{
     margin-left:auto; 
     margin-right:auto; 
     width:20%;
-    color:#cccccc;
+    color:#000000;
      
 }
 .table th{

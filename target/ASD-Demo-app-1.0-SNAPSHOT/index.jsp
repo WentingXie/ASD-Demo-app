@@ -21,12 +21,12 @@
   
     <!-- <body onload="startTime()"> -->      
     <body>
-            <span class="time" id="time" ></span>
+            
             <div class="title">
                 <p>
                   <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
                 </p>
-                <p><h1>Opal Card</h1></p>
+                <p>Opal Card</p>
             </div>
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
