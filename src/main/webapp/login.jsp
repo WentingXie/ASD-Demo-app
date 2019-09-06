@@ -21,7 +21,7 @@
 
         <div class="row">
             <form action="${pageContext.request.contextPath}/LoginServlet" method="post" target="_parent">
-                <p class="form_title">Login Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
+                <p class="title">Login Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
                     <div class="form-group" id="username">
                         <input class="form-input" placeholder="Email" name="email" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>                                       
                     </div>

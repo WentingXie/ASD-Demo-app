@@ -23,7 +23,7 @@
 
 	<div class="container">
 
-		<p class="form_title">My Account</p>
+		<p class="title">My Account</p>
 
 		<form method="post" action="${pageContext.request.contextPath}/changeInfo">
 			<table class="table">
