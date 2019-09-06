@@ -38,12 +38,13 @@
                     </div>
                     <div class="navbar-header pull-right">
                         <a class="navbar-brand" href="#">Customer Care</a>
+                        <a class="navbar-brand" href="listOpalCard">Top Up</a>
                         <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 						       <%=userName%><span class="caret"></span>
 						    </a>
 					    <ul class="dropdown-menu">
 					        <li><a href="edit_user.jsp">Change Information</a></li>
-					        <li><a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a></li>
+					        <li><a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a></li>                                     
 					    </ul>
                     </div>
                 </div>
