@@ -83,8 +83,8 @@ public class OpalCardDao {
         condition.append("SequenceNumber", card.getOpalCardID());
         
         Document update = new Document();
-        update.append("Price", card.getBalance().toString());
+        update.append("Price", card.getBalance());
         
-       collection.findOneAndUpdate(condition, update);
+       collection.updateOne(condition, update);
     }
 }
