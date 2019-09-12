@@ -93,13 +93,15 @@ public class TopUpServlet extends HttpServlet {
         
         OpalCard card = db.getOpalCard(ID);
         
-        BigDecimal amount = new BigDecimal(request.getParameter("amount"));
+        String amount = request.getParameter("amount");
         
-        card.addBalance(amount);
+        int amount2 = Integer.parseInt(amount);
+        
+        card.addBalance(amount2);
         
         db.updateCard(card);
         
-        response.sendRedirect("listOpalCards");
+        response.sendRedirect("listOpalCard");
     }
 
     /**

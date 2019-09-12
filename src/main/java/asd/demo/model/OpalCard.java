@@ -17,10 +17,10 @@ import java.math.BigDecimal;
 public class OpalCard implements Serializable {
     
     private String opalCardID;
-    private BigDecimal balance;
+    private int balance;
     private String description;
             
-public OpalCard (String opalCardID, BigDecimal balance, String description) {
+public OpalCard (String opalCardID, int balance, String description) {
     this.opalCardID = opalCardID;
     this.balance = balance;
     this.description = description;
@@ -30,7 +30,7 @@ public OpalCard() { }
 
 
     
-    public void topUp(String opalCardID, BigDecimal balance, String description) {
+    public void topUp(String opalCardID, int balance, String description) {
         this.opalCardID = opalCardID;
         this.balance = balance;
         this.description = description;    
@@ -47,11 +47,11 @@ public OpalCard() { }
         this.opalCardID = opalCardID;
     }
     
-    public BigDecimal getBalance() {
+    public int getBalance() {
         return balance;
     }
     
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
     
@@ -63,8 +63,8 @@ public OpalCard() { }
         this.description = description;
     }
 
-    public void addBalance(BigDecimal amount) {
-        balance = balance.add(amount);
+    public void addBalance(int amount) {
+        this.balance = balance += amount;
     }
 }
 
