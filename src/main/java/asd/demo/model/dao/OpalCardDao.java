@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static java.util.regex.Pattern.*;
+import javax.servlet.http.HttpSession;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
@@ -62,6 +63,33 @@ public class OpalCardDao {
         return list;
     }
 
+    public List<OpalCard> listOpalCard2(String EmailAddress) {
+
+        //initialise Array
+        List<OpalCard> list2 = new ArrayList<>();
+
+        for (Document doc : collection.find()) {
+            // Create Opal Card
+                OpalCard card = new OpalCard();
+                
+            if (((String) doc.get("EmailAddress")).equals(EmailAddress)) {
+
+                
+                card.setOpalCardID((String) doc.get("_id").toString());
+                card.setBalance((Integer) doc.get("Price"));
+                card.setDescription((String) doc.get("ProductTypeId"));
+                
+                //card.setSecurityNumber((String)doc.get("SecurityNumber"));
+
+                list2.add(card);
+        }    
+        }
+            // Return List
+            return list2;
+        }
+       
+    
+
     public OpalCard getOpalCard(String ID) {
 
         for (Document doc : collection.find()) {
@@ -79,13 +107,13 @@ public class OpalCardDao {
     }
 
     public void updateCard(OpalCard card) {
-        
+
         BasicDBObject newDocument = new BasicDBObject();
-                
-        newDocument.append("$set",  new BasicDBObject().append("Price", card.getBalance()));
-        
+
+        newDocument.append("$set", new BasicDBObject().append("Price", card.getBalance()));
+
         BasicDBObject searchQuery = new BasicDBObject().append(("sequenceNumber"), card.getSequenceNumber());
-        
+
         collection.updateOne(searchQuery, newDocument);
     }
 }

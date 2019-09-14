@@ -1,9 +1,0 @@
-#surefire
-#Mon Sep 02 00:45:07 AEST 2019
-maven.ext.class.path=C\:\\Program Files\\NetBeans 8.2\\java\\maven-nblib\\netbeans-eventspy.jar
-user.dir=C\:\\Users\\jonny\\OneDrive\\Desktop\\ASD\\github
-file.encoding=UTF-8
-localRepository=C\:\\Users\\jonny\\.m2\\repository
-netbeans.deploy=true
-netbeans.deploy.clientUrlPart=/TopUp.jsp
-basedir=C\:\\Users\\jonny\\OneDrive\\Desktop\\ASD\\github

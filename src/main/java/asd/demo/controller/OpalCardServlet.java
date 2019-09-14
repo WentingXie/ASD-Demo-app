@@ -54,14 +54,12 @@ public class OpalCardServlet extends HttpServlet {
         HttpSession session = request.getSession();
         
         // Get User
-        //User user = (User)session.getAttribute("user");
-        
-        //List<OpalCard> opallist = db.listOpalCard(user.getId());
+        User user = (User)session.getAttribute("user");
+           
+        List<OpalCard> opallist = db.listOpalCard2(user.getEmail());
         
        // Get Opal Card List
-        List<OpalCard> opallist = db.listOpalCard();
-        
-        
+       // List<OpalCard> opallist = db.listOpalCard();
         
         // Put into session 
         session.setAttribute("opallist", opallist);
