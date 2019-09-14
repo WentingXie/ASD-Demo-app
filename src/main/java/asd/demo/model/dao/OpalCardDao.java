@@ -49,7 +49,7 @@ public class OpalCardDao {
 
             // Create Opal Card
             OpalCard card = new OpalCard();
-            card.setOpalCardID((String) doc.get("SequenceNumber"));
+            card.setOpalCardID((String) doc.get("_id").toString());
             card.setBalance((Integer) doc.get("Price"));
             card.setDescription((String) doc.get("ProductTypeId"));
             //card.setSecurityNumber((String)doc.get("SecurityNumber"));
@@ -65,9 +65,9 @@ public class OpalCardDao {
     public OpalCard getOpalCard(String ID) {
 
         for (Document doc : collection.find()) {
-            if (((String) doc.get("SequenceNumber")).equals(ID)) {
+            if (((String) doc.get("_id").toString()).equals(ID)) {
                 OpalCard card = new OpalCard();
-                card.setOpalCardID((String) doc.get("SequenceNumber"));
+                card.setOpalCardID((String) doc.get("_id").toString());
                 card.setBalance((Integer) doc.get("Price"));
                 card.setDescription((String) doc.get("ProductTypeId"));
                 //card.setSecurityNumber((String)doc.get("SecurityNumber"));
@@ -84,7 +84,7 @@ public class OpalCardDao {
                 
         newDocument.append("$set",  new BasicDBObject().append("Price", card.getBalance()));
         
-        BasicDBObject searchQuery = new BasicDBObject().append("SequenceNumber", card.getOpalCardID());
+        BasicDBObject searchQuery = new BasicDBObject().append(("sequenceNumber"), card.getSequenceNumber());
         
         collection.updateOne(searchQuery, newDocument);
     }

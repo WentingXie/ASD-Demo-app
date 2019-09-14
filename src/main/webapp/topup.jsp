@@ -27,6 +27,9 @@
     </head>
     <body>
         <div class="title">
+            <p>
+                  <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
+                </p>
          <h2>Top Up</h2>
         </div>
         <hr />
