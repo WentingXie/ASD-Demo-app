@@ -15,6 +15,7 @@ asd\demo\model\OpalCard.class
 asd\demo\controller\OpalCardServlet.class
 asd\demo\controller\Validator.class
 asd\demo\model\dao\UserDao.class
+asd\demo\model\test\AddBalanceTest.class
 asd\demo\model\dao\MongoDBConnector.class
 asd\demo\model\dao\impl\UserDaoImpl.class
 asd\demo\service\impl\UserServiceImpl.class
