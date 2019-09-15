@@ -11,16 +11,16 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     </head>
     <title>Main</title>
-    
+
     <%
         User user = (User)session.getAttribute("user");
         if(user == null){
-        	response.sendRedirect("login.jsp"); 
+        	response.sendRedirect("login.jsp");
         	return;
-        } 
+        }
         String userName = user.getName();
     %>
-    
+
     <body>
             <span class="time" id="time" ></span>
             <div class="title">
@@ -44,7 +44,7 @@
 						    </a>
 					    <ul class="dropdown-menu">
 					        <li><a href="edit_user.jsp">Change Information</a></li>
-					        <li><a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a></li>                                     
+					        <li><a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a></li>
 					    </ul>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                    <span class="text-left"><h1>My Opal Card</h1></span>
                    <div class="col-sm-6 col-md-4">
 				      <div class="thumbnail">
-				          <img src="image/adult.png" alt="adult">  
+				          <img src="image/adult.png" alt="adult">
 				      </div>
 				    </div>
 				    <div class="col-sm-6 col-md-4">
@@ -128,7 +128,7 @@
 					    </a>
 		           </div>
 		        </div>
-       </div> 
+       </div>
 
 	<script>
 	$(function (){
