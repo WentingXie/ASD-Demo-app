@@ -11,23 +11,23 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     </head>
     <title>Main</title>
-    
+
     <%
         User user = (User)session.getAttribute("user");
         if(user == null){
-        	response.sendRedirect("login.jsp"); 
+        	response.sendRedirect("login.jsp");
         	return;
-        } 
+        }
         String userName = user.getName();
     %>
-    
+
     <body>
             <span class="time" id="time" ></span>
             <div class="title">
                 <p>
                   <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
                 </p>
-                <p><h1>Opal Card</h1></p>
+                <p>Opal Card</p>
             </div>
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
@@ -38,6 +38,7 @@
                     </div>
                     <div class="navbar-header pull-right">
                         <a class="navbar-brand" href="#">Customer Care</a>
+                        <a class="navbar-brand" href="listOpalCard">Top Up</a>
                         <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 						       <%=userName%><span class="caret"></span>
 						    </a>
@@ -52,7 +53,7 @@
                    <span class="text-left"><h1>My Opal Card</h1></span>
                    <div class="col-sm-6 col-md-4">
 				      <div class="thumbnail">
-				          <img src="image/adult.png" alt="adult">  
+				          <img src="image/adult.png" alt="adult">
 				      </div>
 				    </div>
 				    <div class="col-sm-6 col-md-4">
@@ -127,7 +128,7 @@
 					    </a>
 		           </div>
 		        </div>
-       </div> 
+       </div>
 
 	<script>
 	$(function (){

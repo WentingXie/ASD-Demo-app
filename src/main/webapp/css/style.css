@@ -1,17 +1,16 @@
 body {
-    background: url("../image/bg.jpg")no-repeat center center fixed; 
+    background: url("../image/bg.jpg")no-repeat center center fixed;
     background-size: cover;
     text-align:center;
     wigth:1000px;
 }
 .title{
-
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: 60px;
-    color: #c9c9c9;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-    text-align: center;
+    font-size: 35px;
+    color:#000000;
+
+
 }
 iframe{
     background:none transparent;
@@ -31,7 +30,7 @@ iframe{
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
     font-size: 18px;
-    color: #ffff00;        
+    color: #ffff00;
 }
 .link{
     font-family: "Times New Roman", Times, serif;
@@ -57,7 +56,7 @@ iframe{
     color: white;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     position: relative;
-    -webkit-animation: myfirst 5s linear 2s infinite alternate; 
+    -webkit-animation: myfirst 5s linear 2s infinite alternate;
     animation: myfirst 5s linear 2s infinite alternate;
 }
 
@@ -101,7 +100,7 @@ iframe{
     color: #fff;
     background-color: #0066cc;
     border: none;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .button:hover {background-color: #3e8e41}
@@ -129,15 +128,15 @@ iframe{
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 .table{
-    
+
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
     font-size: large;
-    margin-left:auto; 
-    margin-right:auto; 
+    margin-left:auto;
+    margin-right:auto;
     width:20%;
-    color:#cccccc;
-     
+    color:#000000;
+
 }
 .table th{
     color: white;

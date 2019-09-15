@@ -1,2 +1,3 @@
-asd/demo/model/UserTest.class
-asd/demo/test/LoginFeature.class
+asd/demo/model/dao/MongoDBConnectorTest.class
+asd/demo/model/dao/RunTest.class
+asd/demo/model/dao/LoginButtonTest.class
