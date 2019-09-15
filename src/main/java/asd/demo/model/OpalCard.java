@@ -7,7 +7,6 @@
 package asd.demo.model;
 
 import java.io.Serializable;
-import static java.lang.Double.sum;
 import java.math.BigDecimal;
 
 
@@ -18,26 +17,23 @@ import java.math.BigDecimal;
 public class OpalCard implements Serializable {
     
     private String opalCardID;
-    private double balance;
+    private BigDecimal balance;
     private String description;
-    private String sequenceNumber;
             
-public OpalCard (String opalCardID, double balance, String description, String sequenceNumber) {
+public OpalCard (String opalCardID, BigDecimal balance, String description) {
     this.opalCardID = opalCardID;
     this.balance = balance;
     this.description = description;
-    this.sequenceNumber = sequenceNumber;
 }
 
 public OpalCard() { }
 
 
     
-    public void topUp(String opalCardID, double balance, String description, String sequenceNumber) {
+    public void topUp(String opalCardID, BigDecimal balance, String description) {
         this.opalCardID = opalCardID;
         this.balance = balance;
-        this.description = description; 
-        this.sequenceNumber = sequenceNumber;
+        this.description = description;    
     }
     
  
@@ -51,11 +47,11 @@ public OpalCard() { }
         this.opalCardID = opalCardID;
     }
     
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
     
-    public void setBalance(double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
     
@@ -66,18 +62,9 @@ public OpalCard() { }
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    public String getSequenceNumber() {
-        return sequenceNumber;
-    }
-    
 
-    public void setSequenceNumber(String sequenceNumber){
-        this.sequenceNumber = sequenceNumber;
-    }
-
-    public void addBalance(double amount) {
-        this.balance = Double.sum(balance, amount);
+    public void addBalance(BigDecimal amount) {
+        balance = balance.add(amount);
     }
 }
 

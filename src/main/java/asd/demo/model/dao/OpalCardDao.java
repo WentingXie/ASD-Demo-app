@@ -10,13 +10,22 @@ package asd.demo.model.dao;
  * @author jonny lie
  */
 import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import asd.demo.model.*;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import static java.util.regex.Pattern.*;
 import org.bson.Document;
+import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 
 public class OpalCardDao {
 
@@ -28,39 +37,41 @@ public class OpalCardDao {
         this.mongoClient = mongoClient;
 
         database = mongoClient.getDatabase("heroku_bqcjmqws");
-        collection = database.getCollection("OpalCardList");
+        collection = database.getCollection("Opal-Card");
     }
 
-    public List<OpalCard> listOpalCard(String EmailAddress) {
-        //initialise Array
+    public List<OpalCard> listOpalCard() {
+
+        // Initialise Array
         List<OpalCard> list = new ArrayList<>();
 
         for (Document doc : collection.find()) {
 
-            if (((String) doc.get("EmailAddress")).equals(EmailAddress)) {
-                // Create Opal Card
-                OpalCard card = new OpalCard();
-                card.setOpalCardID((String) doc.get("_id").toString());
-                card.setBalance((double) doc.get("Balance"));
-                card.setDescription((String) doc.get("Description"));
-                card.setSequenceNumber((String) doc.get("SequenceNumber"));
-                //card.setSecurityNumber((String)doc.get("SecurityNumber"));
-                list.add(card);
-            }
+            // Create Opal Card
+            OpalCard card = new OpalCard();
+            card.setOpalCardID((String) doc.get("SequenceNumber"));
+            card.setBalance(new BigDecimal((String) doc.get("Price")));
+            card.setDescription((String) doc.get("ProductTypeId"));
+            //card.setSecurityNumber((String)doc.get("SecurityNumber"));
+
+            // Add card to list
+            list.add(card);
         }
+
+        // Return List
         return list;
     }
 
     public OpalCard getOpalCard(String ID) {
-        for (Document doc : collection.find()) {
 
+        for (Document doc : collection.find()) {
             if (((String) doc.get("SequenceNumber")).equals(ID)) {
                 OpalCard card = new OpalCard();
-                card.setOpalCardID((String) doc.get("_id").toString());
-                card.setBalance((double) doc.get("Balance"));
-                card.setDescription((String) doc.get("Description"));
-                card.setSequenceNumber((String) doc.get("SequenceNumber"));
+                card.setOpalCardID((String) doc.get("SequenceNumber"));
+                card.setBalance(new BigDecimal((String) doc.get("Price")));
+                card.setDescription((String) doc.get("ProductTypeId"));
                 //card.setSecurityNumber((String)doc.get("SecurityNumber"));
+
                 return card;
             }
         }
@@ -68,11 +79,12 @@ public class OpalCardDao {
     }
 
     public void updateCard(OpalCard card) {
-
-        BasicDBObject newDocument = new BasicDBObject();
-
-        newDocument.append("$set", new BasicDBObject().append("Balance", card.getBalance()));
-        BasicDBObject searchQuery = new BasicDBObject().append(("SequenceNumber"), card.getSequenceNumber());
-        collection.updateOne(searchQuery, newDocument);
+        Document condition = new Document();
+        condition.append("SequenceNumber", card.getOpalCardID());
+        
+        Document update = new Document();
+        update.append("Price", card.getBalance());
+        
+       collection.updateOne(condition, update);
     }
 }

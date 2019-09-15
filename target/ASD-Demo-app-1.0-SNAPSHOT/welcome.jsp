@@ -9,7 +9,7 @@
         <script src="animation.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Welcome Page</title>
-    </head>
+    </head>   
     <%
         String name = request.getParameter("name");
         String email = request.getParameter("email");
@@ -17,15 +17,15 @@
         String phone = request.getParameter("phone");
 
         User user = new User(name, email, password, phone);
-        session.setAttribute("user", user);
-
+        session.setAttribute("user", user);        
+        
         String adminemail = (String)session.getAttribute("adminemail");
         String adminpass = (String)session.getAttribute("adminpassword");
-
-
+        
+        
 
     %>
-    <body style="background:none transparent;">
+    <body style="background:none transparent;"> 
 
         <p class="form_title">Your Information have been updated.</p>
         <table class="table">
@@ -33,7 +33,7 @@
             <tr><td>Email: </td><td class="text"><%=email%></td></tr>
             <tr><td>Password: </td><td class="text"><%= password%></td></tr>
             <tr><td>Phone: </td><td class="text"><%=phone%></td></tr>
-        </table>
+        </table>       
     </body>
     <p class="p">Click <a href="main.jsp" class="link" target="_parent"> here </a> to go to main page.</p>
 
