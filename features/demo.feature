@@ -1,7 +1,10 @@
 
-Feature: Test open app-name URL
+Feature: User login and view own details
 
-Scenario: Test Save button enabled
+Scenario: Test Login button enabled
 Given Open FireFox browser
-When maven-app-heroku is loaded
-Then Save button enabled
+When asd-demo-opal is loaded
+Then Login button enabled
+Then View User Details
+
+

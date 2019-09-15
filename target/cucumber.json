@@ -3,56 +3,68 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-09-13T02:46:13.382Z",
+        "start_timestamp": "2019-09-15T07:44:24.413Z",
         "line": 4,
-        "name": "Test Save button enabled",
+        "name": "Test Login button enabled",
         "description": "",
-        "id": "test-open-app-name-url;test-save-button-enabled",
+        "id": "user-login-and-view-own-details;test-login-button-enabled",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 9474225792,
+              "duration": 9359618103,
               "status": "passed"
             },
             "line": 5,
             "name": "Open FireFox browser",
             "match": {
-              "location": "UserDeatilTest.open()"
+              "location": "LoginButtonTest.open()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1420437826,
+              "duration": 1437109686,
               "status": "passed"
             },
             "line": 6,
-            "name": "maven-app-heroku is loaded",
+            "name": "asd-demo-opal is loaded",
             "match": {
-              "location": "UserDeatilTest.maven_app_heroku_is_loaded()"
+              "location": "LoginButtonTest.maven_app_heroku_is_loaded()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 27228,
+              "duration": 559173845,
               "status": "passed"
             },
             "line": 7,
-            "name": "Save button enabled",
+            "name": "Login button enabled",
             "match": {
-              "location": "UserDeatilTest.Save_button_enabled()"
+              "location": "LoginButtonTest.login_button_enabled()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3010387215,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "View User Details",
+            "match": {
+              "location": "LoginButtonTest.view_user_details()"
             },
             "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "Test open app-name URL",
+    "name": "User login and view own details",
     "description": "",
-    "id": "test-open-app-name-url",
+    "id": "user-login-and-view-own-details",
     "keyword": "Feature",
     "uri": "file:features/demo.feature",
     "tags": []
