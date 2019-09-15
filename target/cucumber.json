@@ -3,7 +3,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-09-13T02:46:13.382Z",
+        "start_timestamp": "2019-09-15T06:51:32.570Z",
         "line": 4,
         "name": "Test Save button enabled",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 9474225792,
+              "duration": 7678597008,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 1420437826,
+              "duration": 1582977020,
               "status": "passed"
             },
             "line": 6,
@@ -37,7 +37,7 @@
           },
           {
             "result": {
-              "duration": 27228,
+              "duration": 32000,
               "status": "passed"
             },
             "line": 7,
