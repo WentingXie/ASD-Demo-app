@@ -7,6 +7,7 @@
 package asd.demo.model;
 
 import java.io.Serializable;
+import static java.lang.Double.sum;
 import java.math.BigDecimal;
 
 
@@ -17,11 +18,11 @@ import java.math.BigDecimal;
 public class OpalCard implements Serializable {
     
     private String opalCardID;
-    private int balance;
+    private double balance;
     private String description;
     private String sequenceNumber;
             
-public OpalCard (String opalCardID, int balance, String description, String sequenceNumber) {
+public OpalCard (String opalCardID, double balance, String description, String sequenceNumber) {
     this.opalCardID = opalCardID;
     this.balance = balance;
     this.description = description;
@@ -32,7 +33,7 @@ public OpalCard() { }
 
 
     
-    public void topUp(String opalCardID, int balance, String description, String sequenceNumber) {
+    public void topUp(String opalCardID, double balance, String description, String sequenceNumber) {
         this.opalCardID = opalCardID;
         this.balance = balance;
         this.description = description; 
@@ -50,11 +51,11 @@ public OpalCard() { }
         this.opalCardID = opalCardID;
     }
     
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
     
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
     
@@ -75,8 +76,8 @@ public OpalCard() { }
         this.sequenceNumber = sequenceNumber;
     }
 
-    public void addBalance(int amount) {
-        this.balance = balance += amount;
+    public void addBalance(double amount) {
+        this.balance = Double.sum(balance, amount);
     }
 }
 
