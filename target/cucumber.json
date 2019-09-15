@@ -1,0 +1,60 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2019-09-13T02:46:13.382Z",
+        "line": 4,
+        "name": "Test Save button enabled",
+        "description": "",
+        "id": "test-open-app-name-url;test-save-button-enabled",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9474225792,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Open FireFox browser",
+            "match": {
+              "location": "UserDeatilTest.open()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1420437826,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "maven-app-heroku is loaded",
+            "match": {
+              "location": "UserDeatilTest.maven_app_heroku_is_loaded()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 27228,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Save button enabled",
+            "match": {
+              "location": "UserDeatilTest.Save_button_enabled()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Test open app-name URL",
+    "description": "",
+    "id": "test-open-app-name-url",
+    "keyword": "Feature",
+    "uri": "file:features/demo.feature",
+    "tags": []
+  }
+]

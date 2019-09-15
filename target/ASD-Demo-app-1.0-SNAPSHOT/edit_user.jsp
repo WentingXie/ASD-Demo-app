@@ -49,7 +49,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" value="Save" class="btn btn-info">&nbsp;&nbsp;&nbsp;
+					<td><input type="submit" value="Save" id="Save" class="btn btn-info">&nbsp;&nbsp;&nbsp;
 					<a href="main.jsp" class="btn btn-info" target="_parent">Cancel</a></td>
 				</tr>
 			</table>
