@@ -1,57 +1,76 @@
 <%-- 
     Document   : topup
-    Created on : 29/08/2019, 3:14:58 PM
+    Created on : 06/09/2019, 2:01:00 PM
     Author     : jonny
 --%>
+
+
 <%@page import="asd.demo.model.OpalCard"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
+
+<%
+    OpalCard card = (OpalCard) session.getAttribute("opalcard");
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
-
-<%List<OpalCard> OpalCardList = (ArrayList)session.getAttribute("OpalCardList");%>
-
-
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Opal</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <script type="text/javascript" src="js/animation.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body>
-        
-        <h2 class="title">Top Up</h2>
-        <hr />
-        <a href="main.jsp">Home</a>
-        <br />
-        <br />
-        <form>
-          <input type="date" name="date" placeholder="Enter a date">  
-          <input type="submit"  value="Search">
-        </form>
-        <hr />
-    <table  class="table2">
-        <thead>
-  <tr>
-    <th>OpalCardId</th>
-    <th>Balance</th>
-    <th>Description</th>
-    <th></th>
-  </tr>
-  
-        </thead>
-       
- 
-  
-</table>
-    </body>
-    
-</html>
 
-   <tbody>
-               
-       
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.bundle.min.js" ></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="title">
+                <p>
+                    <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
+                </p>
+                <br/>
+                <br/>
+                <h1>Top Up</h1>
+                <hr />
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <a class="btn btn-default btn-block" href="listOpalCard">Cancel</a>
+                </div>
+            </div>
+            <hr />
+
+            <form method="post">
+                <table class="table table-bordered table-condensed table-hover table-striped">
+                    <tbody>
+                        <tr>
+                            <td>ID</td>
+                            <td><%=card.getSequenceNumber()%></td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td><%=card.getDescription()%></td>
+                        </tr>
+                        <tr>
+                            <td>Balance</td>
+                            <td><%=card.getBalance()%></td>
+                        </tr>
+                        <tr>
+                            <td>Top Up Amount</td>
+                            <td><input type="number" name="amount" min="0" step="0.01" > </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input class="btn btn-success" type="submit" value="Top Up" > </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
