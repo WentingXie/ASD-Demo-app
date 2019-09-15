@@ -5,7 +5,7 @@
  */
 package asd.demo.model;
 
-import asd.demo.model.dao.MongoDBConnector;
+//import asd.demo.model.dao.MongoDBConnector;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import org.junit.After;
