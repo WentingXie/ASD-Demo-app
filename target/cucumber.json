@@ -3,17 +3,17 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-09-15T08:21:24.354Z",
+        "start_timestamp": "2019-09-15T11:06:52.799Z",
         "line": 4,
-        "name": "Test Login button enabled",
+        "name": "Test Login and Check own user details",
         "description": "",
-        "id": "user-login-and-view-own-details;test-login-button-enabled",
+        "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined);test-login-and-check-own-user-details",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 8882911364,
+              "duration": 15031103030,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 1517796366,
+              "duration": 3521582739,
               "status": "passed"
             },
             "line": 6,
@@ -37,7 +37,7 @@
           },
           {
             "result": {
-              "duration": 663313458,
+              "duration": 2646653763,
               "status": "passed"
             },
             "line": 7,
@@ -49,7 +49,7 @@
           },
           {
             "result": {
-              "duration": 2743506854,
+              "duration": 2908525646,
               "status": "passed"
             },
             "line": 8,
@@ -62,9 +62,9 @@
         ]
       }
     ],
-    "name": "User login and view own details",
+    "name": "User login and view own details(Wenting and Yixin UI Testing Combined)",
     "description": "",
-    "id": "user-login-and-view-own-details",
+    "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined)",
     "keyword": "Feature",
     "uri": "file:features/demo.feature",
     "tags": []

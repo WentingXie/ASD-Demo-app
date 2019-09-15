@@ -43,7 +43,7 @@ public class LoginButtonTest {
      public void login_button_enabled() throws Throwable {
      driver.findElement(By.name("email")).sendKeys("jimmy@gmail.com");
      driver.findElement(By.name("password")).sendKeys("1234");
-     driver.findElement(By.id("login")).click();
+     driver.findElement(By.name("login")).click();
     
 }
     @Then("^View User Details$")
