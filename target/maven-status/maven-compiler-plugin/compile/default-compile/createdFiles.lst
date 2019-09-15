@@ -8,6 +8,7 @@ asd/demo/controller/ConnServlet.class
 asd/demo/model/User.class
 asd/demo/service/IUserService.class
 asd/demo/controller/OpalCardServlet.class
+asd/demo/model/test/AddBalance.class
 asd/demo/model/dao/UserDao.class
 asd/demo/controller/LoginServlet.class
 asd/demo/controller/TopUpServlet.class

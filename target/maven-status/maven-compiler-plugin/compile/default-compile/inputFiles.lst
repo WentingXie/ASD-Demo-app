@@ -8,6 +8,7 @@
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/controller/Validator.java
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/controller/TopUpServlet.java
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/controller/LogoutServlet.java
+/Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/model/test/AddBalance.java
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/service/IUserService.java
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/model/dao/OrderDao.java
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/model/dao/IUserDao.java
