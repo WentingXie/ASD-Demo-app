@@ -24,6 +24,10 @@
     <servlet-name>UserSevlet</servlet-name>
     <url-pattern>/changeInfo</url-pattern>
   </servlet-mapping>
+<!--    <servlet-mapping>
+    <servlet-name>FeedbackServlet</servlet-name>
+    <url-pattern>/FeedbackServlet</url-pattern>
+  </servlet-mapping>-->
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
