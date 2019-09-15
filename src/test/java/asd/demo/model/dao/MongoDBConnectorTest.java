@@ -34,6 +34,7 @@ private static MongoClient mongoClient;
 		String dbName = "heroku_bqcjmqws";
 		String dbUri = String.format("mongodb://%s:%s@%s:%s/%s", dbUser, dbPass, dbUrl, dbPort, dbName);
 		mongoClient = new MongoClient(new MongoClientURI(dbUri));
+                System.out.println("\n<-- Starting test -->"); 
     }
 
 
@@ -43,8 +44,8 @@ private static MongoClient mongoClient;
     @Test
     public void testOpenConnection() {
 
-        assertNotNull("Connection is successful",mongoClient);
-         System.out.println("\n- Connecting to MongoDB ");
+        assertNotNull("Connecting to MongoDB",mongoClient);
+         System.out.println("\n- Connection success ");
     }
 
     /**
@@ -52,7 +53,7 @@ private static MongoClient mongoClient;
      */
     @AfterClass
     public static void tearDownClass() {
-    System.out.print("\n<-- Test Finished : ");
+    System.out.print("\n<-- Test Finished");
 } 
 
 }

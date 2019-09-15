@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: asd.demo.model.dao.MongoDBConnectorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.179 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.114 sec
