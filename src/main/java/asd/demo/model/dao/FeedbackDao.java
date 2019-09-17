@@ -9,7 +9,6 @@ package asd.demo.model.dao;
  *
  * @author suyixin
  */
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -24,39 +23,56 @@ import static java.util.regex.Pattern.*;
 import org.bson.types.ObjectId;
 
 public class FeedbackDao {
-	MongoClient mongoClient;
-	DB database;
-	DBCollection collection;
 
-	public FeedbackDao(MongoClient mongoClient) {
-		this.mongoClient = mongoClient;
+    MongoClient mongoClient;
+    DB database;
+    DBCollection collection;
 
-		database = mongoClient.getDB("heroku_bqcjmqws");
-		collection = database.getCollection("Feedback");
-	}
+    public FeedbackDao(MongoClient mongoClient) {
+        this.mongoClient = mongoClient;
 
-	public List<Feedback> getFeedbackList() {
+        database = mongoClient.getDB("heroku_bqcjmqws");
+        collection = database.getCollection("Feedback");
+    }
 
-		DBCursor cursor = collection.find();
-		System.out.println("COUNT: " + cursor.count());
-		List<Feedback> list = null;
-                    list = new ArrayList<>();
-		int count = 0;
-		while (cursor.hasNext()) {
-			DBObject result = cursor.next();
-                        Feedback feedback = new Feedback();
-                        
-			String name = (String) result.get("name");
-			String email = (String) result.get("email");
-			String title = (String) result.get("title");
-			String description = (String) result.get("description");
-                       feedback.setName(name);
-                       feedback.setTitle(title);
-                       feedback.setDescription(description);
-                       feedback.setEmail(email);
-                       list.add(feedback);
-			
-		}
-		return list;
-	}
+    public List<Feedback> getFeedbackList() {
+
+        DBCursor cursor = collection.find();
+        System.out.println("COUNT: " + cursor.count());
+        List<Feedback> list = null;
+        list = new ArrayList<>();
+        int count = 0;
+        while (cursor.hasNext()) {
+            DBObject result = cursor.next();
+            Feedback feedback = new Feedback();
+            String opalCardNo = (String) result.get("opalCardNo");
+            String firstName = (String) result.get("firstName");
+            String lastName = (String) result.get("lastName");
+            String address = (String) result.get("address");
+            String street1 = (String) result.get("street1");
+            String street2 = (String) result.get("street2");
+            String pinCode = (String) result.get("pinCode");
+            String city = (String) result.get("city");
+            String state = (String) result.get("state");
+            String country = (String) result.get("country");
+            String email = (String) result.get("email");
+            String enqueryType = (String) result.get("enqueryType");
+            String enquery = (String) result.get("enquery");
+            feedback.setOpalCardNo(opalCardNo);
+            feedback.setFirstName(firstName);
+            feedback.setLastName(lastName);
+            feedback.setAddress(address);
+            feedback.setStreet1(street1);
+            feedback.setStreet2(street2);
+            feedback.setCity(city);
+            feedback.setState(state);
+            feedback.setCountry(country);
+            feedback.setEnquery(enquery);
+            feedback.setEnqueryType(enqueryType);
+            feedback.setEmail(email);
+            list.add(feedback);
+
+        }
+        return list;
+    }
 }

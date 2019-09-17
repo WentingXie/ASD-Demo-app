@@ -25,35 +25,55 @@
 
     <body>
         <div>
-        <div class="title">
-            <p>
-                  <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
+            <div class="title">
+                <p>
+                    <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
                 </p>
-        <h2>Customer Feedbacks</h2>
-        </div>
-        <hr />
-        <a href="main.jsp">Home</a>
-        <br />
-        <br />
+                <h2>Customer Feedbacks</h2>
+            </div>
+            <hr />
+            <a href="main.jsp">Home</a>
+            <br />
+            <br />
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th >#</th>
+                        <th >Opal Card No</th>
                         <th >name</th>
-                        <th >email</th>
-                        <th >title</th>
-                        <th>description</th>
+                                                <th >email</th>
+
+                        <th >address</th>
+                        <th>street 1 </th>
+                        <th>street 2 </th>
+                        <th>pin code </th>
+                        <th>state </th>
+                        <th>city </th>
+                        <th>country </th>
+                        <th>enquiry type </th>
+                        <th>enquiry </th>
 
                     </tr>
                 </thead>
                 <tbody>
                     <%for (Feedback f : list) {%>
                     <tr>
-                        <td><%=list.indexOf(f)+1%></td>
-                        <td><%=f.getName()%></td>
-                        <td><%=f.getEmail()%></td>
-                        <td><%=f.getTitle()%></td>
-                        <td><%=f.getDescription()%></td>
+                        <td><%=list.indexOf(f) + 1%></td>
+                        <td><%=f.getOpalCardNo()%></td>
+
+                        <td><%=f.getFirstName()%> <%=f.getLastName()%> </td>
+                                                <td><%=f.getEmail()%></td>
+
+                        <td><%=f.getAddress()%></td>
+                        <td><%=f.getStreet1()%></td>
+                        <td><%=f.getStreet2()%></td>
+                        <td><%=f.getPinCode()%></td>
+                        <td><%=f.getState()%></td>
+                        <td><%=f.getCity()%></td>
+                        <td><%=f.getCountry()%></td> 
+                        <td><%=f.getEnqueryType()%></td> 
+                        <td><%=f.getEnquery()%></td>
+
                     </tr>
                     <%}%>
                 </tbody>

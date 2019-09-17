@@ -29,9 +29,18 @@ public class FeedbackDaoImpl implements IFeedbackDao {
             }
             MongoCollection<Document> collection = mdb.getCollection("Feedback");
             Document document = new Document();
-            document.append("name", feedback.getName());
-            document.append("title", feedback.getTitle());
-            document.append("description", feedback.getDescription());
+            document.append("opalCardNo", feedback.getOpalCardNo());
+            document.append("firstName", feedback.getFirstName());
+            document.append("lastName", feedback.getLastName());
+            document.append("address", feedback.getAddress());
+            document.append("street1", feedback.getStreet1());
+            document.append("street2", feedback.getStreet2());
+            document.append("state", feedback.getState());
+            document.append("pinCode", feedback.getPinCode());
+            document.append("city", feedback.getCity());
+            document.append("country", feedback.getCountry());
+            document.append("enqueryType", feedback.getEnquery());
+            document.append("enquery", feedback.getEnquery());
             document.append("email", feedback.getEmail());
             collection.insertOne(document);
             return 1;

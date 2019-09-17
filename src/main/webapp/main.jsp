@@ -41,7 +41,7 @@
                     <a class="navbar-brand" href="listFeedback">Customer Feedbacks</a>
                     <%}%>
 
-                    <%if (user != null && user.getUserType() != null && !user.getUserType().equals("Admin")) { %>
+                    <%if (user != null && user.getUserType() != null && user.getUserType().equals("User")) { %>
                     <a class="navbar-brand" href="feedback.jsp">Customer Care</a>
 
                     <%}%>

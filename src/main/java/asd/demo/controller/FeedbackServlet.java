@@ -59,19 +59,34 @@ public class FeedbackServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         System.out.println("changeInfo...");
-        String email = user.getEmail();
-        String name = user.getName();
-
-        String title = request.getParameter("title");
-        String description = request.getParameter("description");
+        String opalCardNo = request.getParameter("opalCardNo");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String address = request.getParameter("address");
+        String street1 = request.getParameter("street1");
+        String street2 = request.getParameter("street2");
+        String city = request.getParameter("city");
+        String pinCode = request.getParameter("pinCode");
+        String state = request.getParameter("state");
+        String country = request.getParameter("country");
+        String email = request.getParameter("email");
+        String enqueryType = request.getParameter("enqueryType");
+        String enquery = request.getParameter("enquery");
 
         IFeedbackService service = new FeedbackServiceImpl();
-
         Feedback feedback = new Feedback();
-        feedback.setName(name);
+        feedback.setOpalCardNo(opalCardNo);
+        feedback.setFirstName(firstName);
+        feedback.setLastName(lastName);
+        feedback.setAddress(address);
+        feedback.setStreet1(street1);
+        feedback.setStreet2(street2);
+        feedback.setCity(city);
+        feedback.setState(state);
+        feedback.setCountry(country);
+        feedback.setEnquery(enquery);
+        feedback.setEnqueryType(enqueryType);
         feedback.setEmail(email);
-        feedback.setTitle(title);
-        feedback.setDescription(description);
         System.out.println(feedback.toString());
         int u = service.insertFeedback(feedback);
         if (u == 0) {
