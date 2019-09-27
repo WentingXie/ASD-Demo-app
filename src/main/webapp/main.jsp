@@ -38,7 +38,7 @@
                     </div>
                     <div class="navbar-header pull-right">
                         <a class="navbar-brand" href="#">Customer Care</a>
-                        <a class="navbar-brand" href="listOpalCard">Top Up</a
+                        <a class="navbar-brand" href="listOpalCard">Top Up</a>
                         <a class="navbar-brand" href="ListPaymentHistory">Payment History</a>
                         <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 						       <%=userName%><span class="caret"></span>

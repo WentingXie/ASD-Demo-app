@@ -6,10 +6,14 @@
 package asd.demo.controller;
 
 import asd.demo.model.OpalCard;
+import asd.demo.model.User;
 import asd.demo.model.dao.MongoDBConnector;
 import asd.demo.model.dao.OpalCardDao;
+import asd.demo.model.dao.PaymentHistoryDao;
 import com.mongodb.MongoClient;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -84,8 +88,11 @@ public class TopUpServlet extends HttpServlet {
 
         // Get Database DAO
         OpalCardDao db = new OpalCardDao(client);
+        
+        // Get Database DAO
+        PaymentHistoryDao db2 = new PaymentHistoryDao(client);
 
-        //
+        // Get Selected OpalCardId
         String ID = request.getParameter("id");
 
         OpalCard card = db.getOpalCard(ID);
@@ -97,6 +104,20 @@ public class TopUpServlet extends HttpServlet {
         card.addBalance(amount2);
 
         db.updateCard(card);
+        
+        Date date = new Date();
+        long time = date.getTime();
+        Timestamp isTime = new Timestamp(time);
+        String timeStamp = "" + isTime;
+        
+        // Get Session
+        HttpSession session = request.getSession();
+        
+        // Get User
+        User user = (User) session.getAttribute("user");
+
+        // Add History after Top Up
+        db2.addHistory(ID, amount2, timeStamp, user.getEmail());
 
         response.sendRedirect("listOpalCard");
     }

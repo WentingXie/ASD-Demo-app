@@ -42,7 +42,7 @@ public class OpalCardDao {
                 OpalCard card = new OpalCard();
                 card.setOpalCardID((String) doc.get("_id").toString());
                 card.setBalance((double) doc.get("Balance"));
-                card.setDescription((String) doc.get("Description"));
+                card.setDescription((String) doc.get("ProductTypeId"));
                 card.setSequenceNumber((String) doc.get("SequenceNumber"));
                 //card.setSecurityNumber((String)doc.get("SecurityNumber"));
                 list.add(card);
@@ -58,7 +58,7 @@ public class OpalCardDao {
                 OpalCard card = new OpalCard();
                 card.setOpalCardID((String) doc.get("_id").toString());
                 card.setBalance((double) doc.get("Balance"));
-                card.setDescription((String) doc.get("Description"));
+                card.setDescription((String) doc.get("ProductTypeId"));
                 card.setSequenceNumber((String) doc.get("SequenceNumber"));
                 //card.setSecurityNumber((String)doc.get("SecurityNumber"));
                 return card;
