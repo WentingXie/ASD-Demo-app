@@ -42,29 +42,31 @@ public class UserTest {
         
     }
     
-   
-   /*
-    @Test
-    public void testGetName() {
-        System.out.println("getName");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.getName();
-        Assert.assertEquals(expResult, result);
-        //Assert.assertNotNull(User.getName());
-        Assert.assertNotNull("Cannot fetch ASD users",result);
-    }
-    
-*/
-    
+
     @Test
     public void testSetName() {
         System.out.println("setName");
         String name = "";
         User instance = new User();
-        instance.setName(name);
-        
+        instance.setName(name);      
     }
+    
+    @Test
+    public void testSetPassword() {
+        System.out.println("setPassword");
+        String password = "";
+        User instance = new User();
+        instance.setName(password);      
+    }
+    
+    @Test
+    public void testSetUserType() {
+        System.out.println("setUserType");
+        String userType = "";
+        User instance = new User();
+        instance.setName(userType);      
+    }
+    
 
     @AfterClass
     public static void tearDownClass() {
