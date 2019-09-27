@@ -3,7 +3,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-09-27T06:04:29.962Z",
+        "start_timestamp": "2019-09-27T07:46:26.765Z",
         "line": 4,
         "name": "Test Login and Check own user details",
         "description": "",
@@ -13,50 +13,38 @@
         "steps": [
           {
             "result": {
-              "duration": 11030488494,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 5,
             "name": "Open FireFox browser",
-            "match": {
-              "location": "LoginButtonTest.open()"
-            },
+            "match": {},
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2954866173,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 6,
             "name": "asd-demo-opal is loaded",
-            "match": {
-              "location": "LoginButtonTest.maven_app_heroku_is_loaded()"
-            },
+            "match": {},
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 754776889,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 7,
             "name": "Login button enabled",
-            "match": {
-              "location": "LoginButtonTest.login_button_enabled()"
-            },
+            "match": {},
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 3151696988,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 8,
             "name": "View User Details",
-            "match": {
-              "location": "LoginButtonTest.view_user_details()"
-            },
+            "match": {},
             "keyword": "Then "
           }
         ]
