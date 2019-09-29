@@ -44,10 +44,21 @@
                 </div>
             </div>
             <hr />
-
+            
+            <form method="post" action="clearHistory">
+                <div class="row">
+                   
+                    <div class="col-sm-2">
+                        <input type="submit" class="btn btn-primary btn-danger" value="Clear Page">        
+                    </div>
+                </div> 
+            </form>
+            
+            <hr />
             <table class="table table-bordered table-condensed table-hover table-striped">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>OpalCardNumber</th>
                         <th>TopUpAmount</th>
                         <th>TimeStamp</th>
@@ -58,10 +69,16 @@
                 <tbody
                     <%for (PaymentHistory l : PaymentHistoryList) {%>
                     <tr>
+                        <td><%=l.getId()%></td>
                         <td><%=l.getOpalCardSequenceNumber()%></td>
                         <td><%=l.getTopUpAmount()%></td>
                         <td><%=l.getTimeStamp()%></td>
-                        <td><a href="topup?id=<%=l.getOpalCardSequenceNumber()%>" class="btn btn-xs btn-primary">Delete</a> 
+                        <td>
+                            <form method="post" action="deleteHistory">
+                                <input type="hidden" name="historyid" value="<%=l.getId()%>" />
+                                <input type="submit" class="btn btn-xs btn-danger" value="Delete" />
+                            </form>
+                        </td>
                     </tr>
                     <%}%>
                 </tbody>

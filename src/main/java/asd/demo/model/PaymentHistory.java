@@ -9,12 +9,14 @@ import java.io.Serializable;
 
 public class PaymentHistory implements Serializable {
     
+    private String id;
     private String opalcardSequenceNumber;
     private double topUpAmount;
     private String timeStamp;
     
             
-public PaymentHistory (String opalcardSequenceNumber, double topUpAmount, String timeStamp) {
+public PaymentHistory (String id, String opalcardSequenceNumber, double topUpAmount, String timeStamp) {
+    this.id = id;
     this.opalcardSequenceNumber = opalcardSequenceNumber;
     this.topUpAmount = topUpAmount;
     this.timeStamp = timeStamp;
@@ -22,6 +24,13 @@ public PaymentHistory (String opalcardSequenceNumber, double topUpAmount, String
 
 public PaymentHistory() { }
 
+    public String getId(){
+        return id;
+    }
+    
+    public void setId(String id){
+        this.id = id;
+    }
     
     public String getOpalCardSequenceNumber() {
         return opalcardSequenceNumber;
