@@ -106,7 +106,7 @@
                     <textarea required="true" rows="5" minlength="2" class="form-textarea" name="enquery"></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Post" class="login-button" id="post" />                    
+                    <input type="submit" value="Post" name="post" class="login-button" id="post" />                    
                 </div>
             </form>         
         </div>        

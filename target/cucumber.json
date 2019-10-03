@@ -1,0 +1,69 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2019-09-17T16:53:48.524Z",
+        "line": 4,
+        "name": "Test Login and Check own user details",
+        "description": "",
+        "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined);test-login-and-check-own-user-details",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 24788951505,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Open FireFox browser",
+            "match": {
+              "location": "LoginButtonTest.open()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5633580117,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "asd-demo-opal is loaded",
+            "match": {
+              "location": "LoginButtonTest.maven_app_heroku_is_loaded()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 992805269,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Login button enabled",
+            "match": {
+              "location": "LoginButtonTest.login_button_enabled()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 8,
+            "name": "View User Details",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "User login and view own details(Wenting and Yixin UI Testing Combined)",
+    "description": "",
+    "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined)",
+    "keyword": "Feature",
+    "uri": "file:features/demo.feature",
+    "tags": []
+  }
+]
