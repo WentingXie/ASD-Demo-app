@@ -1,77 +1,122 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asd.demo.controller;
 
-import asd.demo.model.dao.OpalCardDao;
-import asd.demo.model.OpalCard;
-import asd.demo.model.User;
-import asd.demo.model.dao.MongoDBConnector;
-import com.mongodb.MongoClient;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.lang.reflect.Method;
 import java.util.List;
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import org.json.JSONObject;
+
+import asd.demo.model.OpalCard;
+import asd.demo.model.Order;
+import asd.demo.model.User;
+import asd.demo.service.IOpalCardService;
+import asd.demo.service.IOrderService;
+import asd.demo.service.impl.OpalCardServiceImpl;
+import asd.demo.service.impl.OrderServiceImpl;
 
 /**
- *
- * @author jonny
+ * Servlet implementation class OpalCardServlet
  */
-@WebServlet(name = "OpalCardServlet", urlPatterns = {"/listOpalCard"})
+@WebServlet("/OpalCardServlet")
 public class OpalCardServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public OpalCardServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-        // Get Database Connector
-        MongoDBConnector connector = new MongoDBConnector();
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = request.getRequestURI();
+		String methodName = url.substring(url.lastIndexOf("/") + 1);
+		Method method = null;
+		System.out.println(methodName);
+		try {
+			method = getClass().getDeclaredMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
+			method.invoke(this, request, response);
+		} catch (Exception e) {
+			throw new RuntimeException("Error calling method...");
+		}
+	}
 
-        // Get Database Client
-        MongoClient client = connector.openConnection();
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 
-        // Get Database DAO
-        OpalCardDao db = new OpalCardDao(client);
+	private void activateCard(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        // Get Session
-        HttpSession session = request.getSession();
+		String sequenceNumber = request.getParameter("sequenceNumber");
+		String securityNumber = request.getParameter("securityNumber");
+		System.out.println("sequenceNumber" + sequenceNumber);
+		System.out.println("securityNumber" + securityNumber);
+		JSONObject json = new JSONObject();
+		PrintWriter printWriter = response.getWriter();
 
-        // Get User
-        User user = (User) session.getAttribute("user");
+		if (sequenceNumber == null || sequenceNumber.isEmpty()) {
+			json.put("msg", "Plesase enter the SequenceNumber.");
 
-        List<OpalCard> opallist = db.listOpalCard(user.getEmail());
+		} else if (securityNumber == null || securityNumber.isEmpty()) {
+			json.put("msg", "Plesase enter the SecurityNumber.");
+		} else {
 
-        // Put into session 
-        session.setAttribute("opallist", opallist);
+			User loginUser = (User) request.getSession().getAttribute("user");
 
-        // Get view page.
-        RequestDispatcher view = request.getRequestDispatcher("opalcardlist.jsp");
+			IOrderService orderService = new OrderServiceImpl();
+			List<Order> orderList = orderService.getOrdersByUserIdAndSequenceNumberAndStatus(loginUser.getUserId(),
+					sequenceNumber, "0"); // query unbound order
 
-        // Forward user to the view page.
-        view.forward(request, response);
-    }
+			if (orderList.size() > 0) {
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+				IOpalCardService opalCardService = new OpalCardServiceImpl();
+				OpalCard oc = opalCardService.getOneOpalCardBySequenceAndSecurityNumber(sequenceNumber, securityNumber);
+				System.out.println(oc == null ? oc : oc.toString());
+				if (oc != null) {
+					orderService.updateOrderStatus(orderList.get(0));// update order status
+				} else {
+					json.put("msg",
+							"No Opal Card does exists or SequenceNumberhas been used,Please enter the correct SequenceNumber or SecurityNumber .");
+				}
+			} else {
+				json.put("msg",
+						"No Opal Card does exists or SequenceNumberhas been used,Please enter the correct SequenceNumber or SecurityNumber.");
+			}
+		}
+		printWriter.print(json.toString());
+		printWriter.flush();
+		printWriter.close();
+	}
 
-    }
+	/**
+	 * just for test
+	 */
+	private void initCards(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+		IOpalCardService opalCardService = new OpalCardServiceImpl();
+		String rs = opalCardService.initAllOpalCardsStatus();
+		System.out.println(rs);
+	}
 
 }

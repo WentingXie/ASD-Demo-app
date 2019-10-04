@@ -26,16 +26,17 @@ public class UserDaoImpl implements IUserDao {
 
 			MongoCollection<Document> collection = mdb.getCollection("User");
 
-			System.out.println(collection.count());
+//			System.out.println(collection.count());
 
 			BasicDBList condList = new BasicDBList();
 			BasicDBObject cond1 = new BasicDBObject();
 			cond1.append("EmailAddress", email);
-			BasicDBObject cond2 = new BasicDBObject();
-			cond2.append("Password", userPwd);
 			condList.add(cond1);
-			condList.add(cond2);
-
+			if (userPwd != null) {
+				BasicDBObject cond2 = new BasicDBObject();
+				cond2.append("Password", userPwd);
+				condList.add(cond2);
+			}
 			BasicDBObject cond = new BasicDBObject();
 			cond.put("$and", condList);
 			FindIterable<Document> cursor = collection.find(cond);
@@ -48,17 +49,18 @@ public class UserDaoImpl implements IUserDao {
 			System.out.println(document);
 
 			User user = new User();
+			user.setUserId(document.get("_id").toString());
 			user.setName(document.get("UserName").toString());
 			user.setPassword(document.get("Password").toString());
 			user.setPhone(document.get("PhoneNumber").toString());
 			user.setEmail(document.get("EmailAddress").toString());
 			user.setUserType(String.valueOf(document.get("UserType")));
 			user.setAccountBalance(String.valueOf(document.get("AccountBalance")));
-			System.out.println(user.toString());
-			System.out.println("ok....");
+//			System.out.println(user.toString());
+//			System.out.println("ok....");
 			return user;
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("exception : " + e.toString());
 			return null;
 		}
 
@@ -84,7 +86,7 @@ public class UserDaoImpl implements IUserDao {
 			collection.insertOne(document);
 			return 1;
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("exception : " + e.toString());
 			return 0;
 		}
 
@@ -114,7 +116,7 @@ public class UserDaoImpl implements IUserDao {
 //			document.append("AccountBalance", newUser.getAccountBalance());
 			document.append("PhoneNumber", newUser.getPhone());
 //			document.append("EmailAddress", newUser.getEmail());
-			document.append("UserType", newUser.getUserType());
+//			document.append("UserType", newUser.getUserType());
 			Document newDocument = new Document("$set", document);
 			collection.updateOne(filter, newDocument);
 			System.out.println(newDocument.toJson());
@@ -128,7 +130,7 @@ public class UserDaoImpl implements IUserDao {
 
 			return 1;
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("exception : " + e.toString());
 			return 0;
 		}
 	}
@@ -161,7 +163,7 @@ public class UserDaoImpl implements IUserDao {
 			System.out.println("ok....");
 			return user;
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("exception : " + e.toString());
 			return null;
 		}
 	}

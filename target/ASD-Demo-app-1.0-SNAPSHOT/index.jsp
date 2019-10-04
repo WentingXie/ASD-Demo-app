@@ -2,8 +2,8 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
-    <head>
-
+    <head>        
+         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.bundle.min.js" ></script>
@@ -11,22 +11,27 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
+        
         <!-- <script src="jsanimation.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>  
         <script type="text/javascript" src="js/animation.js"></script> -->
-
+          
     </head>
     <title>Home</title>
-
-    <!-- <body onload="startTime()"> -->
+     <%
+        User user = (User)session.getAttribute("user");
+        if(user != null){
+        	response.sendRedirect("main.jsp"); 
+        } 
+    %>
+    <!-- <body onload="startTime()"> -->      
     <body>
-
+            <span class="time" id="time" ></span>
             <div class="title">
                 <p>
                   <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
                 </p>
-                <p>Opal Card</p>
+                <p><h1>Opal Card</h1></p>
             </div>
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
@@ -42,7 +47,6 @@
             </nav>
             <div class="container">
 	            <div class="row">
-		            <div class="center-block">
 					    <a href="#">
 					      <img src="image/card_pensioner.png" width="266px" alt="senior/penioner"
 					      data-container="body" data-toggle="popover" data-placement="left" data-html="true"
@@ -67,10 +71,8 @@
 							 <br>- All Sydney and Newcastle Light Rail
 				            ">
 					    </a>
-					</div>
 				</div>
 			    <div class="row">
-		            <div class="center-block">
 					    <a href="#">
 					      <img src="image/card_child.png" width="266px" alt="card_child"
 							data-container="body" data-toggle="popover" data-placement="left" data-html="true"
@@ -95,9 +97,8 @@
 							 <br>- All Sydney and Newcastle Light Rail
 				            ">
 					    </a>
-		           </div>
 		        </div>
-       </div>
+       </div> 
 
 	<script>
 	$(function (){

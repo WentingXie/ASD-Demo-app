@@ -15,31 +15,31 @@
 	<%
 		User user = (User) session.getAttribute("user");
 	 if(user == null){
-     	response.sendRedirect("login.jsp");
+     	response.sendRedirect("login.jsp"); 
      	return;
-     }
+     } 
      String userName = user.getName();
 	%>
 
 	<div class="container">
 
-		<p class="title">My Account</p>
+		<p class="form_title">My Account</p>
 
 		<form method="post" action="${pageContext.request.contextPath}/changeInfo">
 			<table class="table">
 			    <tr>
 					<td>Email</td>
-					<td><input type="text" name="email" readonly class="form-control"
+					<td><input type="text" name="email" readonly class="form-control"  
 						value="<%=user.getEmail()%>"></td>
 				</tr>
 				<tr>
 					<td>Full name</td>
-					<td><input type="text" name="name" class="form-control"
+					<td><input type="text" name="name" class="form-control"  
 						value="<%=user.getName()%>"></td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="password" class="form-control"
+					<td><input type="password" name="password" class="form-control"  
 						value="<%=user.getPassword()%>"></td>
 				</tr>
 				<tr>
@@ -49,8 +49,8 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" value="Save" id="Save" class="btn btn-info">&nbsp;&nbsp;&nbsp;
-					<a href="main.jsp" class="btn btn-info" target="_parent">Cancel</a></td>
+					<td><input type="submit" value="Save" class="btn btn-info">&nbsp;&nbsp;&nbsp;
+					<a href="main.jsp" class="btn btn-info" target="_parent">Cancle</a></td>
 				</tr>
 			</table>
 		</form>
