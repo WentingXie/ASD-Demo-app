@@ -120,7 +120,7 @@ public class TopUpServlet extends HttpServlet {
 		// Add History after Top Up
 		db2.addHistory(ID, amount2, timeStamp, user.getEmail());
 
-		response.sendRedirect("ListOpalCard");
+		response.sendRedirect("listOpalCard");
 	}
 
 	/**
