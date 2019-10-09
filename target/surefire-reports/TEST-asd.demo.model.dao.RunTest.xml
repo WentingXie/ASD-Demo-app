@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="asd.demo.model.dao.RunTest" time="18.583" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="asd.demo.model.dao.RunTest" time="16.857" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_201\jre\bin"/>
@@ -62,5 +62,70 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Test Login and Check own user details(User login and view own details(Wenting and Yixin UI Testing Combined))" name="Test Login and Check own user details" time="18.239"/>
+  <testcase classname="Test Login and Check own user details(User login and view own details(Wenting and Yixin UI Testing Combined))" name="Test Login and Check own user details" time="16.453">
+    <error message="Unable to locate element: *[name=&apos;login&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-VSUA7RQ&apos;, ip: &apos;192.168.226.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 15668, moz:profile: C:\Users\jonny\AppData\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 75db4347-0852-4c03-9ba3-ca1e062ae394
+*** Element info: {Using=name, value=login}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: Unable to locate element: *[name=&apos;login&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-VSUA7RQ&apos;, ip: &apos;192.168.226.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 15668, moz:profile: C:\Users\jonny\AppData\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 75db4347-0852-4c03-9ba3-ca1e062ae394
+*** Element info: {Using=name, value=login}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at asd.demo.model.dao.LoginButtonTest.login_button_enabled(LoginButtonTest.java:46)
+	at ✽.Login button enabled(file:features/demo.feature:7)
+</error>
+    <system-out>
+&lt;-- Test Finished03:30:55.524 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Reading https://api.github.com/repos/mozilla/geckodriver/releases to seek wires, geckodriver
+03:30:56.360 [cluster-ClusterId{value=&apos;5d9e0b3e3eabed33905cb71b&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1438279}] to ds023603.mlab.com:23603
+03:30:56.361 [cluster-ClusterId{value=&apos;5d9e0b3e3eabed33905cb71b&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] DEBUG org.mongodb.driver.cluster - Checking status of ds023603.mlab.com:23603
+03:30:56.637 [cluster-ClusterId{value=&apos;5d9e0b3e3eabed33905cb71b&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] INFO org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ds023603.mlab.com:23603, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 12]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, roundTripTimeNanos=255189039, setName=&apos;rs-ds023603&apos;, canonicalAddress=ds023603-a.mlab.com:23603, hosts=[ds023603-a.mlab.com:23603], passives=[], arbiters=[], primary=&apos;ds023603-a.mlab.com:23603&apos;, tagSet=TagSet{[]}, electionId=7fffffff000000000000000a, setVersion=2, lastWriteDate=Thu Oct 10 03:30:48 AEDT 2019, lastUpdateTimeNanos=15837543548659}
+03:30:56.643 [cluster-ClusterId{value=&apos;5d9e0b3e3eabed33905cb71b&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] DEBUG org.mongodb.driver.cluster - Updating cluster description to  {type=REPLICA_SET, servers=[{address=ds023603.mlab.com:23603, type=REPLICA_SET_PRIMARY, roundTripTime=255.2 ms, state=CONNECTED}]
+03:30:56.670 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Latest version of wires, geckodriver is 0.25.0
+03:30:56.730 [main] INFO io.github.bonigarcia.wdm.Downloader - Using binary driver previously downloaded
+03:30:56.733 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\jonny\.m2\repository\webdriver\geckodriver\win64\0.25.0\geckodriver.exe
+03:31:06.644 [cluster-ClusterId{value=&apos;5d9e0b3e3eabed33905cb71b&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] DEBUG org.mongodb.driver.cluster - Checking status of ds023603.mlab.com:23603
+03:31:06.948 [cluster-ClusterId{value=&apos;5d9e0b3e3eabed33905cb71b&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] DEBUG org.mongodb.driver.cluster - Updating cluster description to  {type=REPLICA_SET, servers=[{address=ds023603.mlab.com:23603, type=REPLICA_SET_PRIMARY, roundTripTime=264.5 ms, state=CONNECTED}]
+</system-out>
+    <system-err>1570638659389	mozrunner::runner	INFO	Running command: &quot;C:\\Program Files\\Mozilla Firefox\\firefox.exe&quot; &quot;-marionette&quot; &quot;-foreground&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;C:\\Users\\jonny\\AppData\\Local\\Temp\\rust_mozprofileKz531B&quot;
+1570638663723	Marionette	INFO	Listening on port 55851
+1570638663820	Marionette	WARN	TLS certificate errors will be ignored for this session
+1570638663992	Marionette	DEBUG	[6442450945] Frame script loaded
+1570638664208	Marionette	DEBUG	[6442450945] Frame script registered
+Oct 10, 2019 3:31:04 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1570638664726	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1570638665848	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1570638667789	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/
+1570638669238	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/
+1570638669272	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://asd-demo-opal.herokuapp.com/
+1570638669608	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://asd-demo-opal.herokuapp.com/
+1570638670247	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/login.jsp
+1570638670546	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/login.jsp
+1570638670571	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://asd-demo-opal.herokuapp.com/login.jsp
+1570638670867	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://asd-demo-opal.herokuapp.com/login.jsp
+1570638671180	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/login.jsp
+1570638671188	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/login.jsp
+</system-err>
+  </testcase>
 </testsuite>

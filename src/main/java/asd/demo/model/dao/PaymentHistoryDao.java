@@ -51,6 +51,29 @@ public class PaymentHistoryDao {
         return list;
     }
 
+    public List<PaymentHistory> listPaymentHistoryByNumber(String EmailAddress, String Search) {
+        //initialise Array
+        List<PaymentHistory> list = new ArrayList<>();
+
+        for (Document doc : collection.find()) {
+            
+        String search = Search;
+        
+        if (search == null) search = "";
+
+            if (((String) doc.get("EmailAddress")).equals(EmailAddress) && ((String) doc.get("SequenceNumber")).contains(search)) {
+                // Create Opal Card
+                PaymentHistory history = new PaymentHistory();
+                history.setId((String) doc.get("_id").toString());
+                history.setOpalCardSequenceNumber((String) doc.get("SequenceNumber"));
+                history.setTopUpAmount((double) doc.get("Amount"));
+                history.setTimeStamp((String) doc.get("TimeStamp"));
+                list.add(history);
+            }
+        }
+        return list;
+    }
+
     public void addHistory(String sequenceNumber, double amount, String timeStamp, String emailAddress) {
 
         Document doc = new Document();
