@@ -5,6 +5,7 @@ asd/demo/model/dao/OpalCardDao.class
 asd/demo/controller/OpalCardListServlet.class
 asd/demo/model/OpalCard.class
 asd/demo/model/User.class
+asd/demo/controller/ListOrderServlet.class
 asd/demo/model/dao/IOpalCardDao.class
 asd/demo/model/dao/IOrderDao.class
 asd/demo/service/impl/OpalCardServiceImpl.class

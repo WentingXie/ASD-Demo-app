@@ -39,7 +39,7 @@
 
             <div class="row">
                 <div class="col-sm-4">
-                    <a class="btn btn-default btn-block" href="listOpalCard">Cancel</a>
+                    <a class="btn btn-default btn-block" href="ListOpalCard">Cancel</a>
                 </div>
             </div>
             <hr />

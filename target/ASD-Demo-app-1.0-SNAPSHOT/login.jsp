@@ -24,7 +24,7 @@
     %>
     <body>
       <div class="container">
-       <p class="form_title">Login Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
+       <p class="title">Login Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
          <div class="center-block">
             <form action="${pageContext.request.contextPath}/login" method="post" target="_parent" class="form-horizontal">
                   <div class="form-group" id="username">
@@ -34,7 +34,7 @@
                         <input type="password" class="form-control" name ="password" placeholder="Password" required="true">&emsp;<span class="error"><c:if test="${passErr!=null}"><c:out value="${passErr}"/></c:if></span>
                     </div>
                     <div class="form-group">
-                        <input type="button" value="Cancle" onclick="javascript:window.location.href='index.jsp'"class="cancle-button"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Login" class="login-button"/>                    
+                       <input type="submit" value="Login" class="login-button"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Cancel" onclick="javascript:window.location.href='index.jsp'"class="cancle-button"/>                   
                     </div>
                 </form>         
         </div>

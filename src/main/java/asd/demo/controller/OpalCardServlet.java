@@ -100,7 +100,7 @@ public class OpalCardServlet extends HttpServlet {
 				}
 			} else {
 				json.put("msg",
-						"No Opal Card does exists or SequenceNumberhas been used,Please enter the correct SequenceNumber or SecurityNumber.");
+						"No Opal Card does exists or SequenceNumber has been used,Please enter the correct SequenceNumber or SecurityNumber.");
 			}
 		}
 		printWriter.print(json.toString());

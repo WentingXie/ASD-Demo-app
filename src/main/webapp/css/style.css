@@ -5,12 +5,10 @@ body {
     wigth:1000px;
 }
 .title{
-
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: 60px;
-    color: #c9c9c9;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 30px;
+    color: #000000;
     text-align: center;
 }
 iframe{
@@ -24,8 +22,6 @@ iframe{
     color: #10802c;
     float: right;
     right: 15px;
-    color: yellow;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 .text{
     font-family: "Times New Roman", Times, serif;
@@ -39,7 +35,6 @@ iframe{
     text-align: right;
     font-size: large;
     color: #33ff66;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cyan;
 
 }
 .header{
@@ -48,7 +43,6 @@ iframe{
     text-align: left;
     font-size: 20px;
     color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px #003399;
 }
 .float {
     font-family: "Times New Roman", Times, serif;
@@ -77,8 +71,7 @@ iframe{
     font-weight: bold;
     text-align: left;
     font-size: 30px;
-    color:#c9c9c9;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cyan;
+    color:#00000;
     padding: 5px;
 }
 
@@ -87,7 +80,6 @@ iframe{
     font-weight: bold;
     font-size: 16px;
     color:#c9c9c9;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cyan;
 }
 .button {
     display: inline-block;

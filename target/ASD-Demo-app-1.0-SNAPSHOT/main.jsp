@@ -52,6 +52,7 @@
 						    </a>
 					    <ul class="dropdown-menu">
 					        <li><a href="edit_user.jsp">Change Information</a></li>
+                                                <li><a href="${pageContext.request.contextPath}/ListOrderServlet">Order Information</a></li>
 					        <li><a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a></li>
 					    </ul>
                     </div>
@@ -108,7 +109,7 @@
 	      
 	        <div class="row">
             <span class="text-left"><h1>Order an Opal Card</h1></span>
-		                 <a href="#" onclick="chooseOrder('${pageContext.request.contextPath}/chooseOrder','Pensioner')">
+                                            <a href="#" onclick="chooseOrder('${pageContext.request.contextPath}/chooseOrder','Pensioner')">
 					      <img src="image/card_pensioner.png" width="266px" alt="senior/penioner"
 					     <%--  data-container="body" data-toggle="popover" data-placement="left" data-html="true"
 				            data-content="
