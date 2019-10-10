@@ -1,8 +1,4 @@
-<%-- 
-    Document   : paymenthistory
-    Created on : 26/09/2019, 3:14:58 PM
-    Author     : jonny
---%>
+
 <%@page import="asd.demo.model.Order"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -49,9 +45,10 @@
                 <thead>
                     <tr>
                         <th>OpalCardNumber</th>
+                        <th>Product Type</th>
                         <th>Address</th>
                         <th>Order Date</th>
-                        <th></th>
+                        <th>Status</th>
                     </tr>
                 </thead>
 
@@ -59,10 +56,16 @@
                     <%for (Order l : Order) {%>
                     <tr>
                         <td><%=l.getOpalCardSequenceNumber()%></td>
+                        <td><%=l.getProductTypeId()%></td>
                         <td><%=l.getUserAddress()%></td>
                         <td><%=l.getOrderDate()%></td>
+                        <% if (l.getStatus().equals("0")) {%>
+                        <td>Inactive</td>
+                        <%} else {%>
+                        <td>Active</td>
                     </tr>
-                    <%}%>
+                    <%}
+                        }%>
                 </tbody>
 
             </table>

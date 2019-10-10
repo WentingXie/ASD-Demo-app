@@ -41,7 +41,8 @@ public class OrderDao {
 				order.setOpalCardSequenceNumber((String)doc.get("OpalCardSequenceNumber"));
 				order.setUserAddress((String)doc.get("UserAddress"));
                                 order.setOrderDate((String)doc.get("OrderDate"));
-                            
+                                order.setProductTypeId((String)doc.get("ProductTypeId"));
+                                order.setStatus((String)doc.get("Status"));
 				// card.setSecurityNumber((String)doc.get("SecurityNumber"));
 				list.add(order);
 			}
