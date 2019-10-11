@@ -10,47 +10,61 @@ package asd.demo.model.dao;
  * @author suyixin
  */
 import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
-import asd.demo.model.*;
+import asd.demo.model.Order;
 import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import static java.util.regex.Pattern.*;
-import org.bson.types.ObjectId;
+import org.bson.Document;
 
 public class OrderDao {
-	MongoClient mongoClient;
-	DB database;
-	DBCollection collection;
+  MongoClient mongoClient;     
+	MongoDatabase database;
+	MongoCollection<Document> collection;
 
 	public OrderDao(MongoClient mongoClient) {
 		this.mongoClient = mongoClient;
 
-		database = mongoClient.getDB("heroku_bqcjmqws");
-		collection = database.getCollection("order");
+		database = mongoClient.getDatabase("heroku_bqcjmqws");
+		collection = database.getCollection("Order");
 	}
+	public List<Order> listOrder(String UserID) {
+		// initialise Array
+		List<Order> list = new ArrayList<>();
 
-	public Order[] getOrders() {
+		for (Document doc : collection.find()) {
 
-		DBCursor cursor = collection.find();
-		System.out.println("COUNT: " + cursor.count());
-		Order[] order = new Order[cursor.count()];
-		int count = 0;
-		while (cursor.hasNext()) {
-			DBObject result = cursor.next();
-			ObjectId orderId = (ObjectId) result.get("_id");
-			String userid = (String) result.get("userid");
-			int price = (int) result.get("price");
-			int date = (int) result.get("orderdate");
-			int tutSize = (int) result.get("email");
-			// order[count] = new Order(tutorialId, department, grade, userId, tutSize);
-			count++;
+			if (((String) doc.get("UserId")).equals(UserID)) {
+				// Create Opal Card
+				Order order = new Order();
+				order.setOpalCardSequenceNumber((String)doc.get("OpalCardSequenceNumber"));
+				order.setUserAddress((String)doc.get("UserAddress"));
+                                order.setOrderDate((String)doc.get("OrderDate"));
+                            
+				// card.setSecurityNumber((String)doc.get("SecurityNumber"));
+				list.add(order);
+			}
 		}
-		return order;
+		return list;
 	}
+        public List<Order> listActivatedOrder(String UserID) {
+            // initialise Array
+            List<Order> list = new ArrayList<>();
 
+            for (Document doc : collection.find()) {
+
+                    if (((String) doc.get("UserId")).equals(UserID) && doc.get("Status").toString().equals("1")) {
+                            // Create Opal Card
+                            Order order = new Order();
+                            order.setOpalCardSequenceNumber((String)doc.get("OpalCardSequenceNumber"));
+                            order.setUserAddress((String)doc.get("UserAddress"));
+                            order.setOrderDate((String)doc.get("OrderDate"));
+
+                            // card.setSecurityNumber((String)doc.get("SecurityNumber"));
+                            list.add(order);
+                    }
+            }
+            return list;
+	}
 }

@@ -20,6 +20,7 @@ import asd.demo.service.IOpalCardService;
 import asd.demo.service.IOrderService;
 import asd.demo.service.impl.OpalCardServiceImpl;
 import asd.demo.service.impl.OrderServiceImpl;
+import java.sql.Timestamp;
 
 /**
  * Servlet implementation class CardServlet
@@ -71,12 +72,17 @@ public class OrderServlet extends HttpServlet {
 		String userAddress = request.getParameter("userAddress");
 		String postalCode = request.getParameter("postalCode");
 		User loginUser = (User) request.getSession().getAttribute("user");
-
+                
+        Date date = new Date();
+		long time = date.getTime();
+		Timestamp isTime = new Timestamp(time);
+		String timeStamp = "" + date;
+		
 		Order order = new Order();
 		order.setUserId(loginUser.getUserId());
 		order.setProductTypeId(productTypeId);
 		order.setOpalCardSequenceNumber(opalCardSequenceNumber);
-		order.setOrderDate(String.valueOf(new Date().getTime()));
+		order.setOrderDate(timeStamp);
 		order.setUserAddress(userAddress);
 		order.setPostalCode(postalCode);
 
