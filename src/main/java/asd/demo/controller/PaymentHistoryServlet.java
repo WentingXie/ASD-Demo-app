@@ -43,13 +43,24 @@ public class PaymentHistoryServlet extends HttpServlet {
 		// Get Session
 		HttpSession session = request.getSession();
 
-		// Get User
-		User user = (User) session.getAttribute("user");
+        // Get User
+        User user = (User) session.getAttribute("user");
 
-		List<PaymentHistory> historylist = db.listPaymentHistory(user.getEmail());
+        // Get User' search
+        String OpalNumber = request.getParameter("number");
 
-		// Put into session
-		session.setAttribute("historylist", historylist);
+        try {
+
+        List<PaymentHistory> abc = db.listPaymentHistoryByNumber(user.getEmail(), OpalNumber);
+
+        // Put into Session
+        session.setAttribute("historylist", abc);
+
+        } catch (Exception ex) {
+
+        }
+
+
 
 		// Get view page.
 		RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
