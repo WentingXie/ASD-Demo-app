@@ -11,7 +11,6 @@ asd/demo/model/dao/IOpalCardDao.class
 asd/demo/model/dao/IOrderDao.class
 asd/demo/service/impl/OpalCardServiceImpl.class
 asd/demo/model/dao/impl/OpalCardImpl.class
-.netbeans_automatic_build
 asd/demo/service/impl/UserServiceImpl.class
 asd/demo/model/dao/IUserDao.class
 asd/demo/controller/RegisterServlet.class
