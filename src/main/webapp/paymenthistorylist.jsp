@@ -33,7 +33,7 @@
                     <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
                 </p>
                 <br/>
-                <br/>    
+                <br/>
                 <h1>My Payment History</h1>
                 <hr />
             </div>
@@ -45,6 +45,28 @@
             </div>
             <hr />
 
+            <form>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <input class="form-control" type="search" name="number" placeholder="Enter Card Number search here">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="submit" class="btn btn-primary btn-block" value="Search">
+                    </div>
+                </div>
+            </form>
+            <br />
+
+            <form method="post" action="clearHistory">
+                <div class="row">
+
+                    <div class="col-sm-2">
+                        <input type="submit" class="btn btn-primary btn-danger" value="Clear Page">
+                    </div>
+                </div>
+            </form>
+
+            <hr />
             <table class="table table-bordered table-condensed table-hover table-striped">
                 <thead>
                     <tr>
@@ -61,7 +83,7 @@
                         <td><%=l.getOpalCardSequenceNumber()%></td>
                         <td><%=l.getTopUpAmount()%></td>
                         <td><%=l.getTimeStamp()%></td>
-                        <td><a href="topup?id=<%=l.getOpalCardSequenceNumber()%>" class="btn btn-xs btn-primary">Delete</a> 
+                        <td><a href="topup?id=<%=l.getOpalCardSequenceNumber()%>" class="btn btn-xs btn-primary">Delete</a>
                     </tr>
                     <%}%>
                 </tbody>

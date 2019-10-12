@@ -69,20 +69,20 @@
 				      <%
 					     if(opalCardTypes.get(i).equals("Adult")){
 					   %>
-				          <a href="order_details.jsp"><img src="image/adult.png" style="height:175px" alt="adult" ></a>  
+				          <a href="${pageContext.request.contextPath}/ListActivatedOrderServlet?type=Adult"><img src="image/adult.png" style="height:175px" alt="adult" ></a>  
 				          <%
 					     } else if(opalCardTypes.get(i).equals("Pensioner")){
 					    	 
 				          %>
-				          <a href="order_details.jsp"><img src="image/card_pensioner.png" style="height:175px" alt="senior/penioner"></a>  
+				          <a href="${pageContext.request.contextPath}/ListActivatedOrderServlet?type=Pensioner"><img src="image/card_pensioner.png" style="height:175px" alt="senior/penioner"></a>  
 				          <%
  					     } else if(opalCardTypes.get(i).equals("Child")){
  					     %>
-				            <a href="order_details.jsp"><img src="image/card_child.png" style="height:175px" alt="child"></a>  
+				            <a href="${pageContext.request.contextPath}/ListActivatedOrderServlet?type=Child"><img src="image/card_child.png" style="height:175px" alt="child"></a>  
 				         <%
 					     } else {
 				          %>
-				             <a href="order_details.jsp"><img src="image/School.png" style="height:175px" alt="School"></a>  
+				             <a href="${pageContext.request.contextPath}/ListActivatedOrderServlet?type=School"><img src="image/School.png" style="height:175px" alt="School"></a>  
 				         <%
 					     } 
 				          %> 

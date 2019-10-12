@@ -73,10 +73,18 @@ public class OrderServlet extends HttpServlet {
 		String postalCode = request.getParameter("postalCode");
 		User loginUser = (User) request.getSession().getAttribute("user");
                 
+<<<<<<< HEAD
                 Date date = new Date();
 		long time = date.getTime();
 		Timestamp isTime = new Timestamp(time);
 		String timeStamp = "" + date;
+=======
+        Date date = new Date();
+		long time = date.getTime();
+		Timestamp isTime = new Timestamp(time);
+		String timeStamp = "" + date;
+		
+>>>>>>> c3d583524eeb4134a87cc66d147702062b8cf054
 		Order order = new Order();
 		order.setUserId(loginUser.getUserId());
 		order.setProductTypeId(productTypeId);
