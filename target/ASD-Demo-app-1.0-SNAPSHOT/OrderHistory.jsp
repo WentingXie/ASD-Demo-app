@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> c3d583524eeb4134a87cc66d147702062b8cf054
+>>>>>>> 69687fa3ac3641f2788489db71458a247bf10e14
 <%@page import="asd.demo.model.Order"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -25,8 +32,18 @@
         <div class="container">
             <div class="title">
                 <p>
+<<<<<<< HEAD
                     < img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
                 </p >
+=======
+<<<<<<< HEAD
+                    <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
+                </p>
+=======
+                    < img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
+                </p >
+>>>>>>> c3d583524eeb4134a87cc66d147702062b8cf054
+>>>>>>> 69687fa3ac3641f2788489db71458a247bf10e14
                 <br/>
                 <br/>    
                 <h1>My Order History</h1>
@@ -35,7 +52,15 @@
 
             <div class="row">
                 <div class="col-sm-4">
+<<<<<<< HEAD
                     <a href=" " class="btn btn-default btn-block">Home</a >
+=======
+<<<<<<< HEAD
+                    <a href="main.jsp" class="btn btn-default btn-block">Home</a>
+=======
+                    <a href=" " class="btn btn-default btn-block">Home</a >
+>>>>>>> c3d583524eeb4134a87cc66d147702062b8cf054
+>>>>>>> 69687fa3ac3641f2788489db71458a247bf10e14
                 </div>
             </div>
             <hr />
@@ -70,4 +95,12 @@
             </table>
         </div>
     </body>
+<<<<<<< HEAD
 </html>
+=======
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> c3d583524eeb4134a87cc66d147702062b8cf054
+>>>>>>> 69687fa3ac3641f2788489db71458a247bf10e14
