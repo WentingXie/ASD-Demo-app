@@ -6,6 +6,7 @@
 /Users/suyixin/Documents/Github/ASD-Demo-app/src/main/java/asd/demo/controller/ListOrderServlet.java
 /Users/suyixin/Documents/Github/ASD-Demo-app/src/main/java/asd/demo/controller/LoginServlet.java
 /Users/suyixin/Documents/Github/ASD-Demo-app/src/main/java/asd/demo/model/PaymentHistory.java
+/Users/suyixin/Documents/Github/ASD-Demo-app/src/main/java/asd/demo/controller/ListActivatedOrderServlet.java
 /Users/suyixin/Documents/Github/ASD-Demo-app/src/main/java/asd/demo/model/User.java
 /Users/suyixin/Documents/Github/ASD-Demo-app/src/main/java/asd/demo/model/dao/OrderDao.java
 /Users/suyixin/Documents/Github/ASD-Demo-app/src/main/java/asd/demo/model/dao/UserDao.java
