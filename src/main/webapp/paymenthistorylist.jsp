@@ -48,10 +48,10 @@
             <form>
                 <div class="row">
                     <div class="col-sm-3">
-                        <input class="form-control" type="search" name="number" placeholder="Enter Card Number search here">
+                        <input class="form-control" type="search" name="searchbox" placeholder="Enter Card Number search here">
                     </div>
                     <div class="col-sm-2">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search">
+                        <input type="submit" name="search" class="btn btn-primary btn-block" value="Search">
                     </div>
                 </div>
             </form>
@@ -61,7 +61,7 @@
                 <div class="row">
 
                     <div class="col-sm-2">
-                        <input type="submit" class="btn btn-primary btn-danger" value="Clear Page">
+                        <input type="submit" name="delete" class="btn btn-primary btn-danger" value="Clear Page">
                     </div>
                 </div>
             </form>
