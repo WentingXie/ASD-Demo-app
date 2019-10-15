@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asd.demo.controller;
 
 import asd.demo.model.dao.OpalCardDao;
@@ -43,9 +38,10 @@ public class OpalCardListServlet extends HttpServlet {
         // Get Session
         HttpSession session = request.getSession();
 
-        // Get User
+        // Get User Session
         User user = (User) session.getAttribute("user");
 
+        // Get opalcardlist from current logged in user
         List<OpalCard> opallist = db.listOpalCard(user.getEmail());
 
         // Put into session 
@@ -57,21 +53,4 @@ public class OpalCardListServlet extends HttpServlet {
         // Forward user to the view page.
         view.forward(request, response);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

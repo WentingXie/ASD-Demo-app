@@ -1,20 +1,7 @@
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asd.demo.model;
 
 import java.io.Serializable;
-import static java.lang.Double.sum;
-import java.math.BigDecimal;
 
-
-/**
- *
- * @author jonny
- */
 public class OpalCard implements Serializable {
     
     private String opalCardID;
@@ -31,8 +18,6 @@ public OpalCard (String opalCardID, double balance, String description, String s
 
 public OpalCard() { }
 
-
-    
     public void topUp(String opalCardID, double balance, String description, String sequenceNumber) {
         this.opalCardID = opalCardID;
         this.balance = balance;
@@ -40,13 +25,10 @@ public OpalCard() { }
         this.sequenceNumber = sequenceNumber;
     }
     
- 
-    
     public String getOpalCardID() {
         return opalCardID;
     }
     
-
     public void setOpalCardID(String opalCardID){
         this.opalCardID = opalCardID;
     }
@@ -71,7 +53,6 @@ public OpalCard() { }
         return sequenceNumber;
     }
     
-
     public void setSequenceNumber(String sequenceNumber){
         this.sequenceNumber = sequenceNumber;
     }

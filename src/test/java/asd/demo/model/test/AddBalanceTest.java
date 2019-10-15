@@ -38,7 +38,7 @@ public class AddBalanceTest {
     }
 
     /**
-     * Test of addBalance method, of class AddBalance.
+     * Test of addBalance method, of class OpalCard
      */
     @Test
     public void testAddBalance() {
@@ -51,6 +51,9 @@ public class AddBalanceTest {
         assertEquals(expResult, result, 0.0);
     }
     
+     /**
+     * Test of addBalance method, of class OpalCard
+     */
         @Test
     public void testAddBalance2() {
         System.out.println("addBalance");
@@ -62,6 +65,9 @@ public class AddBalanceTest {
         assertEquals(expResult, result, 0.0);
     }
     
+    /**
+     * Test of addBalance method, of class OpalCard
+     */
         @Test
     public void testAddBalance3() {
         System.out.println("addBalance");

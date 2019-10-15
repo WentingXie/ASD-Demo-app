@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asd.demo.model.dao;
 
-/**
- *
- * @author jonny lie
- */
 import com.mongodb.BasicDBObject;
 import asd.demo.model.PaymentHistory;
 import com.mongodb.MongoClient;
@@ -27,17 +18,14 @@ public class PaymentHistoryDao {
 
     public PaymentHistoryDao(MongoClient mongoClient) {
         this.mongoClient = mongoClient;
-
         database = mongoClient.getDatabase("heroku_bqcjmqws");
         collection = database.getCollection("PaymentHistoryList");
     }
 
-    public List<PaymentHistory> listPaymentHistory(String EmailAddress) {
+    public List<PaymentHistory> listPaymentHistory(String EmailAddress) { // Get paymenthistorylist by email address
         //initialise Array
         List<PaymentHistory> list = new ArrayList<>();
-
         for (Document doc : collection.find()) {
-
             if (((String) doc.get("EmailAddress")).equals(EmailAddress)) {
                 // Create Opal Card
                 PaymentHistory history = new PaymentHistory();
@@ -51,16 +39,12 @@ public class PaymentHistoryDao {
         return list;
     }
 
-    public List<PaymentHistory> listPaymentHistoryByNumber(String EmailAddress, String Search) {
+    public List<PaymentHistory> listPaymentHistoryByNumber(String EmailAddress, String Search) { // Get paymenthistorylist by email address and search
         //initialise Array
         List<PaymentHistory> list = new ArrayList<>();
-
         for (Document doc : collection.find()) {
-            
         String search = Search;
-        
         if (search == null) search = "";
-
             if (((String) doc.get("EmailAddress")).equals(EmailAddress) && ((String) doc.get("SequenceNumber")).contains(search)) {
                 // Create Opal Card
                 PaymentHistory history = new PaymentHistory();
@@ -74,8 +58,7 @@ public class PaymentHistoryDao {
         return list;
     }
 
-    public void addHistory(String sequenceNumber, double amount, String timeStamp, String emailAddress) {
-
+    public void addHistory(String sequenceNumber, double amount, String timeStamp, String emailAddress) { // Add payment history after user top up
         Document doc = new Document();
         doc.put("SequenceNumber", sequenceNumber);
         doc.put("Amount", amount);
@@ -84,18 +67,13 @@ public class PaymentHistoryDao {
         collection.insertOne(doc);
     }
 
-    public void deleteHistory(String id) {
-
+    public void deleteHistory(String id) { // Delete history by ID
         collection.deleteOne(new Document("_id", new ObjectId(id)));
-
     }
 
-    public void deleteAll() {
-
+    public void deleteAll() { // Clear paymenthistory page
         BasicDBObject document = new BasicDBObject();
-
         collection.deleteMany(document);
-
     }
 
 }

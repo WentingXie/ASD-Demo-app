@@ -47,20 +47,19 @@ public class PaymentHistoryServlet extends HttpServlet {
         User user = (User) session.getAttribute("user");
         
         // Get User' search 
-        String OpalNumber = request.getParameter("number");
+        String search = request.getParameter("searchbox");
         
         try {
-         
-        List<PaymentHistory> abc = db.listPaymentHistoryByNumber(user.getEmail(), OpalNumber);
+        
+        // Get paymenthistorylist by user's email and search    
+        List<PaymentHistory> historylist = db.listPaymentHistoryByNumber(user.getEmail(), search);
         
         // Put into Session
-        session.setAttribute("historylist", abc);
+        session.setAttribute("historylist", historylist);
         
         } catch (Exception ex) {
             
         }
-
-
 
         // Get view page.
         RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
@@ -73,6 +72,7 @@ public class PaymentHistoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // Get Validator
         Validator validator = new Validator();
         
         // Get Database Connector
@@ -92,12 +92,14 @@ public class PaymentHistoryServlet extends HttpServlet {
         
         // Get User' search 
         String search = request.getParameter("searchbox");
-
-        if (!validator.validateNumber(search)){
-                
-        session.setAttribute("existErr", "Invalid search format.");
         
-        // Get view page.
+        // Validate search by integer
+        if (!validator.validateNumber(search)){
+        
+        // Put error into session    
+        session.setAttribute("existErr", "Card Number you have entered is not valid number.");
+        
+        // Get view page
         RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
 
         // Forward user to the view page.
@@ -105,14 +107,17 @@ public class PaymentHistoryServlet extends HttpServlet {
         } else {
             
         try {
-         
-        List<PaymentHistory> abc = db.listPaymentHistoryByNumber(user.getEmail(), search);
+        
+        // Get paymenthistorylist by user's email and search      
+        List<PaymentHistory> historylist = db.listPaymentHistoryByNumber(user.getEmail(), search);
         
         // Put into Session
-        session.setAttribute("historylist", abc);
+        session.setAttribute("historylist", historylist);
         
+        // Clear error attribute
         session.setAttribute("existErr", "");
         
+        // Get view page
         RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
 
         // Forward user to the view page.
@@ -123,16 +128,4 @@ public class PaymentHistoryServlet extends HttpServlet {
         }
         }
     }
-
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }
