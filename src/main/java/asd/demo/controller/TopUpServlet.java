@@ -80,6 +80,8 @@ public class TopUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        Validator validator = new Validator();
+
         // Get Database Connector
         MongoDBConnector connector = new MongoDBConnector();
 
@@ -88,39 +90,56 @@ public class TopUpServlet extends HttpServlet {
 
         // Get Database DAO
         OpalCardDao db = new OpalCardDao(client);
-        
+
         // Get Database DAO
         PaymentHistoryDao db2 = new PaymentHistoryDao(client);
 
-        // Get Selected OpalCardId
-        String ID = request.getParameter("id");
-
-        OpalCard card = db.getOpalCard(ID);
+        // Get Session
+        HttpSession session = request.getSession();
 
         String amount = request.getParameter("amount");
 
-        double amount2 = Double.parseDouble(amount);
+        if (!validator.validateNumber(amount)) {
 
-        card.addBalance(amount2);
+            session.setAttribute("existErr2", "Invalid amount.");
 
-        db.updateCard(card);
-        
-        Date date = new Date();
-        long time = date.getTime();
-        Timestamp isTime = new Timestamp(time);
-        String timeStamp = "" + isTime;
-        
-        // Get Session
-        HttpSession session = request.getSession();
-        
-        // Get User
-        User user = (User) session.getAttribute("user");
+            // Get view page.
+            RequestDispatcher view = request.getRequestDispatcher("topup.jsp");
 
-        // Add History after Top Up
-        db2.addHistory(ID, amount2, timeStamp, user.getEmail());
+            // Forward user to the view page.
+            view.forward(request, response);
+        } else {
 
-        response.sendRedirect("listOpalCard");
-    }
+            try {
+
+                // Get Selected OpalCardId
+                String ID = request.getParameter("id");
+
+                OpalCard card = db.getOpalCard(ID);
+
+                double amount2 = Double.parseDouble(amount);
+
+                card.addBalance(amount2);
+
+                db.updateCard(card);
+
+                Date date = new Date();
+                long time = date.getTime();
+                Timestamp isTime = new Timestamp(time);
+                String timeStamp = "" + isTime;
+
+                // Get User
+                User user = (User) session.getAttribute("user");
+
+                // Add History after Top Up
+                db2.addHistory(ID, amount2, timeStamp, user.getEmail());
+
+                response.sendRedirect("listOpalCard");
+            } catch (Exception ex) {
+
+            }
+            }
+            }
 
     /**
      * Returns a short description of the servlet.

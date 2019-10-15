@@ -1,4 +1,5 @@
 asd\demo\model\dao\IUserDao.class
+asd\demo\model\dao\PaymentHistoryDao.class
 asd\demo\controller\RegisterServlet.class
 asd\demo\model\Order.class
 asd\demo\utils\MongoDBUtil.class
@@ -9,10 +10,16 @@ asd\demo\model\dao\OpalCardDao.class
 asd\demo\model\User.class
 asd\demo\model\OpalCard.class
 asd\demo\controller\Validator.class
+asd\demo\model\PaymentHistory.class
+asd\demo\controller\test.class
+asd\demo\controller\PaymentHistoryServlet.class
+asd\demo\controller\ClearHistoryServlet.class
 asd\demo\controller\LogoutServlet.class
 asd\demo\model\dao\OrderDao.class
 asd\demo\model\test\AddBalance.class
+asd\demo\controller\DeletePaymentHistoryServlet.class
 asd\demo\controller\UserSevlet.class
+asd\demo\controller\OpalCardListServlet.class
 asd\demo\controller\TopUpServlet.class
 asd\demo\model\dao\UserDao.class
 asd\demo\model\dao\MongoDBConnector.class

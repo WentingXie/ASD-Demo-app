@@ -39,11 +39,23 @@
 
             <div class="row">
                 <div class="col-sm-4">
-                    <a class="btn btn-default btn-block" href="listOpalCard">Cancel</a>
+                    <a class="btn btn-default btn-block" href="ListOpalCard">Cancel</a>
                 </div>
             </div>
             <hr />
-
+            
+            <h3 class="text-danger">
+            <%
+            String name=(String)session.getAttribute("existErr2"); 
+            if(!(name == null || (name.equals(""))))
+            {
+            %>
+            <p><%=name %></p>
+            <%
+            }
+            %>
+            </h3>
+            
             <form method="post">
                 <table class="table table-bordered table-condensed table-hover table-striped">
                     <tbody>
@@ -61,7 +73,7 @@
                         </tr>
                         <tr>
                             <td>Top Up Amount</td>
-                            <td><input type="number" name="amount" min="0" step="0.01" > </td>
+                            <td><input type="number" id="amount" name="amount" min="5" max="100" required="true"> </td>
                         </tr>
                         <tr>
                             <td></td>

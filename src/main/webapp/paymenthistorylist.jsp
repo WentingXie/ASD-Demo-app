@@ -25,6 +25,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Opal</title>
     </head>
+    <%
+        String searchErr = request.getParameter("searchErr");
+        String emptyErr = request.getParameter("empty");
+        String existErr = request.getParameter("existErr");
+    %>
 
     <body>
         <div class="container">
@@ -45,32 +50,43 @@
             </div>
             <hr />
             
-            <form>
-                <div class="row">    
-                    <div class="col-sm-3">
-                        <input class="form-control" type="search" name="number" placeholder="Enter Card Number search here">        
+            <h3 class="text-danger">
+            <%
+            String name=(String)session.getAttribute("existErr"); 
+            if(!(name == null || (name.equals(""))))
+            {
+            %>
+            <p><%=name %></p>
+            <%
+            }
+            %>
+            </h3>
+
+            <div class="row">
+                <form action="${pageContext.request.contextPath}/ListPaymentHistory" method="post" target="_parent">
+                    <div class="col-sm-3" id="searchbox">
+                        <input class="form-control" type="search" placeholder="Enter Opal Number Search Here" name="searchbox" id="searchbox" required="true">                               
                     </div>
                     <div class="col-sm-2">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search">        
+                        <input type="submit" id="search" name="search" value="Search" class="btn btn-primary btn-block"/>                    
                     </div>
-                </div> 
-            </form>
+                </form>         
+            </div> 
             <br />
-            
+
             <form method="post" action="clearHistory">
                 <div class="row">
-                   
+
                     <div class="col-sm-2">
                         <input type="submit" class="btn btn-primary btn-danger" value="Clear Page">        
                     </div>
                 </div> 
             </form>
-            
+
             <hr />
             <table class="table table-bordered table-condensed table-hover table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>OpalCardNumber</th>
                         <th>TopUpAmount</th>
                         <th>TimeStamp</th>
@@ -81,14 +97,13 @@
                 <tbody
                     <%for (PaymentHistory l : PaymentHistoryList) {%>
                     <tr>
-                        <td><%=l.getId()%></td>
                         <td><%=l.getOpalCardSequenceNumber()%></td>
                         <td><%=l.getTopUpAmount()%></td>
                         <td><%=l.getTimeStamp()%></td>
                         <td>
                             <form method="post" action="deleteHistory">
                                 <input type="hidden" name="historyid" value="<%=l.getId()%>" />
-                                <input type="submit" class="btn btn-xs btn-danger" value="Delete" />
+                                <input type="submit" name="delete" class="btn btn-xs btn-danger" value="Delete" />
                             </form>
                         </td>
                     </tr>

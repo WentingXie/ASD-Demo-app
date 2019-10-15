@@ -73,7 +73,57 @@ public class PaymentHistoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        Validator validator = new Validator();
+        
+        // Get Database Connector
+        MongoDBConnector connector = new MongoDBConnector();
+
+        // Get Database Client
+        MongoClient client = connector.openConnection();
+
+        // Get Database DAO
+        PaymentHistoryDao db = new PaymentHistoryDao(client);
+
+        // Get Session
+        HttpSession session = request.getSession();
+
+        // Get User
+        User user = (User) session.getAttribute("user");
+        
+        // Get User' search 
+        String search = request.getParameter("searchbox");
+
+        if (!validator.validateNumber(search)){
+                
+        session.setAttribute("existErr", "Invalid search format.");
+        
+        // Get view page.
+        RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
+
+        // Forward user to the view page.
+        view.forward(request, response);
+        } else {
+            
+        try {
+         
+        List<PaymentHistory> abc = db.listPaymentHistoryByNumber(user.getEmail(), search);
+        
+        // Put into Session
+        session.setAttribute("historylist", abc);
+        
+        session.setAttribute("existErr", "");
+        
+        RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
+
+        // Forward user to the view page.
+        view.forward(request, response);
+        
+        } catch (Exception ex) {
+            
+        }
+        }
     }
+
 
     /**
      * Returns a short description of the servlet.

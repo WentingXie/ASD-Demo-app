@@ -3,7 +3,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-10-09T16:30:54.864Z",
+        "start_timestamp": "2019-10-15T07:24:20.019Z",
         "line": 4,
         "name": "Test Login and Check own user details",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 14385483609,
+              "duration": 9267604437,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 1940439680,
+              "duration": 1940843480,
               "status": "passed"
             },
             "line": 6,
@@ -37,9 +37,8 @@
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: Unable to locate element: *[name\u003d\u0027login\u0027]\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-VSUA7RQ\u0027, ip: \u0027192.168.226.1\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_201\u0027\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 15668, moz:profile: C:\\Users\\jonny\\AppData\\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}\nSession ID: 75db4347-0852-4c03-9ba3-ca1e062ae394\n*** Element info: {Using\u003dname, value\u003dlogin}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)\r\n\tat org.openqa.selenium.By$ByName.findElement(By.java:284)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat asd.demo.model.dao.LoginButtonTest.login_button_enabled(LoginButtonTest.java:46)\r\n\tat ✽.Login button enabled(file:features/demo.feature:7)\r\n",
-              "duration": 115155008,
-              "status": "failed"
+              "duration": 1007722268,
+              "status": "passed"
             },
             "line": 7,
             "name": "Login button enabled",
@@ -50,13 +49,85 @@
           },
           {
             "result": {
-              "duration": 161976,
-              "status": "skipped"
+              "duration": 822416267,
+              "status": "passed"
             },
             "line": 8,
-            "name": "View User Details",
+            "name": "View Payment Detail",
             "match": {
               "location": "LoginButtonTest.view_user_details()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 817138245,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Opal card selected",
+            "match": {
+              "location": "LoginButtonTest.opal_card_selected()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 774584978,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Type amount of top up",
+            "match": {
+              "location": "LoginButtonTest.Type_amount_of_top_up()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 833063177,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "View Main Page",
+            "match": {
+              "location": "LoginButtonTest.view_main_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 791230502,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "View Payment History",
+            "match": {
+              "location": "LoginButtonTest.view_payment_history()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 511430514,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Search opal card number",
+            "match": {
+              "location": "LoginButtonTest.Search_opal_card_number()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 315169456,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Delete all history",
+            "match": {
+              "location": "LoginButtonTest.Delete_all_history()"
             },
             "keyword": "Then "
           }
