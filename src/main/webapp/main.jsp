@@ -95,7 +95,7 @@
 				      <div class="thumbnail"style="height:188px">
            		            <div class="card-body">
            		              <br/><br/><br/><br/>
-           		             <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Activate an Opal Card</a>
+           		             <a class="btn btn-primary btn-lg" data-toggle="modal" name="activated" data-target="#myModal">Activate an Opal Card</a>
 				            </div>
 				       </div>
 				     </div>
@@ -191,7 +191,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" name="activated" onclick="ActivateCard();">ActivateCard</button>
+        <button type="button" class="btn btn-primary" onclick="ActivateCard();">ActivateCard</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
