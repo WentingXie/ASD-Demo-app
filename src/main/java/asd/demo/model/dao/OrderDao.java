@@ -32,28 +32,6 @@ public class OrderDao {
 		database = mongoClient.getDatabase("heroku_bqcjmqws");
 		collection = database.getCollection("Order");
 	}
-<<<<<<< HEAD
-
-	public Order[] getOrders() {
-
-		DBCursor cursor = collection.find();
-		System.out.println("COUNT: " + cursor.count());
-		Order[] order = new Order[cursor.count()];
-		int count = 0;
-		while (cursor.hasNext()) {
-			DBObject result = cursor.next();
-			ObjectId orderId = (ObjectId) result.get("_id");
-			String userid = (String) result.get("userid");
-			int price = (int) result.get("price");
-			int date = (int) result.get("orderdate");
-			int tutSize = (int) result.get("email");
-			// order[count] = new Order(tutorialId, department, grade, userId, tutSize);
-			count++;
-		}
-		return order;
-	}
-
-=======
 	public List<Order> listOrder(String UserID) {
 		// initialise Array
 		List<Order> list = new ArrayList<>();
@@ -110,5 +88,4 @@ public class OrderDao {
             Document newDocument = new Document("$set", document);
             collection.updateOne(filter, newDocument);
         }
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
 }

@@ -12,11 +12,8 @@ import asd.demo.model.dao.OpalCardDao;
 import asd.demo.model.dao.PaymentHistoryDao;
 import com.mongodb.MongoClient;
 import java.io.IOException;
-<<<<<<< HEAD
-=======
 import java.sql.Timestamp;
 import java.util.Date;
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,18 +29,6 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "TopUpServlet", urlPatterns = {"/topup"})
 public class TopUpServlet extends HttpServlet {
 
-<<<<<<< HEAD
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-=======
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -56,16 +41,10 @@ public class TopUpServlet extends HttpServlet {
         // Get Database DAO
         OpalCardDao db = new OpalCardDao(client);
 
-<<<<<<< HEAD
-        //
-        String ID = request.getParameter("id");
-
-=======
         // Get selected opalcard ID
         String ID = request.getParameter("id");
         
         // Get the card's property by ID
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
         OpalCard card = db.getOpalCard(ID);
 
         // Get Session
@@ -85,11 +64,8 @@ public class TopUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-<<<<<<< HEAD
-=======
         Validator validator = new Validator();
 
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
         // Get Database Connector
         MongoDBConnector connector = new MongoDBConnector();
 
@@ -99,23 +75,6 @@ public class TopUpServlet extends HttpServlet {
         // Get Database DAO
         OpalCardDao db = new OpalCardDao(client);
 
-<<<<<<< HEAD
-        //
-        String ID = request.getParameter("id");
-
-        OpalCard card = db.getOpalCard(ID);
-
-        String amount = request.getParameter("amount");
-
-        double amount2 = Double.parseDouble(amount);
-
-        card.addBalance(amount2);
-
-        db.updateCard(card);
-
-        response.sendRedirect("listOpalCard");
-    }
-=======
         // Get Database DAO
         PaymentHistoryDao db2 = new PaymentHistoryDao(client);
 
@@ -130,7 +89,6 @@ public class TopUpServlet extends HttpServlet {
             
             // Put error into session 
             session.setAttribute("existErr2", "Amount you have entered is not valid number.");
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
 
             // Get view page.
             RequestDispatcher view = request.getRequestDispatcher("topup.jsp");

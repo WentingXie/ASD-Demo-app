@@ -73,6 +73,7 @@ public class FeedbackDetailsServlet extends HttpServlet {
 		String body = request.getParameter("body");
 		String email = request.getParameter("email");
                                                     new Email(email,body);
+                                                    response.getWriter().print("<script>alert('YOUR QUIERY HAS BEEN SUCCESFULLY FORWARDED TO THE OUR STAFF, YOU WILL BE CONTACTED BACK SHORTLY THROUGH THE EMAIL PROVIDED.')</script>");
               doGet(request, response);
  }
 

@@ -7,16 +7,13 @@ body {
 .title{
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-<<<<<<< HEAD
     font-size: 35px;
     color:#000000;
 
 
-=======
     font-size: 30px;
     color: #000000;
     text-align: center;
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
 }
 iframe{
     background:none transparent;
@@ -135,13 +132,10 @@ iframe{
     margin-left:auto;
     margin-right:auto;
     width:20%;
-<<<<<<< HEAD
     color:#000000;
 
-=======
     color:#cccccc;
      
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
 }
 .table th{
     color: white;
@@ -161,11 +155,11 @@ input{
     font-size: 18px;
 }
 .date:invalid+span:after{
-    content: 'é‰ï¿½';
+    content: 'é‰?ï¿½';
     padding-left: 5px;
 }
 .date:valid+span:after{
-    content: 'é‰ï¿½';
+    content: 'é‰?ï¿½';
     padding-left: 5px;
 }
 .login-form {
@@ -407,8 +401,6 @@ textarea:focus, input:focus, button:focus {
         transform: rotate(-360deg);
     }
 }
-<<<<<<< HEAD
-=======
 
  .center-block {
     width:500px;
@@ -417,4 +409,3 @@ textarea:focus, input:focus, button:focus {
     margin: 0 auto;
     /* margin-left: auto; margin-right: auto; */
 }
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
