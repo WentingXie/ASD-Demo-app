@@ -3,7 +3,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-10-17T04:07:01.390Z",
+        "start_timestamp": "2019-10-17T03:25:11.387Z",
         "line": 4,
         "name": "Test Login and Check own user details",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 19043665865,
+              "duration": 9293582364,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 2794704712,
+              "duration": 1344256733,
               "status": "passed"
             },
             "line": 6,
@@ -37,7 +37,7 @@
           },
           {
             "result": {
-              "duration": 1587381733,
+              "duration": 1489406338,
               "status": "passed"
             },
             "line": 7,
@@ -49,7 +49,7 @@
           },
           {
             "result": {
-              "duration": 256116492,
+              "duration": 253113253,
               "status": "passed"
             },
             "line": 8,
