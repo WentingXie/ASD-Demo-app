@@ -64,9 +64,10 @@ public class OrderServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
+        // Create a new order
 	private synchronized void createOrder(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+                 
 		String opalCardSequenceNumber = request.getParameter("opalCardSequenceNumber");
 		String productTypeId = request.getParameter("productTypeId");
 		String userAddress = request.getParameter("userAddress");
@@ -77,8 +78,9 @@ public class OrderServlet extends HttpServlet {
 		long time = date.getTime();
 		Timestamp isTime = new Timestamp(time);
 		String timeStamp = "" + date;
-		
+		//Create new order
 		Order order = new Order();
+                // Setup details of order
 		order.setUserId(loginUser.getUserId());
 		order.setProductTypeId(productTypeId);
 		order.setOpalCardSequenceNumber(opalCardSequenceNumber);
@@ -90,7 +92,9 @@ public class OrderServlet extends HttpServlet {
 		JSONObject json = new JSONObject();
 
 		IOpalCardService opalCardService = new OpalCardServiceImpl();
+                //Get opal card
 		OpalCard oc = opalCardService.checkOneOpalCardBySequenceNumber(opalCardSequenceNumber);
+                // if status is 0, then order opal card
 		if ("0".equals(oc.getStatus())) {
 
 			if (opalCardService.updateOpalStatus(oc) > 0) {
@@ -119,13 +123,14 @@ public class OrderServlet extends HttpServlet {
 
 		System.out.println(productTypeId);
 		IOpalCardService opalCardService = new OpalCardServiceImpl();
-
+                //Get opal card
 		OpalCard oc = opalCardService.getOneOpalCardByProducTypeId(productTypeId);
 
 		System.out.println(oc == null ? oc : oc.toString());
 
 		JSONObject json = new JSONObject();
 		PrintWriter printWriter = response.getWriter();
+                //if opal card is null, then get the notification
 		if (oc == null) {
 			json.put("msg", "Insufficient stock, please choose another card.");
 		} else {

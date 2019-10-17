@@ -97,7 +97,7 @@
            		              <br/><br/><br/><br/>
                                       <a class="btn btn-primary btn-lg" data-toggle="modal" name="activated" id="activated" data-target="#myModal">Activate an Opal Card</a>
 				            </div>
-				       </div>s
+				       </div>
 				     </div>
 				    <!--  <div class="col-sm-6 col-md-4">
 				      <div class="thumbnail">

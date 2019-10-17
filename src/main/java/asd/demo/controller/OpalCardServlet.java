@@ -63,7 +63,7 @@ public class OpalCardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
+        // Activation function
 	private void activateCard(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -73,23 +73,25 @@ public class OpalCardServlet extends HttpServlet {
 		System.out.println("securityNumber" + securityNumber);
 		JSONObject json = new JSONObject();
 		PrintWriter printWriter = response.getWriter();
-
+                //Validation for null 
 		if (sequenceNumber == null || sequenceNumber.isEmpty()) {
 			json.put("msg", "Plesase enter the SequenceNumber.");
 
 		} else if (securityNumber == null || securityNumber.isEmpty()) {
 			json.put("msg", "Plesase enter the SecurityNumber.");
 		} else {
-
+                        // Get current login user
 			User loginUser = (User) request.getSession().getAttribute("user");
 
 			IOrderService orderService = new OrderServiceImpl();
+                           //Get order by user and opal card number and status
 			List<Order> orderList = orderService.getOrdersByUserIdAndSequenceNumberAndStatus(loginUser.getUserId(),
 					sequenceNumber, "0"); // query unbound order
-
+                        //if order list is not null
 			if (orderList.size() > 0) {
 
 				IOpalCardService opalCardService = new OpalCardServiceImpl();
+                                //Get Existing opal card
 				OpalCard oc = opalCardService.getOneOpalCardBySequenceAndSecurityNumber(sequenceNumber, securityNumber);
 				System.out.println(oc == null ? oc : oc.toString());
 				if (oc != null) {

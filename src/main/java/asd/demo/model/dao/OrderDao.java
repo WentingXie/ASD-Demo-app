@@ -39,8 +39,9 @@ public class OrderDao {
 		for (Document doc : collection.find()) {
 
 			if (((String) doc.get("UserId")).equals(UserID)) {
-				// Create Opal Card
+				// Create Order
 					Order order = new Order();
+                                        //Setup Order attributes
 				order.setOpalCardSequenceNumber((String)doc.get("OpalCardSequenceNumber"));
 				order.setUserAddress((String)doc.get("UserAddress"));
                                 order.setOrderDate((String)doc.get("OrderDate"));
@@ -60,10 +61,11 @@ public class OrderDao {
             List<Order> list = new ArrayList<>();
 
             for (Document doc : collection.find()) {
-
+                    //get order for activated card from login user
                     if (((String) doc.get("UserId")).equals(UserID) && doc.get("Status").toString().equals("1")) {
-                            // Create Opal Card
+                            // Create Order
                             Order order = new Order();
+                            //Setup Order attributes
                             order.setId(doc.get("_id").toString());
                             order.setOpalCardSequenceNumber((String)doc.get("OpalCardSequenceNumber"));
                             order.setUserAddress((String)doc.get("UserAddress"));
@@ -75,10 +77,13 @@ public class OrderDao {
             }
             return list;
 	}
+        //Deavtivate Card
         public void DeactivateOrde(String id) {
             ObjectId _idobj = null;
+            //Get login User ID
             _idobj = new ObjectId(id);
             Bson filter = Filters.eq("_id", _idobj);
+            // Set up the status to 0(Deactivate)
             Document document = new Document("Status", "0");
             Document newDocument = new Document("$set", document);
             collection.updateOne(filter, newDocument);
