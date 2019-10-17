@@ -28,20 +28,20 @@
          <div class="center-block">
             <form action="${pageContext.request.contextPath}/login" method="post" target="_parent" class="form-horizontal">
                   <div class="form-group" id="username">
-                        <input class="form-control" placeholder="Email" name="email" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>                                       
+                        <input class="form-control" placeholder="Email" name="email" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>
                     </div>
                     <div class="form-group" id="password">
                         <input type="password" class="form-control" name ="password" placeholder="Password" required="true">&emsp;<span class="error"><c:if test="${passErr!=null}"><c:out value="${passErr}"/></c:if></span>
                     </div>
                     <div class="form-group">
-                       <input type="submit" value="Login" name="login" class="login-button"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Cancel" onclick="javascript:window.location.href='index.jsp'"class="cancle-button"/>                   
+                      <input type="submit" name = "login" value="Login" class="login-button"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Cancel" onclick="javascript:window.location.href='index.jsp'"class="cancle-button"/>
                     </div>
-                </form>         
+                </form>
         </div>
-       </div>       
+       </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
-        <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>       
+        <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
     </body>
 
 </html>
