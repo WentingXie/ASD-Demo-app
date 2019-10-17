@@ -1,5 +1,5 @@
 
-Feature: User login and view own details(Wenting and Yixin UI Testing Combined)
+Feature: Check Activated button enabled
 
 Scenario: Test Login and Check own user details
 Given Open FireFox browser
