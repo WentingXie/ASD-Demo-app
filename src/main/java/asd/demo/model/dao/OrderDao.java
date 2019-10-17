@@ -26,12 +26,14 @@ public class OrderDao {
 	MongoDatabase database;
 	MongoCollection<Document> collection;
 
+
 	public OrderDao(MongoClient mongoClient) {
 		this.mongoClient = mongoClient;
 
 		database = mongoClient.getDatabase("heroku_bqcjmqws");
 		collection = database.getCollection("Order");
 	}
+
 	public List<Order> listOrder(String UserID) {
 		// initialise Array
 		List<Order> list = new ArrayList<>();
@@ -40,7 +42,7 @@ public class OrderDao {
 
 			if (((String) doc.get("UserId")).equals(UserID)) {
 				// Create Opal Card
-					Order order = new Order();
+				Order order = new Order();
 				order.setOpalCardSequenceNumber((String)doc.get("OpalCardSequenceNumber"));
 				order.setUserAddress((String)doc.get("UserAddress"));
                                 order.setOrderDate((String)doc.get("OrderDate"));
@@ -48,13 +50,11 @@ public class OrderDao {
                                 order.setStatus((String)doc.get("Status"));
 				// card.setSecurityNumber((String)doc.get("SecurityNumber"));
 				list.add(order);
-                            
-				// card.setSecurityNumber((String)doc.get("SecurityNumber"));
-				
 			}
 		}
 		return list;
-	}
+        }
+
         public List<Order> listActivatedOrder(String UserID) {
             // initialise Array
             List<Order> list = new ArrayList<>();
@@ -74,6 +74,7 @@ public class OrderDao {
                     }
             }
             return list;
+
 	}
         public void DeactivateOrde(String id) {
             ObjectId _idobj = null;
@@ -84,3 +85,7 @@ public class OrderDao {
             collection.updateOne(filter, newDocument);
         }
 }
+
+
+
+

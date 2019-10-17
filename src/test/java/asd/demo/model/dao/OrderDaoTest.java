@@ -60,11 +60,21 @@ public class OrderDaoTest {
         OrderDao order = new OrderDao(mongoClient);
         List<Order> o = order.listActivatedOrder("5d7765e1d811c60caca96bd4");
          assertNotNull("Testing Order History",o);
-        
+
            
             System.out.println("Getting the Activated Card");
              System.out.println(o);
             System.out.println("List Activated Order Test Succeed");
+
+        for(Order i:o){
+            if(i.getStatus() == "1"){
+            System.out.println("Getting the Activated Card");
+            System.out.println(i);
+            }
+        }
+        
+        System.out.println("List Activated Order Test Succeed");
+
     }
     
 }

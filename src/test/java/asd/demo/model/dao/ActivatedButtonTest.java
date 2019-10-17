@@ -46,7 +46,7 @@ public class ActivatedButtonTest {
      driver.findElement(By.name("login")).click();
     
 }
-     @Then("^Activated button enabled$")
+     @Then("^View Order History Page$")
      public void Activated_button_enabled() throws Throwable {
 
      driver.get("https://asd-demo-opal.herokuapp.com/ListOrderServlet");

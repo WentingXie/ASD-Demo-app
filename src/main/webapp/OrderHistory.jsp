@@ -1,8 +1,10 @@
+
 <%-- 
     Document   : paymenthistory
     Created on : 26/09/2019, 3:14:58 PM
     Author     : jonny
 --%>
+
 <%@page import="asd.demo.model.Order"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -30,8 +32,10 @@
         <div class="container">
             <div class="title">
                 <p>
+
                     <img height="45px" width="120px" class="pull-left" src="image/Opal_card_logo.svg.png"/>
                 </p>
+
                 <br/>
                 <br/>    
                 <h1>My Order History</h1>
@@ -40,7 +44,9 @@
 
             <div class="row">
                 <div class="col-sm-4">
+
                     <a href="main.jsp" class="btn btn-default btn-block">Home</a>
+
                 </div>
             </div>
             <hr />
@@ -74,4 +80,5 @@
             </table>
         </div>
     </body>
+
 </html>
