@@ -1,5 +1,5 @@
 
-Feature: User login and view own details(Wenting and Yixin UI Testing Combined)
+Feature: User able to login and view order history page
 
 Scenario: Test Login and Check own user details
 Given Open FireFox browser
