@@ -22,7 +22,7 @@ public class UITest {
 
     WebDriver driver;
 
-    @Given("^Open FireFox browser$")
+    @Given("^open fireFox browser$")
     public void open() throws Throwable {
         Class<? extends WebDriver> driverClass = FirefoxDriver.class;
         WebDriverManager.getInstance(driverClass).setup();
@@ -37,55 +37,55 @@ public class UITest {
         driver.navigate().to(driver.getCurrentUrl());    
     }
 
-    @Then("^Login button enabled$")
+    @Then("^login button enabled$")
     public void login_button_enabled() throws Throwable {
         driver.findElement(By.name("email")).sendKeys("jimmy@gmail.com");
         driver.findElement(By.name("password")).sendKeys("1234");
         driver.findElement(By.name("login")).click();
     }
     
-    @Then("^View Payment Detail")
-     public void view_user_details() throws Throwable{
+    @Then("^view payment detail$")
+     public void view_payment_detail() throws Throwable{
         driver.get("https://asd-demo-opal.herokuapp.com/ListOpalCard");
         driver.navigate().to(driver.getCurrentUrl());
      }
      
-     @Then("^Opal card selected")
+     @Then("^opal card selected$")
      public void opal_card_selected() throws Throwable{
         driver.findElement(By.name("select")).click();
      }
      
-     @Then("^Type amount of top up$")
-     public void Type_amount_of_top_up() throws Throwable {
+     @Then("^type amount of top up$")
+     public void type_amount_of_top_up() throws Throwable {
          driver.findElement(By.name("amount")).sendKeys("100");
          driver.findElement(By.name("topup")).click();
      }
      
-     @Then("^View Main Page")
+     @Then("^view main page$")
      public void view_main_page() throws Throwable{
         driver.get("https://asd-demo-opal.herokuapp.com/main.jsp");
         driver.navigate().to(driver.getCurrentUrl());
      }
      
-     @Then("^View Payment History")
+     @Then("^view payment history$")
      public void view_payment_history() throws Throwable{
         driver.get("https://asd-demo-opal.herokuapp.com/ListPaymentHistory");
         driver.navigate().to(driver.getCurrentUrl());
      }
      
-     @Then("^Search by opal card number$")
-     public void Search_by_opal_card_number() throws Throwable {
+     @Then("^search by opal card number$")
+     public void search_by_opal_card_number() throws Throwable {
         driver.findElement(By.name("searchbox")).sendKeys("30");
         driver.findElement(By.name("search")).click();
      }
      
-     @Then("^Delete history$")
-     public void Delete_history() throws Throwable {
+     @Then("^delete history$")
+     public void delete_history() throws Throwable {
         driver.findElement(By.name("delete")).click();
      }
      
-     @Then("^Clear history page$")
-     public void Clear_history_page() throws Throwable {
+     @Then("^clear history page$")
+     public void clear_history_page() throws Throwable {
         driver.findElement(By.name("clear")).click();
      }
 }

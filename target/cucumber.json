@@ -3,21 +3,21 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-10-17T09:15:14.383Z",
+        "start_timestamp": "2019-10-17T10:09:45.469Z",
         "line": 4,
-        "name": "Test Login, top up opalcard, search card, delete history, and clear history page.",
+        "name": "test Login, top up opalcard, search history by card number, delete history, and clear history page.",
         "description": "",
-        "id": "top-up-and-payment-history;test-login--top-up-opalcard--search-card--delete-history--and-clear-history-page.",
+        "id": "top-up-and-payment-history;test-login--top-up-opalcard--search-history-by-card-number--delete-history--and-clear-history-page.",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 38636411008,
+              "duration": 11310752395,
               "status": "passed"
             },
             "line": 5,
-            "name": "Open FireFox browser",
+            "name": "open FireFox browser",
             "match": {
               "location": "UITest.open()"
             },
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 3317891430,
+              "duration": 1742794667,
               "status": "passed"
             },
             "line": 6,
@@ -37,11 +37,11 @@
           },
           {
             "result": {
-              "duration": 4850659614,
+              "duration": 2533753679,
               "status": "passed"
             },
             "line": 7,
-            "name": "Login button enabled",
+            "name": "login button enabled",
             "match": {
               "location": "UITest.login_button_enabled()"
             },
@@ -49,23 +49,24 @@
           },
           {
             "result": {
-              "duration": 822147231,
+              "duration": 985770667,
               "status": "passed"
             },
             "line": 8,
-            "name": "View Payment Detail",
+            "name": "view payment detail",
             "match": {
-              "location": "UITest.view_user_details()"
+              "location": "UITest.view_payment_detail()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 487652548,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: Unable to locate element: *[name\u003d\u0027select\u0027]\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-VSUA7RQ\u0027, ip: \u0027192.168.226.1\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_201\u0027\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 1732, moz:profile: C:\\Users\\jonny\\AppData\\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}\nSession ID: ed289c38-3067-4fd0-ae70-de8f567334cb\n*** Element info: {Using\u003dname, value\u003dselect}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)\r\n\tat org.openqa.selenium.By$ByName.findElement(By.java:284)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat asd.demo.model.dao.UITest.opal_card_selected(UITest.java:55)\r\n\tat ✽.opal card selected(file:features/demo.feature:9)\r\n",
+              "duration": 21035062,
+              "status": "failed"
             },
             "line": 9,
-            "name": "Opal card selected",
+            "name": "opal card selected",
             "match": {
               "location": "UITest.opal_card_selected()"
             },
@@ -73,23 +74,23 @@
           },
           {
             "result": {
-              "duration": 3793604032,
-              "status": "passed"
+              "duration": 16593,
+              "status": "skipped"
             },
             "line": 10,
-            "name": "Type amount of top up",
+            "name": "type amount of top up",
             "match": {
-              "location": "UITest.Type_amount_of_top_up()"
+              "location": "UITest.type_amount_of_top_up()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1081695573,
-              "status": "passed"
+              "duration": 4345,
+              "status": "skipped"
             },
             "line": 11,
-            "name": "View Main Page",
+            "name": "view main page",
             "match": {
               "location": "UITest.view_main_page()"
             },
@@ -97,11 +98,11 @@
           },
           {
             "result": {
-              "duration": 818212813,
-              "status": "passed"
+              "duration": 3951,
+              "status": "skipped"
             },
             "line": 12,
-            "name": "View Payment History",
+            "name": "view payment history",
             "match": {
               "location": "UITest.view_payment_history()"
             },
@@ -109,37 +110,37 @@
           },
           {
             "result": {
-              "duration": 445303528,
-              "status": "passed"
+              "duration": 3555,
+              "status": "skipped"
             },
             "line": 13,
-            "name": "Search opal card number",
+            "name": "search by opal card number",
             "match": {
-              "location": "UITest.Search_opal_card_number()"
+              "location": "UITest.search_by_opal_card_number()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 720081888,
-              "status": "passed"
+              "duration": 3555,
+              "status": "skipped"
             },
             "line": 14,
-            "name": "Delete history",
+            "name": "delete history",
             "match": {
-              "location": "UITest.Delete_all_history()"
+              "location": "UITest.delete_history()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 748248199,
-              "status": "passed"
+              "duration": 17778,
+              "status": "skipped"
             },
             "line": 15,
-            "name": "Clear history page",
+            "name": "clear history page",
             "match": {
-              "location": "UITest.Clear_history_page()"
+              "location": "UITest.clear_history_page()"
             },
             "keyword": "Then "
           }

@@ -1,15 +1,15 @@
 
 Feature: Top Up and Payment History
 
-Scenario: Test Login, top up opalcard, search card, delete history, and clear history page.
-Given Open FireFox browser
+Scenario: test Login, top up opalcard, search history by card number, delete history, and clear history page.
+Given open fireFox browser
 When asd-demo-opal is loaded
-Then Login button enabled
-Then View Payment Detail
-Then Opal card selected
-Then Type amount of top up
-Then View Main Page
-Then View Payment History
-Then Search by opal card number
-Then Delete history
-Then Clear history page
+Then login button enabled
+Then view payment detail
+Then opal card selected
+Then type amount of top up
+Then view main page
+Then view payment history
+Then search by opal card number
+Then delete history
+Then clear history page

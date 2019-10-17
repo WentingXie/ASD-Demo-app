@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="asd.demo.model.dao.RunTest" time="56.033" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="asd.demo.model.dao.RunTest" time="17.333" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_201\jre\bin"/>
@@ -61,5 +61,85 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Top Up and Payment History" name="Test Login\u002C top up opalcard\u002C search card\u002C delete history\u002C and clear history page." time="55.725"/>
+  <testcase classname="Top Up and Payment History" name="test Login\u002C top up opalcard\u002C search history by card number\u002C delete history\u002C and clear history page." time="16.603">
+    <error message="Unable to locate element: *[name=&apos;select&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-VSUA7RQ&apos;, ip: &apos;192.168.226.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 1732, moz:profile: C:\Users\jonny\AppData\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: ed289c38-3067-4fd0-ae70-de8f567334cb
+*** Element info: {Using=name, value=select}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: Unable to locate element: *[name=&apos;select&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-VSUA7RQ&apos;, ip: &apos;192.168.226.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 1732, moz:profile: C:\Users\jonny\AppData\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: ed289c38-3067-4fd0-ae70-de8f567334cb
+*** Element info: {Using=name, value=select}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at asd.demo.model.dao.UITest.opal_card_selected(UITest.java:55)
+	at ✽.opal card selected(file:features/demo.feature:9)
+</error>
+    <system-out>
+&lt;-- Test Finished21:09:46.117 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Reading https://api.github.com/repos/mozilla/geckodriver/releases to seek wires, geckodriver
+21:09:46.627 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Latest version of wires, geckodriver is 0.26.0
+21:09:46.638 [main] INFO io.github.bonigarcia.wdm.Downloader - Using binary driver previously downloaded
+21:09:46.639 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\jonny\.m2\repository\webdriver\geckodriver\win64\0.26.0\geckodriver.exe
+21:09:46.916 [cluster-ClusterId{value=&apos;5da83de9fcd7bd1c4c813c3d&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1513606}] to ds023603.mlab.com:23603
+21:09:46.916 [cluster-ClusterId{value=&apos;5da83de9fcd7bd1c4c813c3d&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] DEBUG org.mongodb.driver.cluster - Checking status of ds023603.mlab.com:23603
+21:09:47.158 [cluster-ClusterId{value=&apos;5da83de9fcd7bd1c4c813c3d&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] INFO org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ds023603.mlab.com:23603, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 12]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, roundTripTimeNanos=238546568, setName=&apos;rs-ds023603&apos;, canonicalAddress=ds023603-a.mlab.com:23603, hosts=[ds023603-a.mlab.com:23603], passives=[], arbiters=[], primary=&apos;ds023603-a.mlab.com:23603&apos;, tagSet=TagSet{[]}, electionId=7fffffff000000000000000a, setVersion=2, lastWriteDate=Thu Oct 17 21:09:41 AEDT 2019, lastUpdateTimeNanos=882078349432}
+21:09:47.159 [cluster-ClusterId{value=&apos;5da83de9fcd7bd1c4c813c3d&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] DEBUG org.mongodb.driver.cluster - Updating cluster description to  {type=REPLICA_SET, servers=[{address=ds023603.mlab.com:23603, type=REPLICA_SET_PRIMARY, roundTripTime=238.5 ms, state=CONNECTED}]
+21:09:57.161 [cluster-ClusterId{value=&apos;5da83de9fcd7bd1c4c813c3d&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] DEBUG org.mongodb.driver.cluster - Checking status of ds023603.mlab.com:23603
+21:09:57.399 [cluster-ClusterId{value=&apos;5da83de9fcd7bd1c4c813c3d&apos;, description=&apos;null&apos;}-ds023603.mlab.com:23603] DEBUG org.mongodb.driver.cluster - Updating cluster description to  {type=REPLICA_SET, servers=[{address=ds023603.mlab.com:23603, type=REPLICA_SET_PRIMARY, roundTripTime=238.4 ms, state=CONNECTED}]
+</system-out>
+    <system-err>1571306987513	mozrunner::runner	INFO	Running command: &quot;C:\\Program Files\\Mozilla Firefox\\firefox.exe&quot; &quot;-marionette&quot; &quot;-foreground&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;C:\\Users\\jonny\\AppData\\Local\\Temp\\rust_mozprofileZB1smp&quot;
+1571306989394	Marionette	INFO	Listening on port 50384
+1571306989631	Marionette	WARN	TLS certificate errors will be ignored for this session
+1571306989679	Marionette	DEBUG	[6442450945] Frame script loaded
+1571306989683	Marionette	DEBUG	[6442450945] Frame script registered
+Oct 17, 2019 9:09:49 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1571306989753	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1571306990569	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1571306992138	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/
+1571306996775	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/
+1571306996790	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://asd-demo-opal.herokuapp.com/
+1571306997060	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://asd-demo-opal.herokuapp.com/
+1571306997585	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/login.jsp
+1571306997961	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/login.jsp
+1571306997977	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://asd-demo-opal.herokuapp.com/login.jsp
+1571306998242	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://asd-demo-opal.herokuapp.com/login.jsp
+1571306998520	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/login.jsp
+1571306998523	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/login.jsp
+1571306998608	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://asd-demo-opal.herokuapp.com/login.jsp
+1571306998874	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://asd-demo-opal.herokuapp.com/login.jsp
+1571306998875	Marionette	DEBUG	[6442450945] Received DOM event unload for https://asd-demo-opal.herokuapp.com/login.jsp
+1571307001037	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/login
+1571307001053	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/login
+1571307001077	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://asd-demo-opal.herokuapp.com/login
+1571307001583	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://asd-demo-opal.herokuapp.com/login
+1571307001589	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/ListOpalCard
+1571307001754	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/ListOpalCard
+1571307001768	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://asd-demo-opal.herokuapp.com/ListOpalCard
+1571307002018	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://asd-demo-opal.herokuapp.com/ListOpalCard
+1571307002018	Marionette	DEBUG	[6442450945] Received DOM event unload for https://asd-demo-opal.herokuapp.com/ListOpalCard
+1571307002024	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://asd-demo-opal.herokuapp.com/ListOpalCard
+1571307002037	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1571307002042	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/ListOpalCard
+</system-err>
+  </testcase>
 </testsuite>
