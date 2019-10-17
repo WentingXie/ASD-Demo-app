@@ -34,7 +34,7 @@
                         <input type="password" class="form-control" name ="password" placeholder="Password" required="true">&emsp;<span class="error"><c:if test="${passErr!=null}"><c:out value="${passErr}"/></c:if></span>
                     </div>
                     <div class="form-group">
-                       <input type="submit" value="Login" class="login-button"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Cancel" onclick="javascript:window.location.href='index.jsp'"class="cancle-button"/>                   
+                       <input type="submit" name = "login" value="Login" class="login-button"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Cancel" onclick="javascript:window.location.href='index.jsp'"class="cancle-button"/>                   
                     </div>
                 </form>         
         </div>

@@ -24,54 +24,118 @@ import javax.servlet.http.HttpSession;
  *
  * @author jonny
  */
-@WebServlet(name = "PaymentHistoryServlet", urlPatterns = { "/ListPaymentHistory" })
+@WebServlet(name = "PaymentHistoryServlet", urlPatterns = {"/ListPaymentHistory"})
 public class PaymentHistoryServlet extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		// Get Database Connector
-		MongoDBConnector connector = new MongoDBConnector();
+        // Get Database Connector
+        MongoDBConnector connector = new MongoDBConnector();
 
-		// Get Database Client
-		MongoClient client = connector.openConnection();
+        // Get Database Client
+        MongoClient client = connector.openConnection();
 
-		// Get Database DAO
-		PaymentHistoryDao db = new PaymentHistoryDao(client);
+        // Get Database DAO
+        PaymentHistoryDao db = new PaymentHistoryDao(client);
 
-		// Get Session
-		HttpSession session = request.getSession();
+        // Get Session
+        HttpSession session = request.getSession();
 
-		// Get User
-		User user = (User) session.getAttribute("user");
+        // Get User
+        User user = (User) session.getAttribute("user");
+
+        // Get User' search
+        String OpalNumber = request.getParameter("number");
+
+        try {
+
+        List<PaymentHistory> abc = db.listPaymentHistoryByNumber(user.getEmail(), OpalNumber);
+
+        // Put into Session
+        session.setAttribute("historylist", abc);
+
+        } catch (Exception ex) {
+
+        }
 
 		List<PaymentHistory> historylist = db.listPaymentHistory(user.getEmail());
 
 		// Put into session
 		session.setAttribute("historylist", historylist);
 
-		// Get view page.
-		RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
+        // Get view page.
+        RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
 
-		// Forward user to the view page.
-		view.forward(request, response);
-	}
+        // Forward user to the view page.
+        view.forward(request, response);
+    }
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-	}
+        Validator validator = new Validator();
 
-	/**
-	 * Returns a short description of the servlet.
-	 *
-	 * @return a String containing servlet description
-	 */
-	@Override
-	public String getServletInfo() {
-		return "Short description";
-	}// </editor-fold>
+        // Get Database Connector
+        MongoDBConnector connector = new MongoDBConnector();
+
+        // Get Database Client
+        MongoClient client = connector.openConnection();
+
+        // Get Database DAO
+        PaymentHistoryDao db = new PaymentHistoryDao(client);
+
+        // Get Session
+        HttpSession session = request.getSession();
+
+        // Get User
+        User user = (User) session.getAttribute("user");
+
+        // Get User' search
+        String search = request.getParameter("searchbox");
+
+        if (!validator.validateNumber(search)){
+
+        session.setAttribute("existErr", "Invalid search format.");
+
+        // Get view page.
+        RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
+
+        // Forward user to the view page.
+        view.forward(request, response);
+        } else {
+
+        try {
+
+        List<PaymentHistory> abc = db.listPaymentHistoryByNumber(user.getEmail(), search);
+
+        // Put into Session
+        session.setAttribute("historylist", abc);
+
+        session.setAttribute("existErr", "");
+
+        RequestDispatcher view = request.getRequestDispatcher("paymenthistorylist.jsp");
+
+        // Forward user to the view page.
+        view.forward(request, response);
+
+        } catch (Exception ex) {
+
+        }
+        }
+    }
+
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
 }
