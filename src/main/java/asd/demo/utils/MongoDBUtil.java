@@ -11,6 +11,7 @@ import com.mongodb.client.MongoDatabase;
 public class MongoDBUtil {
 
 	private static MongoDBUtil mongoDBUtil;
+	private static MongoDatabase mongoDatabase;
 
 	private MongoDBUtil() {
 
@@ -25,17 +26,19 @@ public class MongoDBUtil {
 
 	@SuppressWarnings("resource")
 	public MongoDatabase getConnect() {
-		List<ServerAddress> adds = new ArrayList<>();
+		if (mongoDatabase == null) {
 
-		ServerAddress serverAddress = new ServerAddress("ds023603.mlab.com", 23603);
-		adds.add(serverAddress);
+			List<ServerAddress> adds = new ArrayList<>();
 
-		List<MongoCredential> credentials = new ArrayList<>();
-		MongoCredential mongoCredential = MongoCredential.createScramSha1Credential("heroku_bqcjmqws",
-				"heroku_bqcjmqws", "3n91u46bthugnp5ejiuvpc9fvq".toCharArray());
-		credentials.add(mongoCredential);
+			ServerAddress serverAddress = new ServerAddress("ds023603.mlab.com", 23603);
+			adds.add(serverAddress);
 
-		return new MongoClient(adds, credentials).getDatabase("heroku_bqcjmqws");
-
+			List<MongoCredential> credentials = new ArrayList<>();
+			MongoCredential mongoCredential = MongoCredential.createScramSha1Credential("heroku_bqcjmqws",
+					"heroku_bqcjmqws", "3n91u46bthugnp5ejiuvpc9fvq".toCharArray());
+			credentials.add(mongoCredential);
+			mongoDatabase = new MongoClient(adds, credentials).getDatabase("heroku_bqcjmqws");
+		}
+		return mongoDatabase;
 	}
 }

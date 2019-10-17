@@ -30,4 +30,9 @@ public class UserServiceImpl implements IUserService {
 		return userDao.findByEmail(email);
 	}
 
+	@Override
+	public User checkUserEmail(String email) {
+		return userDao.findByEmailAndPwd(email, null);
+	}
+
 }

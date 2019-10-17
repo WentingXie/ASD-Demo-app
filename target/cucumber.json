@@ -1,0 +1,72 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2019-10-17T06:03:23.824Z",
+        "line": 4,
+        "name": "Test Login and Check own user details",
+        "description": "",
+        "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined);test-login-and-check-own-user-details",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7980175038,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Open FireFox browser",
+            "match": {
+              "location": "ActivatedButtonTest.open()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2251811835,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "asd-demo-opal is loaded",
+            "match": {
+              "location": "ActivatedButtonTest.maven_app_heroku_is_loaded()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1413615284,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Login button enabled",
+            "match": {
+              "location": "ActivatedButtonTest.login_button_enabled()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 249652411,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Activated button enabled",
+            "match": {
+              "location": "ActivatedButtonTest.Activated_button_enabled()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "User login and view own details(Wenting and Yixin UI Testing Combined)",
+    "description": "",
+    "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined)",
+    "keyword": "Feature",
+    "uri": "file:features/demo.feature",
+    "tags": []
+  }
+]

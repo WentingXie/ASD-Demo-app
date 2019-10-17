@@ -7,10 +7,16 @@ body {
 .title{
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
+<<<<<<< HEAD
     font-size: 35px;
     color:#000000;
 
 
+=======
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+>>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
 }
 iframe{
     background:none transparent;
@@ -23,8 +29,6 @@ iframe{
     color: #10802c;
     float: right;
     right: 15px;
-    color: yellow;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 .text{
     font-family: "Times New Roman", Times, serif;
@@ -38,7 +42,6 @@ iframe{
     text-align: right;
     font-size: large;
     color: #33ff66;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cyan;
 
 }
 .header{
@@ -47,7 +50,6 @@ iframe{
     text-align: left;
     font-size: 20px;
     color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px #003399;
 }
 .float {
     font-family: "Times New Roman", Times, serif;
@@ -76,8 +78,7 @@ iframe{
     font-weight: bold;
     text-align: left;
     font-size: 30px;
-    color:#c9c9c9;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cyan;
+    color:#00000;
     padding: 5px;
 }
 
@@ -86,7 +87,6 @@ iframe{
     font-weight: bold;
     font-size: 16px;
     color:#c9c9c9;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cyan;
 }
 .button {
     display: inline-block;
@@ -135,8 +135,13 @@ iframe{
     margin-left:auto;
     margin-right:auto;
     width:20%;
+<<<<<<< HEAD
     color:#000000;
 
+=======
+    color:#cccccc;
+     
+>>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
 }
 .table th{
     color: white;
@@ -266,6 +271,29 @@ textarea:focus, input:focus, button:focus {
     box-shadow: inset 0 40px 0 0 rgb(62, 142, 65);
 }
 
+.cancle-button {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+
+    border: none;
+    border-radius: 4px;
+    background-size: 500% 100%;
+    background: rgba(6, 41, 61, 1);
+    box-shadow: inset 0 0 0 0 rgba(20, 196, 148, 1);
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1em;
+}
+.cancle-button:hover {
+    box-shadow: inset 0 40px 0 0 rgb(240,230,140);
+}
+
 .remember-checkbox {
     display: inline;
     position: relative;
@@ -379,3 +407,14 @@ textarea:focus, input:focus, button:focus {
         transform: rotate(-360deg);
     }
 }
+<<<<<<< HEAD
+=======
+
+ .center-block {
+    width:500px;
+    float: none;
+    display: block;
+    margin: 0 auto;
+    /* margin-left: auto; margin-right: auto; */
+}
+>>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8

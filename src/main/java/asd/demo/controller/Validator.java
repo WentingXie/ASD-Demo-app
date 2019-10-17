@@ -8,7 +8,9 @@ import java.util.regex.Pattern;
 public class Validator implements Serializable{
     private String emailPattern = "([a-zA-Z0-9]+)(([._-])([a-zA-Z0-9]+))*(@)([a-z]+)(.)([a-z]{3})((([.])[a-z]{0,2})*)";   
     private String namePattern = "([A-Z][a-z]+[\\s])+[A-Z][a-z]*";    
-    private String passwordPattern = "[a-z]{6,}[0-9]+";    
+    private String passwordPattern = "[a-z]{6,}[0-9]+"; 
+    private String integerPattern = "[0-9]+";
+    private String decimalPattern = "\\d{0,9}\\.\\d{1,2}";
     private HashMap<String,String> errors;
     
     public Validator(){ 
@@ -38,6 +40,14 @@ public class Validator implements Serializable{
     
     public boolean validatePassword(String password){        
         return validate(passwordPattern,password);
+    }
+    
+    public boolean validateNumber(String number){
+        return validate(integerPattern, number);
+    }
+    
+    public boolean validateDouble(String decimal){
+    return validate(decimalPattern, decimal);
     }
        
     public HashMap errors(){

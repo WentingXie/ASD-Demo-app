@@ -5,46 +5,95 @@
  */
 package asd.demo.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author suyixin
  */
-public class Order {
-    private String userid;
-    private String OpalSN;
-    private String orderDate;
-    private String Price;
+public class Order implements Serializable {
+	/**
+	 * serialVersionUID
+	 */
+	private static final long serialVersionUID = 1171568948806763208L;
+	private String id;
+	private String userId;
+	private String OpalCardSequenceNumber;
+	private String productTypeId;
+	private String orderDate;
+	private String userAddress;
+	private String postalCode;
+	private String status;// 0:Unbound 1:Binded
 
-    public String getUserid() {
-        return userid;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public String getOpalSN() {
-        return OpalSN;
-    }
+	public String getOrderDate() {
+		return orderDate;
+	}
 
-    public void setOpalSN(String OpalSN) {
-        this.OpalSN = OpalSN;
-    }
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
+	}
 
-    public String getOrderDate() {
-        return orderDate;
-    }
+	public String getUserId() {
+		return userId;
+	}
 
-    public void setOrderDate(String orderDate) {
-        this.orderDate = orderDate;
-    }
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
-    public String getPrice() {
-        return Price;
-    }
+	public String getOpalCardSequenceNumber() {
+		return OpalCardSequenceNumber;
+	}
 
-    public void setPrice(String Price) {
-        this.Price = Price;
-    }
-    
+	public void setOpalCardSequenceNumber(String opalCardSequenceNumber) {
+		OpalCardSequenceNumber = opalCardSequenceNumber;
+	}
+
+	public String getUserAddress() {
+		return userAddress;
+	}
+
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", userId=" + userId + ", OpalCardSequenceNumber=" + OpalCardSequenceNumber
+				+ ", orderDate=" + orderDate + ", userAddress=" + userAddress + ", postalCode=" + postalCode
+				+ ", status=" + status + "]";
+	}
+
+	public String getProductTypeId() {
+		return productTypeId;
+	}
+
+	public void setProductTypeId(String productTypeId) {
+		this.productTypeId = productTypeId;
+	}
+
 }

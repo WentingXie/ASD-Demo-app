@@ -42,9 +42,17 @@ public class RegisterServlet extends HttpServlet {
 
 		IUserService service = new UserServiceImpl();
 
+		User checkUser = service.checkUserEmail(email);
+		if (checkUser != null) {
+			request.setAttribute("message", "The Email has registered, please change it.");
+			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			return;
+		}
+
 		User user = new User();
 		user.setName(username);
 		user.setEmail(email);
+		user.setAccountBalance("0");
 		user.setPassword(password);
 		user.setPhone(phone);
 		System.out.println(user.toString());
@@ -55,9 +63,9 @@ public class RegisterServlet extends HttpServlet {
 			return;
 		}
 		// register success
-		response.getWriter()
-				.print("<script>alert('Successful account registration!');window.location='main.jsp'</script>");
+		response.getWriter().print("<script>alert('Successful account registration!');</script>");
 		request.getSession().setAttribute("user", user);
+		request.getRequestDispatcher("/goMain").forward(request, response);
 	}
 
 	/**

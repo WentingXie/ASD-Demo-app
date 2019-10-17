@@ -17,4 +17,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty", "json:target/cucumber.json"},
                 features={"features"})
+<<<<<<< HEAD
 public class RunTest {   }
+=======
+public class RunTest {   }
+>>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
