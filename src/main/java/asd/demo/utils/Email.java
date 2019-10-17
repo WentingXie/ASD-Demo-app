@@ -12,10 +12,10 @@ import javax.mail.internet.*;
 public class Email {  
 // for example, smtp.mailgun.org
     private static final String SMTP_SERVER = "smtp.gmail.com";
-    private static final String USERNAME = "gamil user anem";
-    private static final String PASSWORD = "passowrd";
+    private static final String USERNAME = "Testingasdapp@gmail.com";
+    private static final String PASSWORD = "Testing1234";
 
-    private static final String EMAIL_FROM = "pancham010@gmail.com";
+    private static final String EMAIL_FROM = "Testingasdapp@gmail.com";
     private static final String EMAIL_TO = "email_1@yahoo.com, email_2@gmail.com";
     private static final String EMAIL_TO_CC = "";
 
