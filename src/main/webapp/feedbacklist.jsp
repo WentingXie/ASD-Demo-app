@@ -40,9 +40,8 @@
                     <tr>
                         <th >#</th>
                         <th >Opal Card No</th>
-                        <th >name</th>
-                                                <th >email</th>
-
+                        <th> name</th>
+                        <th >email</th>
                         <th >address</th>
                         <th>street 1 </th>
                         <th>street 2 </th>
@@ -60,10 +59,8 @@
                     <tr>
                         <td><%=list.indexOf(f) + 1%></td>
                         <td><%=f.getOpalCardNo()%></td>
-
-                        <td><%=f.getFirstName()%> <%=f.getLastName()%> </td>
-                                                <td><%=f.getEmail()%></td>
-
+                        <td><a href="FeedbackDetailsServlet?feedbackUserEmail=<%=f.getEmail()%>"><%=f.getFirstName()%> <%=f.getLastName()%> </a></td>
+                         <td><%=f.getEmail()%></td>
                         <td><%=f.getAddress()%></td>
                         <td><%=f.getStreet1()%></td>
                         <td><%=f.getStreet2()%></td>
@@ -73,7 +70,6 @@
                         <td><%=f.getCountry()%></td> 
                         <td><%=f.getEnqueryType()%></td> 
                         <td><%=f.getEnquery()%></td>
-
                     </tr>
                     <%}%>
                 </tbody>

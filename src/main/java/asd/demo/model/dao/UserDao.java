@@ -9,7 +9,6 @@ package asd.demo.model.dao;
  *
  * @author suyixin
  */
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -24,33 +23,85 @@ import static java.util.regex.Pattern.*;
 import org.bson.types.ObjectId;
 
 public class UserDao {
-	MongoClient mongoClient;
-	DB database;
-	DBCollection collection;
 
-	public UserDao(MongoClient mongoClient) {
-		this.mongoClient = mongoClient;
+    MongoClient mongoClient;
+    DB database;
+    DBCollection collection;
 
-		database = mongoClient.getDB("heroku_bqcjmqws");
-		collection = database.getCollection("user");
-	}
+    public UserDao(MongoClient mongoClient) {
+        this.mongoClient = mongoClient;
 
-	public User[] getUsers() {
+        database = mongoClient.getDB("heroku_bqcjmqws");
+        collection = database.getCollection("user");
+    }
 
-		DBCursor cursor = collection.find();
-		System.out.println("COUNT: " + cursor.count());
-		User[] user = new User[cursor.count()];
-		int count = 0;
-		while (cursor.hasNext()) {
-			DBObject result = cursor.next();
-			ObjectId userId = (ObjectId) result.get("_id");
+    public User[] getUsers() {
 
-			String name = (String) result.get("name");
-			String password = (String) result.get("password");
-			String email = (String) result.get("email");
+        DBCursor cursor = collection.find();
+        System.out.println("COUNT: " + cursor.count());
+        User[] user = new User[cursor.count()];
+        int count = 0;
+        while (cursor.hasNext()) {
+            DBObject result = cursor.next();
+            ObjectId userId = (ObjectId) result.get("_id");
 
-			count++;
-		}
-		return user;
-	}
+            String name = (String) result.get("name");
+            String password = (String) result.get("password");
+            String email = (String) result.get("email");
+
+            count++;
+        }
+        return user;
+    }
+
+    public ArrayList<User> getUsersList() {
+
+        DBCursor cursor = collection.find();
+        System.out.println("COUNT: " + cursor.count());
+        ArrayList<User> users = new ArrayList<>();
+        int count = 0;
+        while (cursor.hasNext()) {
+            DBObject result = cursor.next();
+            ObjectId userId = (ObjectId) result.get("_id");
+
+            String name = (String) result.get("name");
+            String password = (String) result.get("password");
+            String email = (String) result.get("email");
+            String accountBalance = (String) result.get("accountBalance");
+            String userType = (String) result.get("userType");
+            String phone = (String) result.get("phone");
+
+            User user = new User();
+            user.setName(name);
+            user.setEmail(email);
+            user.setPhone(phone);
+            user.setAccountBalance(accountBalance);
+            user.setUserType(userType);
+            users.add(user);
+
+        }
+        return users;
+    }
+
+//    public User getUser(String emailId) {
+//
+//        User user = new User();
+//           DBObject query = new BasicDBObject("email", emailId);
+//             DBObject  result = collection.findOne(query);
+//                ObjectId userId = (ObjectId) result.get("_id");
+//                String name = (String) result.get("name");
+//                String password = (String) result.get("password");
+//                String email = (String) result.get("email");
+//                String accountBalance = (String) result.get("accountBalance");
+//                String userType = (String) result.get("userType");
+//                String phone = (String) result.get("phone");
+//
+//                user.setName(name);
+//                user.setEmail(email);
+//                user.setPhone(phone);
+//                user.setAccountBalance(accountBalance);
+//                user.setUserType(userType);
+//
+//        return user;
+//    }
 }

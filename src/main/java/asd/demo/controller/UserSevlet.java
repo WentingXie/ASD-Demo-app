@@ -1,5 +1,6 @@
 package asd.demo.controller;
 
+import asd.demo.model.OpalCard;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
@@ -10,8 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import asd.demo.model.User;
+import asd.demo.model.dao.MongoDBConnector;
+import asd.demo.model.dao.OpalCardDao;
+import asd.demo.model.dao.UserDao;
 import asd.demo.service.IUserService;
 import asd.demo.service.impl.UserServiceImpl;
+import com.mongodb.MongoClient;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class UserSevlet
@@ -85,5 +93,6 @@ public class UserSevlet extends HttpServlet {
 		request.getSession().setAttribute("user", user);
 
 	}
+  
 
 }
