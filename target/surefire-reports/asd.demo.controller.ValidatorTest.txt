@@ -3,7 +3,11 @@ Test set: asd.demo.controller.ValidatorTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 sec
+=======
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 sec
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 sec
 >>>>>>> parent of 6a490bf... UI and Unit test

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite tests="1" failures="0" name="asd.demo.model.dao.MongoDBConnectorTest" time="0.993" errors="0" skipped="0">
+=======
+<testsuite tests="1" failures="0" name="asd.demo.model.dao.MongoDBConnectorTest" time="0.981" errors="0" skipped="0">
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 <testsuite tests="1" failures="0" name="asd.demo.model.dao.MongoDBConnectorTest" time="0.981" errors="0" skipped="0">
 >>>>>>> parent of 6a490bf... UI and Unit test

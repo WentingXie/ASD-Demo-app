@@ -5,11 +5,19 @@
       {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "start_timestamp": "2019-10-17T10:09:45.469Z",
         "line": 4,
         "name": "test Login, top up opalcard, search history by card number, delete history, and clear history page.",
         "description": "",
         "id": "top-up-and-payment-history;test-login--top-up-opalcard--search-history-by-card-number--delete-history--and-clear-history-page.",
+=======
+        "start_timestamp": "2019-10-15T07:24:20.019Z",
+        "line": 4,
+        "name": "Test Login and Check own user details",
+        "description": "",
+        "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined);test-login-and-check-own-user-details",
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
         "start_timestamp": "2019-10-15T07:24:20.019Z",
         "line": 4,
@@ -31,7 +39,11 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "duration": 11310752395,
+=======
+              "duration": 9267604437,
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
               "duration": 9267604437,
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -51,7 +63,11 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "duration": 1742794667,
+=======
+              "duration": 1940843480,
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
               "duration": 1940843480,
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -71,7 +87,11 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "duration": 2533753679,
+=======
+              "duration": 1007722268,
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
               "duration": 1007722268,
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -91,7 +111,11 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "duration": 985770667,
+=======
+              "duration": 822416267,
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
               "duration": 822416267,
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -105,7 +129,11 @@
             "match": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "location": "UITest.view_payment_detail()"
+=======
+              "location": "LoginButtonTest.view_user_details()"
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
               "location": "LoginButtonTest.view_user_details()"
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -119,10 +147,13 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "error_message": "org.openqa.selenium.NoSuchElementException: Unable to locate element: *[name\u003d\u0027select\u0027]\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-VSUA7RQ\u0027, ip: \u0027192.168.226.1\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_201\u0027\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 1732, moz:profile: C:\\Users\\jonny\\AppData\\Loca..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}\nSession ID: ed289c38-3067-4fd0-ae70-de8f567334cb\n*** Element info: {Using\u003dname, value\u003dselect}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)\r\n\tat org.openqa.selenium.By$ByName.findElement(By.java:284)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat asd.demo.model.dao.UITest.opal_card_selected(UITest.java:55)\r\n\tat ✽.opal card selected(file:features/demo.feature:9)\r\n",
               "duration": 21035062,
               "status": "failed"
 =======
+=======
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 >>>>>>> parent of 6a490bf... UI and Unit test
               "duration": 817138245,
@@ -140,9 +171,12 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "duration": 16593,
               "status": "skipped"
 =======
+=======
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 >>>>>>> parent of 6a490bf... UI and Unit test
               "duration": 774584978,
@@ -154,7 +188,11 @@
             "match": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "location": "UITest.type_amount_of_top_up()"
+=======
+              "location": "LoginButtonTest.Type_amount_of_top_up()"
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
               "location": "LoginButtonTest.Type_amount_of_top_up()"
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -168,9 +206,12 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "duration": 4345,
               "status": "skipped"
 =======
+=======
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 >>>>>>> parent of 6a490bf... UI and Unit test
               "duration": 833063177,
@@ -188,9 +229,12 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "duration": 3951,
               "status": "skipped"
 =======
+=======
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 >>>>>>> parent of 6a490bf... UI and Unit test
               "duration": 791230502,
@@ -208,9 +252,12 @@
             "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "duration": 3555,
               "status": "skipped"
 =======
+=======
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 >>>>>>> parent of 6a490bf... UI and Unit test
               "duration": 511430514,
@@ -222,7 +269,11 @@
             "match": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "location": "UITest.search_by_opal_card_number()"
+=======
+              "location": "LoginButtonTest.Search_opal_card_number()"
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
               "location": "LoginButtonTest.Search_opal_card_number()"
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -234,6 +285,7 @@
           },
           {
             "result": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               "duration": 3555,
@@ -255,6 +307,15 @@
             "name": "clear history page",
             "match": {
               "location": "UITest.clear_history_page()"
+=======
+              "duration": 315169456,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Delete all history",
+            "match": {
+              "location": "LoginButtonTest.Delete_all_history()"
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
               "duration": 315169456,
               "status": "passed"
