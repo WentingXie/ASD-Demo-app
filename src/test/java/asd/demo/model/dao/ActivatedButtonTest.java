@@ -49,7 +49,7 @@ public class ActivatedButtonTest {
      @Then("^Activated button enabled$")
      public void Activated_button_enabled() throws Throwable {
 
-     driver.findElement(By.name("Activated")).click();
+     driver.get("https://asd-demo-opal.herokuapp.com/ListOrderServlet");
      
      
     
