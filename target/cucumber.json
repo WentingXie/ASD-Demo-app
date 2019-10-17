@@ -1,0 +1,156 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2019-10-17T11:51:18.640Z",
+        "line": 4,
+        "name": "test Login, top up opalcard, search history by card number, delete history, and clear history page.",
+        "description": "",
+        "id": "top-up-and-payment-history;test-login--top-up-opalcard--search-history-by-card-number--delete-history--and-clear-history-page.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9582571951,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "open fireFox browser",
+            "match": {
+              "location": "UITest.open()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1918182813,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "asd-demo-opal is loaded",
+            "match": {
+              "location": "UITest.maven_app_heroku_is_loaded()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2226066300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "login button enabled",
+            "match": {
+              "location": "UITest.login_button_enabled()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 866557393,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "view payment detail",
+            "match": {
+              "location": "UITest.view_payment_detail()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 454679955,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "opal card selected",
+            "match": {
+              "location": "UITest.opal_card_selected()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 778443324,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "type amount of top up",
+            "match": {
+              "location": "UITest.type_amount_of_top_up()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 923898955,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "view main page",
+            "match": {
+              "location": "UITest.view_main_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 814435381,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "view payment history",
+            "match": {
+              "location": "UITest.view_payment_history()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 466781472,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "search by opal card number",
+            "match": {
+              "location": "UITest.search_by_opal_card_number()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 719431049,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "delete history",
+            "match": {
+              "location": "UITest.delete_history()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 701279959,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "clear history page",
+            "match": {
+              "location": "UITest.clear_history_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Top Up and Payment History",
+    "description": "",
+    "id": "top-up-and-payment-history",
+    "keyword": "Feature",
+    "uri": "file:features/demo.feature",
+    "tags": []
+  }
+]
