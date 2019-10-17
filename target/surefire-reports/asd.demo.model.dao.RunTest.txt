@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: asd.demo.model.dao.RunTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.034 sec <<< FAILURE!
-Test Login and Check own user details(User login and view own details(Wenting and Yixin UI Testing Combined))  Time elapsed: 9.713 sec  <<< ERROR!
-org.openqa.selenium.NoSuchElementException: Unable to locate element: *[name='login']
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 12.28 sec <<< FAILURE!
+Test Login and Check own user details(User login and view own details(Wenting and Yixin UI Testing Combined))  Time elapsed: 11.927 sec  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: Unable to locate element: *[name='Activated']
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Wentings-MacBook-Pro.local', ip: 'fe80:0:0:0:8a9:7523:d9e4:e380%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15', java.version: '1.8.0_221'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190827005903, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 4177, moz:profile: /var/folders/rg/m4qr0mr54_3..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: MAC, platformName: MAC, platformVersion: 19.0.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: f513b736-37c2-0d4c-9274-e5c3cf8ab332
-*** Element info: {Using=name, value=login}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190827005903, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 4620, moz:profile: /var/folders/rg/m4qr0mr54_3..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: MAC, platformName: MAC, platformVersion: 19.0.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 864eaac2-d1e5-6344-9b1e-03ed48addde1
+*** Element info: {Using=name, value=Activated}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -25,5 +25,5 @@ Session ID: f513b736-37c2-0d4c-9274-e5c3cf8ab332
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
 	at org.openqa.selenium.By$ByName.findElement(By.java:284)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at asd.demo.model.dao.ActivatedButtonTest.login_button_enabled(ActivatedButtonTest.java:46)
-	at ✽.Login button enabled(file:features/demo.feature:7)
+	at asd.demo.model.dao.ActivatedButtonTest.Activated_button_enabled(ActivatedButtonTest.java:52)
+	at ✽.Activated button enabled(file:features/demo.feature:8)
