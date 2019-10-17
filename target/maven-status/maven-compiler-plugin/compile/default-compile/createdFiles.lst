@@ -6,6 +6,7 @@ asd/demo/controller/ListActivatedOrderServlet.class
 asd/demo/controller/OpalCardListServlet.class
 asd/demo/model/OpalCard.class
 asd/demo/model/User.class
+asd/demo/controller/DeletePaymentHistoryServlet.class
 asd/demo/controller/ListOrderServlet.class
 asd/demo/model/dao/IOpalCardDao.class
 asd/demo/model/dao/IOrderDao.class
@@ -32,5 +33,6 @@ asd/demo/controller/LogoutServlet.class
 asd/demo/model/dao/impl/UserDaoImpl.class
 asd/demo/utils/MongoDBUtil.class
 asd/demo/controller/UserSevlet.class
+asd/demo/controller/ClearHistoryServlet.class
 asd/demo/model/dao/OrderDao.class
 asd/demo/controller/OrderServlet.class

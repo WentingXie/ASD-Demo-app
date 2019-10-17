@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asd.demo.controller;
 
 import asd.demo.model.dao.OpalCardDao;
@@ -24,54 +19,38 @@ import javax.servlet.http.HttpSession;
  *
  * @author jonny
  */
-@WebServlet(name = "OpalCardListServlet", urlPatterns = { "/ListOpalCard" })
+@WebServlet(name = "OpalCardListServlet", urlPatterns = {"/ListOpalCard"})
 public class OpalCardListServlet extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		// Get Database Connector
-		MongoDBConnector connector = new MongoDBConnector();
+        // Get Database Connector
+        MongoDBConnector connector = new MongoDBConnector();
 
-		// Get Database Client
-		MongoClient client = connector.openConnection();
+        // Get Database Client
+        MongoClient client = connector.openConnection();
 
-		// Get Database DAO
-		OpalCardDao db = new OpalCardDao(client);
+        // Get Database DAO
+        OpalCardDao db = new OpalCardDao(client);
 
-		// Get Session
-		HttpSession session = request.getSession();
+        // Get Session
+        HttpSession session = request.getSession();
 
-		// Get User
-		User user = (User) session.getAttribute("user");
+        // Get User Session
+        User user = (User) session.getAttribute("user");
 
-		List<OpalCard> opallist = db.listOpalCard(user.getEmail());
+        // Get opalcardlist from current logged in user
+        List<OpalCard> opallist = db.listOpalCard(user.getEmail());
 
-		// Put into session
-		session.setAttribute("opallist", opallist);
+        // Put into session 
+        session.setAttribute("opallist", opallist);
 
-		// Get view page.
-		RequestDispatcher view = request.getRequestDispatcher("opalcardlist.jsp");
+        // Get view page.
+        RequestDispatcher view = request.getRequestDispatcher("opalcardlist.jsp");
 
-		// Forward user to the view page.
-		view.forward(request, response);
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
-
-	/**
-	 * Returns a short description of the servlet.
-	 *
-	 * @return a String containing servlet description
-	 */
-	@Override
-	public String getServletInfo() {
-		return "Short description";
-	}// </editor-fold>
-
+        // Forward user to the view page.
+        view.forward(request, response);
+    }
 }

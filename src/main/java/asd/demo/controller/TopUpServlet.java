@@ -26,111 +26,111 @@ import javax.servlet.http.HttpSession;
  *
  * @author jonny
  */
-@WebServlet(name = "TopUpServlet", urlPatterns = { "/topup" })
+@WebServlet(name = "TopUpServlet", urlPatterns = {"/topup"})
 public class TopUpServlet extends HttpServlet {
 
-	// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
-	// + sign on the left to edit the code.">
-	/**
-	 * Handles the HTTP <code>GET</code> method.
-	 *
-	 * @param request  servlet request
-	 * @param response servlet response
-	 * @throws ServletException if a servlet-specific error occurs
-	 * @throws IOException      if an I/O error occurs
-	 */
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// Get Database Connector
-		MongoDBConnector connector = new MongoDBConnector();
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Get Database Connector
+        MongoDBConnector connector = new MongoDBConnector();
 
-		// Get Database Client
-		MongoClient client = connector.openConnection();
+        // Get Database Client
+        MongoClient client = connector.openConnection();
 
-		// Get Database DAO
-		OpalCardDao db = new OpalCardDao(client);
+        // Get Database DAO
+        OpalCardDao db = new OpalCardDao(client);
 
-		//
-		String ID = request.getParameter("id");
+        // Get selected opalcard ID
+        String ID = request.getParameter("id");
+        
+        // Get the card's property by ID
+        OpalCard card = db.getOpalCard(ID);
 
-		OpalCard card = db.getOpalCard(ID);
+        // Get Session
+        HttpSession session = request.getSession();
 
-		// Get Session
-		HttpSession session = request.getSession();
+        // Put into session 
+        session.setAttribute("opalcard", card);
 
-		// Put into session
-		session.setAttribute("opalcard", card);
+        // Get view page.
+        RequestDispatcher view = request.getRequestDispatcher("topup.jsp");
 
-		// Get view page.
-		RequestDispatcher view = request.getRequestDispatcher("topup.jsp");
+        // Forward user to the view page.
+        view.forward(request, response);
+    }
 
-		// Forward user to the view page.
-		view.forward(request, response);
-	}
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-	/**
-	 * Handles the HTTP <code>POST</code> method.
-	 *
-	 * @param request  servlet request
-	 * @param response servlet response
-	 * @throws ServletException if a servlet-specific error occurs
-	 * @throws IOException      if an I/O error occurs
-	 */
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+        Validator validator = new Validator();
 
-		// Get Database Connector
-		MongoDBConnector connector = new MongoDBConnector();
+        // Get Database Connector
+        MongoDBConnector connector = new MongoDBConnector();
 
-		// Get Database Client
-		MongoClient client = connector.openConnection();
+        // Get Database Client
+        MongoClient client = connector.openConnection();
 
-		// Get Database DAO
-		OpalCardDao db = new OpalCardDao(client);
+        // Get Database DAO
+        OpalCardDao db = new OpalCardDao(client);
 
-		// Get Database DAO
-		PaymentHistoryDao db2 = new PaymentHistoryDao(client);
+        // Get Database DAO
+        PaymentHistoryDao db2 = new PaymentHistoryDao(client);
 
-		// Get Selected OpalCardId
-		String ID = request.getParameter("id");
+        // Get Session
+        HttpSession session = request.getSession();
+        
+        // Get the entered amount
+        String amount = request.getParameter("amount");
+        
+        // Validate amount by integer
+        if (!validator.validateNumber(amount)) {
+            
+            // Put error into session 
+            session.setAttribute("existErr2", "Amount you have entered is not valid number.");
 
-		OpalCard card = db.getOpalCard(ID);
+            // Get view page.
+            RequestDispatcher view = request.getRequestDispatcher("topup.jsp");
 
-		String amount = request.getParameter("amount");
+            // Forward user to the view page.
+            view.forward(request, response);
+        } else {
 
-		double amount2 = Double.parseDouble(amount);
+            try {
 
-		card.addBalance(amount2);
+                // Get Selected OpalCardId
+                String ID = request.getParameter("id");
+                
+                // Get the card's property by ID
+                OpalCard card = db.getOpalCard(ID);
+                
+                // Convert the amount to double
+                double amount2 = Double.parseDouble(amount);
+                
+                // Add card balance by entered amount
+                card.addBalance(amount2);
+                
+                // Update card in the database
+                db.updateCard(card);
+                
+                // Get current date
+                Date date = new Date();
+                long time = date.getTime();
+                Timestamp isTime = new Timestamp(time);
+                String timeStamp = "" + isTime;
 
-		db.updateCard(card);
+                // Get User
+                User user = (User) session.getAttribute("user");
 
-		Date date = new Date();
-		long time = date.getTime();
-		Timestamp isTime = new Timestamp(time);
-		String timeStamp = "" + isTime;
-
-		// Get Session
-		HttpSession session = request.getSession();
-
-		// Get User
-		User user = (User) session.getAttribute("user");
-
-		// Add History after Top Up
-		db2.addHistory(ID, amount2, timeStamp, user.getEmail());
-
-		response.sendRedirect("ListOpalCard");
-	}
-
-	/**
-	 * Returns a short description of the servlet.
-	 *
-	 * @return a String containing servlet description
-	 */
-	@Override
-	public String getServletInfo() {
-		return "Short description";
-	}// </editor-fold>
-
+                // Add History after Top Up
+                db2.addHistory(ID, amount2, timeStamp, user.getEmail());
+                
+                // Bring user to opalcardlist.jsp
+                response.sendRedirect("ListOpalCard");
+            } catch (Exception ex) {
+                
+            }
+        }
+        }
 }
