@@ -73,8 +73,8 @@ public class UITest {
         driver.navigate().to(driver.getCurrentUrl());
      }
      
-     @Then("^Search opal card number$")
-     public void Search_opal_card_number() throws Throwable {
+     @Then("^Search by opal card number$")
+     public void Search_by_opal_card_number() throws Throwable {
         driver.findElement(By.name("searchbox")).sendKeys("30");
         driver.findElement(By.name("search")).click();
      }

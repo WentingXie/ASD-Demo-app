@@ -10,6 +10,6 @@ Then Opal card selected
 Then Type amount of top up
 Then View Main Page
 Then View Payment History
-Then Search opal card number
+Then Search by opal card number
 Then Delete history
 Then Clear history page
