@@ -69,7 +69,7 @@
                 
                 <div class="row">
                     <div class="col-sm-2">
-                        <input type="submit" class="btn btn-primary btn-danger" value="Clear Page">        
+                        <input type="submit" name="clear" class="btn btn-primary btn-danger" value="Clear Page">        
                     </div>
                 </div> 
                 

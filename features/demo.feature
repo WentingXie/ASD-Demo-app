@@ -1,5 +1,5 @@
 
-Feature: User login and view own details(Wenting and Yixin UI Testing Combined)
+Feature: Top Up and Payment History
 
 Scenario: test Login, top up opalcard, search history by card number, delete history, and clear history page.
 Given open fireFox browser
