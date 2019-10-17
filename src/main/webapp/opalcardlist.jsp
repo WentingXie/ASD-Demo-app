@@ -53,7 +53,7 @@
                         <td><%=l.getSequenceNumber()%></td>
                         <td><%=l.getBalance()%></td>
                         <td><%=l.getDescription()%></td>
-                        <td><a href="topup?id=<%=l.getSequenceNumber()%>" name="select" class="btn btn-xs btn-primary">Top Up</a> 
+                        <td><a href="topup?id=<%=l.getSequenceNumber()%>" class="btn btn-xs btn-primary">Top Up</a> 
                     </tr>
                     <%}%>
                 </tbody>

@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: asd.demo.model.dao.RunTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.324 sec <<< FAILURE!
 test Login\u002C top up opalcard\u002C search history by card number\u002C delete history\u002C and clear history page.(Top Up and Payment History)  Time elapsed: 16.603 sec  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: Unable to locate element: *[name='select']
@@ -27,3 +28,6 @@ Session ID: ed289c38-3067-4fd0-ae70-de8f567334cb
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at asd.demo.model.dao.UITest.opal_card_selected(UITest.java:55)
 	at ?.opal card selected(file:features/demo.feature:9)
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.462 sec
+>>>>>>> parent of 6a490bf... UI and Unit test
