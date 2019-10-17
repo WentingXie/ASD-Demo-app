@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite tests="1" failures="0" name="asd.demo.model.dao.RunTest" time="17.333" errors="1" skipped="0">
+=======
+<testsuite tests="1" failures="0" name="asd.demo.model.dao.RunTest" time="17.468" errors="0" skipped="0">
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 <testsuite tests="1" failures="0" name="asd.demo.model.dao.RunTest" time="17.468" errors="0" skipped="0">
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -65,6 +69,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <testcase classname="Top Up and Payment History" name="test Login\u002C top up opalcard\u002C search history by card number\u002C delete history\u002C and clear history page." time="16.603">
     <error message="Unable to locate element: *[name=&apos;select&apos;]
@@ -147,6 +152,9 @@ INFO: Detected dialect: W3C
 1571307002042	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://asd-demo-opal.herokuapp.com/ListOpalCard
 </system-err>
   </testcase>
+=======
+  <testcase classname="Test Login and Check own user details(User login and view own details(Wenting and Yixin UI Testing Combined))" name="Test Login and Check own user details" time="17.084"/>
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
   <testcase classname="Test Login and Check own user details(User login and view own details(Wenting and Yixin UI Testing Combined))" name="Test Login and Check own user details" time="17.084"/>
 >>>>>>> parent of 6a490bf... UI and Unit test

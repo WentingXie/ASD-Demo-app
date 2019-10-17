@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite tests="3" failures="0" name="asd.demo.controller.ValidatorTest" time="0.152" errors="0" skipped="0">
+=======
+<testsuite tests="3" failures="0" name="asd.demo.controller.ValidatorTest" time="0.079" errors="0" skipped="0">
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
 <testsuite tests="3" failures="0" name="asd.demo.controller.ValidatorTest" time="0.079" errors="0" skipped="0">
 >>>>>>> parent of 6a490bf... UI and Unit test
@@ -67,7 +71,11 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <testcase classname="asd.demo.controller.ValidatorTest" name="testValidateNumber2" time="0.022"/>
+=======
+  <testcase classname="asd.demo.controller.ValidatorTest" name="testValidateNumber2" time="0.004"/>
+>>>>>>> parent of 6a490bf... UI and Unit test
 =======
   <testcase classname="asd.demo.controller.ValidatorTest" name="testValidateNumber2" time="0.004"/>
 >>>>>>> parent of 6a490bf... UI and Unit test
