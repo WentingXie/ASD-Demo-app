@@ -3,140 +3,152 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-10-15T07:24:20.019Z",
+        "start_timestamp": "2019-10-17T09:15:14.383Z",
         "line": 4,
-        "name": "Test Login and Check own user details",
+        "name": "Test Login, top up opalcard, search card, delete history, and clear history page.",
         "description": "",
-        "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined);test-login-and-check-own-user-details",
+        "id": "top-up-and-payment-history;test-login--top-up-opalcard--search-card--delete-history--and-clear-history-page.",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 9267604437,
+              "duration": 38636411008,
               "status": "passed"
             },
             "line": 5,
             "name": "Open FireFox browser",
             "match": {
-              "location": "LoginButtonTest.open()"
+              "location": "UITest.open()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1940843480,
+              "duration": 3317891430,
               "status": "passed"
             },
             "line": 6,
             "name": "asd-demo-opal is loaded",
             "match": {
-              "location": "LoginButtonTest.maven_app_heroku_is_loaded()"
+              "location": "UITest.maven_app_heroku_is_loaded()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1007722268,
+              "duration": 4850659614,
               "status": "passed"
             },
             "line": 7,
             "name": "Login button enabled",
             "match": {
-              "location": "LoginButtonTest.login_button_enabled()"
+              "location": "UITest.login_button_enabled()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 822416267,
+              "duration": 822147231,
               "status": "passed"
             },
             "line": 8,
             "name": "View Payment Detail",
             "match": {
-              "location": "LoginButtonTest.view_user_details()"
+              "location": "UITest.view_user_details()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 817138245,
+              "duration": 487652548,
               "status": "passed"
             },
             "line": 9,
             "name": "Opal card selected",
             "match": {
-              "location": "LoginButtonTest.opal_card_selected()"
+              "location": "UITest.opal_card_selected()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 774584978,
+              "duration": 3793604032,
               "status": "passed"
             },
             "line": 10,
             "name": "Type amount of top up",
             "match": {
-              "location": "LoginButtonTest.Type_amount_of_top_up()"
+              "location": "UITest.Type_amount_of_top_up()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 833063177,
+              "duration": 1081695573,
               "status": "passed"
             },
             "line": 11,
             "name": "View Main Page",
             "match": {
-              "location": "LoginButtonTest.view_main_page()"
+              "location": "UITest.view_main_page()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 791230502,
+              "duration": 818212813,
               "status": "passed"
             },
             "line": 12,
             "name": "View Payment History",
             "match": {
-              "location": "LoginButtonTest.view_payment_history()"
+              "location": "UITest.view_payment_history()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 511430514,
+              "duration": 445303528,
               "status": "passed"
             },
             "line": 13,
             "name": "Search opal card number",
             "match": {
-              "location": "LoginButtonTest.Search_opal_card_number()"
+              "location": "UITest.Search_opal_card_number()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 315169456,
+              "duration": 720081888,
               "status": "passed"
             },
             "line": 14,
-            "name": "Delete all history",
+            "name": "Delete history",
             "match": {
-              "location": "LoginButtonTest.Delete_all_history()"
+              "location": "UITest.Delete_all_history()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 748248199,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Clear history page",
+            "match": {
+              "location": "UITest.Clear_history_page()"
             },
             "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "User login and view own details(Wenting and Yixin UI Testing Combined)",
+    "name": "Top Up and Payment History",
     "description": "",
-    "id": "user-login-and-view-own-details(wenting-and-yixin-ui-testing-combined)",
+    "id": "top-up-and-payment-history",
     "keyword": "Feature",
     "uri": "file:features/demo.feature",
     "tags": []

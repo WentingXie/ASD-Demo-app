@@ -1,7 +1,7 @@
 
-Feature: User login and view own details(Wenting and Yixin UI Testing Combined)
+Feature: Top Up and Payment History
 
-Scenario: Test Login and Check own user details
+Scenario: Test Login, top up opalcard, search card, delete history, and clear history page.
 Given Open FireFox browser
 When asd-demo-opal is loaded
 Then Login button enabled
@@ -11,4 +11,5 @@ Then Type amount of top up
 Then View Main Page
 Then View Payment History
 Then Search opal card number
-Then Delete all history
+Then Delete history
+Then Clear history page
