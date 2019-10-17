@@ -9,6 +9,7 @@ asd/demo/model/User.class
 asd/demo/controller/ListOrderServlet.class
 asd/demo/model/dao/IOpalCardDao.class
 asd/demo/model/dao/IOrderDao.class
+asd/demo/controller/DeactivateServlet.class
 asd/demo/service/impl/OpalCardServiceImpl.class
 asd/demo/model/dao/impl/OpalCardImpl.class
 asd/demo/service/impl/UserServiceImpl.class

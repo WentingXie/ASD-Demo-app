@@ -33,3 +33,4 @@
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/controller/RegisterServlet.java
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/service/impl/UserServiceImpl.java
 /Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/model/dao/impl/OpalCardImpl.java
+/Users/wentingxie/Documents/GitHub/ASD-Demo-app/src/main/java/asd/demo/controller/DeactivateServlet.java

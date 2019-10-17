@@ -28,6 +28,10 @@
         <servlet-name>ListActivatedOrderServlet</servlet-name>
         <servlet-class>asd.demo.controller.ListActivatedOrderServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeactivateServlet</servlet-name>
+        <servlet-class>asd.demo.controller.DeactivateServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
         <url-pattern>/ConnServlet</url-pattern>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>ListActivatedOrderServlet</servlet-name>
         <url-pattern>/ListActivatedOrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeactivateServlet</servlet-name>
+        <url-pattern>/deactivate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

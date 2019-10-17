@@ -11,7 +11,9 @@
 
 <!DOCTYPE html>
 
-<%List<Order> Order = (ArrayList) session.getAttribute("orderlist");%>
+<%
+    List<Order> Order = (ArrayList) session.getAttribute("orderlist");
+%>
 
 <html>
 
@@ -56,14 +58,16 @@
                 </thead>
 
                 <tbody
-                    <%for (Order l : Order) {%>
-                    <tr>
-                        <td><%=l.getOpalCardSequenceNumber()%></td>
-                        <td><%=l.getUserAddress()%></td>
-                        <td><%=l.getOrderDate()%></td>
-                        <td><a href="deactivate?id=<%=l.getOpalCardSequenceNumber()%>" class="btn btn-xs btn-primary">Deactivate</a> 
-                    </tr>
-                    <%}%>
+                    <%if (Order != null) {%>
+                        <%for (Order l : Order) {%>
+                        <tr>
+                            <td><%=l.getOpalCardSequenceNumber()%></td>
+                            <td><%=l.getUserAddress()%></td>
+                            <td><%=l.getOrderDate()%></td>
+                            <td><a href="deactivate?id=<%=l.getId()%>" class="btn btn-xs btn-primary">Deactivate</a> 
+                        </tr>
+                        <%}%>
+                     <%}%>
                 </tbody>
 
             </table>
