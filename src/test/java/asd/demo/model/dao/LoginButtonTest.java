@@ -52,6 +52,12 @@ public class LoginButtonTest {
      driver.navigate().to(driver.getCurrentUrl());
      }
      
+         @Then("^user_feedbacks")
+    public void user_feedbacks() throws Throwable {
+        driver.get("https://asd-demo-opal.herokuapp.com/");
+        driver.navigate().to(driver.getCurrentUrl());
+    }
+     
       @Then("^add_feedback_form")
     public void add_feedback_form() throws Throwable {
         driver.get("https://asd-demo-opal.herokuapp.com/feedback.jsp");

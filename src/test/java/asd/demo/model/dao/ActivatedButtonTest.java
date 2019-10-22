@@ -21,7 +21,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ActivatedButtonTest {
 
     WebDriver driver;
-
     @Given("^Open FireFox browser$")
     public void open() throws Throwable {
         Class<? extends WebDriver> driverClass = FirefoxDriver.class;

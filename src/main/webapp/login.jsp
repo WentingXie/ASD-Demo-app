@@ -23,39 +23,22 @@
         String emptyErr = request.getParameter("empty");
     %>
     <body>
-<<<<<<< HEAD
-
-        <div class="row">
-            <form action="${pageContext.request.contextPath}/LoginServlet" method="post" target="_parent">
-                <p class="title">Login Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
-                    <div class="form-group" id="username">
-                        <input class="form-input" placeholder="Email" name="email" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>
-=======
       <div class="container">
        <p class="title">Login Details:  </p>&emsp;<span class="error"> <c:if test="${emptyErr!=null}"><c:out value="${emptyErr}"/></c:if></span>
          <div class="center-block">
             <form action="${pageContext.request.contextPath}/login" method="post" target="_parent" class="form-horizontal">
                   <div class="form-group" id="username">
                         <input class="form-control" placeholder="Email" name="email" required="true">&emsp;<span class="error"><c:if test="${emailErr!=null}"><c:out value="${emailErr}"/></c:if></span>
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
                     </div>
                     <div class="form-group" id="password">
                         <input type="password" class="form-control" name ="password" placeholder="Password" required="true">&emsp;<span class="error"><c:if test="${passErr!=null}"><c:out value="${passErr}"/></c:if></span>
                     </div>
-<<<<<<< HEAD
-                    <div class="form-group" id="login">
-                        <input type="submit" value="Login" name="login" class="login-button"/>
-                    </div>
-                </form>
-            </div>
-=======
                     <div class="form-group">
                       <input type="submit" name ="login" id ="login" value="Login" class="login-button"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Cancel" onclick="javascript:window.location.href='index.jsp'"class="cancle-button"/>
                     </div>
                 </form>
         </div>
        </div>
->>>>>>> 8d2df50caeb8b502ff0a23064ce40d38b05ee1a8
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
         <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
