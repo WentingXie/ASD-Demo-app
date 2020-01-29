@@ -68,7 +68,7 @@
                         </tr>
                         <tr>
                             <td>Top Up Amount</td>
-                            <td><input type="number" id="amount" name="amount" min="5" max="100" required="true"> </td>
+                            <td><input id="amount" name="amount" required="true"> </td>
                         </tr>
                         <tr>
                             <td></td>

@@ -15,7 +15,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  *
- * @author suyixin
+ * @author Jonny Lie
  */
 public class UITest {
 
@@ -86,5 +86,10 @@ public class UITest {
      @Then("^clear history page$")
      public void clear_history_page() throws Throwable {
         driver.findElement(By.name("clear")).click();
+     }
+     
+     @Then("^close browser$")
+     public void close_browser() throws Throwable {
+         driver.close();
      }
 }

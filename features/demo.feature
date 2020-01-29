@@ -13,3 +13,4 @@ Then view payment history
 Then search by opal card number
 Then delete history
 Then clear history page
+Then close browser
